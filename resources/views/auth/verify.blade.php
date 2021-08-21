@@ -23,14 +23,24 @@
 						@endif
 
 						Vous allez recevoir dans quelques minutes un courriel de vérification. Ouvrez-le puis cliquez sur le lien pour valider votre inscription.
-                		Si vous ne l'avez pas reçu,
-						<form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
-							@csrf
-							<button type="submit" class="btn btn-link p-0 m-0 align-baseline">cliquez ici pour le renvoyer</button>.
-						</form>
 						<br />
-						<br />
-						En cas de problème, vous pouvez écrire à <a href="mailto:contact@nuitducode.net">contact@nuitducode.net</a>.
+						<ul>
+							<li class="mt-3">Si vous ne l'avez pas reçu,
+							<form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
+								@csrf
+								<button type="submit" class="btn btn-link p-0 m-0 align-baseline">cliquez ici</button> pour le renvoyer.
+							</form>
+							</li>
+							<li class="mt-3">
+							Si vous avez commis une erreur lors de l'inscription (adresse courriel erronée par exemple), complétez une <a href="/direct-register" class="button text-center">nouvelle inscription</a>.
+							</li>
+							<li class="mt-3">
+							Si vous avez reçu le courriel de vérification, que vous avez cliqué sur le lien mais que vous arrivez tout de même sur cette page, <a href="/direct-login" class="button text-center">cliquez ici</a> pour vous connecter.
+							</li>
+							<li class="mt-3">
+							Si un problème persiste et vous empêche de vous connecter, vous pouvez écrire à <a href="mailto:contact@nuitducode.net">contact@nuitducode.net</a>.
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>

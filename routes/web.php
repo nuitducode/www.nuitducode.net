@@ -40,6 +40,22 @@ Route::view('/organisation', 'organisation');
 // TEST
 Route::view('/test', 'test');
 
+// CLEAR COOKIE
+Route::get('/direct-register', function(){
+   Cookie::queue(Cookie::forget(strtolower(str_replace(' ', '_', config('app.name'))) . '_session'));
+   return redirect('/register');
+});
+
+Route::get('/direct-login', function(){
+   Cookie::queue(Cookie::forget(strtolower(str_replace(' ', '_', config('app.name'))) . '_session'));
+   return redirect('/login');
+});
+
+Route::get('/direct-welcome', function(){
+   Cookie::queue(Cookie::forget(strtolower(str_replace(' ', '_', config('app.name'))) . '_session'));
+   return redirect('/');
+});
+
 
 // ============================================================================
 // == CONSOLE
