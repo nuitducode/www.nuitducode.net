@@ -70,10 +70,22 @@
 							</div>
 
 							<div class="form-group row">
-								<label for="etablissement" class="col-md-4 col-form-label text-md-right  text-info">établissement <sup class="text-danger">*</sup></label>
+								<label for="etablissement" class="col-md-4 col-form-label text-md-right text-info">établissement <sup class="text-danger">*</sup></label>
 								<div class="col-md-6">
 									<input id="etablissement" type="text" class="form-control @error('etablissement') is-invalid @enderror" name="etablissement" value="{{ old('etablissement') }}" />
 									@error('etablissement')
+										<span class="invalid-feedback" role="alert">
+											<strong>{{ $message }}</strong>
+										</span>
+									@enderror
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<label for="nb_participants" class="col-md-4 col-form-label text-md-right text-info" style=";line-height:1">nombre d'élèves participants <sup class="text-danger">*</sup><br /><span class="small font-italic" style="opacity:0.5">ce nombre peut être mis à jour ulterieurement</span></label>
+								<div class="col-md-6">
+									<input id="nb_participants" type="text" class="form-control @error('nb_participants') is-invalid @enderror" name="nb_participants" value="{{ old('nb_participants') }}" />
+									@error('nb_participants')
 										<span class="invalid-feedback" role="alert">
 											<strong>{{ $message }}</strong>
 										</span>
