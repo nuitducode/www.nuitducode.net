@@ -82,7 +82,7 @@
 							</div>
 
 							<div class="form-group row">
-								<label for="nb_participants" class="col-md-4 col-form-label text-md-right text-info" style=";line-height:1">nombre d'élèves participants <sup class="text-danger">*</sup><br /><span class="small font-italic" style="opacity:0.5">ce nombre peut être mis à jour à tout moment</span></label>
+								<label for="nb_participants" class="col-md-4 col-form-label text-md-right text-info" style=";line-height:1">nombre d'élèves participant <sup class="text-danger">*</sup><br /><span class="small font-italic" style="opacity:0.5">ce nombre peut être mis à jour à tout moment</span></label>
 								<div class="col-md-6">
 									<input id="nb_participants" type="text" class="form-control @error('nb_participants') is-invalid @enderror" name="nb_participants" value="{{ old('nb_participants') }}" />
 									@error('nb_participants')

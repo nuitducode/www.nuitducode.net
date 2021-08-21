@@ -44,6 +44,10 @@
                                 <td>{{ Auth::user()->etablissement }}</td>
                             </tr>
                             <tr>
+                                <td><i class="fas fa-id-badge"></i></td>
+                                <td>{{ Auth::user()->nb_participants }}</td>
+                            </tr>
+                            <tr>
                                 <td><i class="fas fa-globe-americas"></i></td>
                                 <td>{{ Auth::user()->pays }}</td>
                             </tr>
