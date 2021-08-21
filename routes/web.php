@@ -32,7 +32,7 @@ Route::view('/donnees-personnelles', 'donnees-personnelles')->name('donnees-pers
 Route::view('/presentation', 'presentation');
 
 // CONSIGNES
-Route::view('/consignes', 'consignes');
+Route::view('/regles-conseils', 'regles-conseils');
 
 // ORGANISATION
 Route::view('/organisation', 'organisation');

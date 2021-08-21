@@ -15,9 +15,11 @@
 			</div>
 			<div class="col-md-3 text-center">
 					<a href="https://twitter.com/nuitducode" target="_blank"><button type="button" class="btn btn-light btn-sm text-muted ml-1 pt-2"><i class="fab fa-twitter"></i></button></a>
-					<a href="https://twitter.com/nuitducode" target="_blank"><button type="button" class="btn btn-light btn-sm text-muted ml-1 pt-2"><i class="fab fa-youtube"></i></button></a>
 					<a href="https://twitter.com/nuitducode" target="_blank"><button type="button" class="btn btn-light btn-sm text-muted ml-1 pt-2"><i class="fab fa-github-alt"></i></button></a>
+					<!--
+					<a href="https://twitter.com/nuitducode" target="_blank"><button type="button" class="btn btn-light btn-sm text-muted ml-1 pt-2"><i class="fab fa-youtube"></i></button></a>
 					<a href="https://twitter.com/nuitducode" target="_blank"><button type="button" class="btn btn-light btn-sm text-muted ml-1 pt-2"><img src="{{ asset('img/icon-scratch.svg') }}" width="13" /></button></a>
+				-->
 					<br />
 					<br />
 					<a class="btn btn-outline-secondary btn-sm" style="font-size:80%;opacity:0.3;margin:2px 0px 0px 4px" href="login" role="button">se connecter</a>
@@ -39,11 +41,15 @@
 			</div>
 
 			<div class="col-md-3 text-center">
-				<div class="bouton"><a href="presentation"><img src="{{ asset('img/bouton_presentation.svg') }}" /></a></div>
-				<div class="bouton"><a href="consignes"><img src="{{ asset('img/bouton_regles-conseils.svg') }}" /></a></div>
-				<div class="bouton"><a href="organisation"><img src="{{ asset('img/bouton_organisation.svg') }}" /></a></div>
+				<div class="bouton"><a href="regles-conseils"><img src="{{ asset('img/bouton_regles-conseils.svg') }}" /></a></div>
 				<div class="bouton"><a href="https://github.com/nuit-du-code/ORGANISATION/discussions" target="_blank"><img src="{{ asset('img/bouton_discussions.svg') }}" /></a></div>
+
+				<!--
+				<div class="bouton"><a href="presentation"><img src="{{ asset('img/bouton_presentation.svg') }}" /></a></div>
+
+				<div class="bouton"><a href="organisation"><img src="{{ asset('img/bouton_organisation.svg') }}" /></a></div>
 				<div class="bouton"><a href="faq"><img src="{{ asset('img/bouton_faq.svg') }}" /></a></div>
+				-->
 			</div>
 
 

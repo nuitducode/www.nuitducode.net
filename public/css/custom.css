@@ -9,6 +9,18 @@ body {
   background-color: #f8fafc;
 }
 
+a {
+    color: #9966ff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:hover {
+    color: #8E44AD;
+    text-decoration: none;
+    background-color: transparent;
+}
+
 
 h1 {
 	font-size: 24px;
@@ -22,14 +34,14 @@ h2 {
 	margin-top:50px;
 	font-size: 18px;
 	text-transform: uppercase;
-	color: #c83737;
+	color: #3490dc;
 }
 
 h3 {
 	margin-top:30px;
 	font-size: 14px;
-	font-weight:bold;
 	text-transform: uppercase;
+	color: #3490dc;
 }
 
 /* [SCROLLSPY] */
@@ -39,15 +51,16 @@ h3 {
 
 .nav-link {
 	font-size:0.7rem;
+    color:#3490dc;
     display: block;
-    padding: 0rem 0.5rem;
+    padding: 0.2rem 0.5rem;
 	border-left:solid 4px transparent;
 }
 
 .nav-link.active {
-    color: #c83737 !important;
+    color: #9966ff !important;
     background-color: transparent !important;
-	border-left:solid 4px #c83737;
+	border-left:solid 4px #9966ff;
 }
 /* [/SCROLLSPY] */
 
