@@ -54,9 +54,7 @@
 
 							<div class="form-group row mb-0">
 								<div class="col-md-8 offset-md-4">
-									<button type="submit" class="btn btn-warning">
-										se connecter
-									</button>
+									<button type="submit" class="btn btn-warning"><i class="fas fa-check"></i></button>
 
 									@if (Route::has('password.request'))
 										<a class="text-decoration-none small text-muted ml-3" style="opacity:0.5" href="{{ route('password.request') }}">
