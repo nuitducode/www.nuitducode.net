@@ -18,14 +18,19 @@
 					<div class="card-body">
 						@if (session('resent'))
 							<div class="text-monospace text-success pb-3" role="alert">
-								Un nouveau lien de vérification a été envoyé à l'adresse email que vous avez indiquée lors de votre inscription.
+								Un nouveau lien de vérification a été envoyé à l'adresse courriel que vous avez indiquée lors de votre inscription.
 							</div>
 						@endif
 
-						Vous allez recevoir dans quelques minutes un courriel de vérification. Ouvrez-le puis cliquez sur le lien pour valider votre inscription.
-						<br />
+						<p>Adresse courriel indiquée lors de l'inscription : <span class="text-danger text-monospace"> {{ Auth::user()->email }}</span></p>
+
+						<p>Vous allez recevoir dans quelques minutes un courriel de vérification. Ouvrez-le puis cliquez sur le lien pour valider votre inscription. </p>
+
 						<ul>
-							<li class="mt-3">Si vous ne l'avez pas reçu,
+							<li class="mt-3">
+							Si le courriel n'apparaît pas dans votre boîte de réception, vérifiez vos "spams''.
+							</li>
+							<li class="mt-3">Si vous ne l'avez pas reçu après plusieurs minutes,
 							<form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
 								@csrf
 								<button type="submit" class="btn btn-link p-0 m-0 align-baseline">cliquez ici</button> pour le renvoyer.

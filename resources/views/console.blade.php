@@ -22,42 +22,42 @@
 				@endif
 
     			<div class="row mb-5">
-    				<div class="col-md-12">
+                    <div class="col-md-12">
 
                         <h1>Fiche de renseignements</h1>
 
-                        <table class="table table-hover table-borderless text-muted text-left table-sm" style="width:0;">
+                        <table class="table table-hover table-borderless text-muted" style="width:0;">
                             <tr>
-                                <td><i class="fas fa-id-badge"></i></td>
+                                <td class="text-center"><i class="fas fa-address-card"></i></td>
                                 <td>{{ Auth::user()->prenom }} {{ Auth::user()->nom }}</td>
                             </tr>
                             <tr>
-                                <td><i class="fas fa-briefcase"></i></td>
+                                <td class="text-center"><i class="fas fa-briefcase"></i></td>
                                 <td>{{ Auth::user()->titre }}</td>
                             </tr>
                             <tr>
-                                <td><i class="fas fa-at"></i></td>
+                                <td class="text-center"><i class="fas fa-at"></i></td>
                                 <td>{{ Auth::user()->email }}</td>
                             </tr>
                             <tr>
-                                <td><i class="fas fa-school"></i></td>
+                                <td class="text-center"><i class="fas fa-school"></i></td>
                                 <td>{{ Auth::user()->etablissement }}</td>
                             </tr>
                             <tr>
-                                <td><i class="fas fa-id-badge"></i></td>
+                                <td class="text-center"><i class="fas fa-check-square"></i></td>
                                 <td>{{ Auth::user()->nb_participants }}</td>
                             </tr>
                             <tr>
-                                <td><i class="fas fa-globe-americas"></i></td>
+                                <td class="text-center"><i class="fas fa-globe-americas"></i></td>
                                 <td>{{ Auth::user()->pays }}</td>
                             </tr>
                             <tr>
-                                <td><i class="fas fa-city"></i></td>
+                                <td class="text-center"><i class="fas fa-city"></i></td>
                                 <td>{{ Auth::user()->ville }}</td>
                             </tr>
                         </table>
 
-                        <a class="btn btn-primary" href="{{ route('renseignements-modifier_get') }}" role="button">modifier</a>
+                        <a class="btn btn-primary mt-3" href="{{ route('renseignements-modifier_get') }}" role="button">modifier</a>
 
     				</div>
     			</div>
