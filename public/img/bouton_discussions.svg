@@ -8,7 +8,7 @@
 <feBlend in2="BackgroundImage" mode="multiply"/>
 </filter>
 <style><![CDATA[ .sb3-label {
-      font: 500 12pt Helevetica Neue, Helvetica, sans-serif;
+      font: 500 12pt Nunito;
       fill: #fff;
       word-spacing: +1pt;
     }
@@ -82,7 +82,7 @@
       fill: #ffff80;
     }
     .sb3-comment-label {
-      font: 400 12pt Helevetica Neue, Helvetica, sans-serif;
+      font: 400 12pt Nunito;
       fill: #000;
       word-spacing: 0;
     }
@@ -107,9 +107,9 @@
 </rdf:RDF>
 </metadata>
 <g transform="translate(-6742.3 -4742.7)" font-size="40px" letter-spacing="0px" word-spacing="0px">
-<flowRoot fill="#000000" font-family="sans-serif" style="line-height:1.25" xml:space="preserve"><flowRegion><rect x="-1029.5" y="1912.6" width="65.761" height="73.186" style=""/></flowRegion><flowPara/></flowRoot>
-<flowRoot fill="#000000" font-family="sans-serif" style="line-height:1.25" xml:space="preserve"><flowRegion><rect x="7430.3" y="5171.3" width="461.03" height="166.17" style=""/></flowRegion><flowPara/></flowRoot>
-<text x="3617" y="2319.25" font-family="sans-serif" style="line-height:1.25" xml:space="preserve"><tspan x="3617" y="2319.25"/></text>
+<flowRoot fill="#000000" font-family="Nunito" style="line-height:1.25" xml:space="preserve"><flowRegion><rect x="-1029.5" y="1912.6" width="65.761" height="73.186" style=""/></flowRegion><flowPara/></flowRoot>
+<flowRoot fill="#000000" font-family="Nunito" style="line-height:1.25" xml:space="preserve"><flowRegion><rect x="7430.3" y="5171.3" width="461.03" height="166.17" style=""/></flowRegion><flowPara/></flowRoot>
+<text x="3617" y="2319.25" font-family="Nunito" style="line-height:1.25" xml:space="preserve"><tspan x="3617" y="2319.25"/></text>
 <g transform="translate(-13 668.82)" style="line-height:1.25" aria-label="L'ATELIER NUMERIQUE">
 <use transform="translate(6542 3282.4)" width="100%" height="100%" href="#sb3-greenFlag"/>
 <use transform="translate(6610 3563.4)" width="100%" height="100%" href="#sb3-loopArrow"/>
