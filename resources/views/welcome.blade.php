@@ -43,10 +43,10 @@
 					<span class="text-monospace small" style="color:silver"> établissements inscrits</span>
 					<span class="ml-3 small" style="font-weight:bold;color:#d35400">{{ DB::table('users')->whereNotNull('email_verified_at')->sum('nb_participants'); }}</span>
 					<span class="text-monospace small" style="color:silver"> élèves</span>
-					<span class="ml-3 small" style="font-weight:bold;color:#d35400">{{ DB::table('users')->whereNotNull('email_verified_at')->distinct()->count('pays'); }}</span>
-					<span class="text-monospace small" style="color:silver"> pays</span>
 					<span class="ml-3 small" style="font-weight:bold;color:#d35400">{{ DB::table('users')->whereNotNull('email_verified_at')->distinct()->count('ville'); }}</span>
 					<span class="text-monospace small" style="color:silver"> villes</span>
+					<span class="ml-3 small" style="font-weight:bold;color:#d35400">{{ DB::table('users')->whereNotNull('email_verified_at')->distinct()->count('pays'); }}</span>
+					<span class="text-monospace small" style="color:silver"> pays</span>
 				</p>
 			</div>
 
