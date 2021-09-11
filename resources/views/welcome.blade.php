@@ -48,6 +48,7 @@
 					<span class="ml-3 small" style="font-weight:bold;color:#d35400">{{ DB::table('users')->distinct()->count('pays'); }}</span>
 					<span class="text-monospace small" style="color:silver"> pays</span>
 				</p>
+				@include('inc-footer')
 			</div>
 
 			<div class="col-md-3 text-center">
@@ -75,7 +76,7 @@
 		</div><!-- row -->
 	</div><!-- container -->
 
-	@include('inc-footer')
+
 	@include('inc-bottom-js')
 <script>
 $('.videoplay').on('click', function() {
