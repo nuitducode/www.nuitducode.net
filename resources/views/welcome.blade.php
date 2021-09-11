@@ -39,7 +39,7 @@
 					<a class="btn btn-warning" href="register" role="button"><img src="{{ asset('img/icon-green-flag.svg') }}" width="12" class="mr-2" />inscrire un établissement</a>
 				</p>
 				<p class="text-center mt-5">
-					<span class="small" style="font-weight:bold;color:#d35400">{{ DB::table('users')->whereNotNull('email_verified_at')->count(); }}</span>
+					<span class="small" style="font-weight:bold;color:#d35400">{{ DB::table('users')->count(); }}</span>
 					<span class="text-monospace small" style="color:silver"> établissements inscrits</span>
 					<span class="ml-3 small" style="font-weight:bold;color:#d35400">{{ DB::table('users')->sum('nb_participants'); }}</span>
 					<span class="text-monospace small" style="color:silver"> élèves</span>
