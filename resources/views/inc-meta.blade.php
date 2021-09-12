@@ -23,22 +23,22 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <!-- Open Graph -->
-<meta property="og:title" content="dozo.app" />
+<meta property="og:title" content="Nuit du c0de" />
 <meta property="og:type" content="website" />
-<meta property="og:description" content="Browsing monitoring - Keep your students stay on task." />
+<meta property="og:description" content="Concours de programmation Scratch. Cours moyen / collège / Lycée." />
 <meta property="og:url" content="https://dozo.app" />
 <meta property="og:image" content="{{ asset('img/open-graph.png') }}" />
-<meta property="og:image:alt" content="dozo.app" />
+<meta property="og:image:alt" content="Nuit du c0de" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@dozoapp">
-<meta name="twitter:creator" content="@dozoapp">
-<meta name="twitter:title" content="dozo.app">
-<meta name="twitter:description" content="Browsing monitoring - Keep your students stay on task.">
+<meta name="twitter:site" content="@nuitducode">
+<meta name="twitter:creator" content="@nuitducode">
+<meta name="twitter:title" content="Nuit du c0de">
+<meta name="twitter:description" content="Concours de programmation Scratch. Cours moyen / collège / Lycée.">
 <meta name="twitter:image" content="{{ asset('img/open-graph.png') }}">
 
 <!-- Matomo -->
