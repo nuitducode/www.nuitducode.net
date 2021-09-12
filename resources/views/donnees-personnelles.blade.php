@@ -1,6 +1,6 @@
 <?php
 include('github-import.php');
-$github_document = github_import('nuit-du-code/www.nuitducode.net/contents/donnees-personnelles.md');
+$github_document = github_import('nuit-du-code/www.nuitducode.net/contents/md/donnees-personnelles.md');
 ?>
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
