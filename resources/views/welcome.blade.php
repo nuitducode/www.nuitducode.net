@@ -68,7 +68,7 @@
 					La <b>Nuit du c0de</b> se déroule forcément la nuit ? Non. Heureusement. Chaque établissement organise sa <b>Nuit du c0de</b> en fonction de ses ressources et de ses contraintes. Le matin, l'après-midi, le soir, en semaine, le week-end, c'est selon.
 				</p>
 				<p class="text-monospace text-muted small text-justify mt-2">
-					Alors, pourquoi la <b><u>Nuit</u> du c0de</b> ? Car, lors des premières éditions, les établissements de la zone Asie-Pacifique se retrouvaient à Taipei le temps d'un week-end riche en rencontres et aventures. Le concours proprement dit débutait à 18h pour se finir à minuit. De nuit donc.
+					Alors, pourquoi la <b><u>Nuit</u> du c0de</b> ? Car, lors des premières éditions, les établissements de la zone Asie-Pacifique se retrouvaient à Taipei le temps d'un week-end riche en rencontres et aventures (grâce à Alexis Kauffmann et Jean-Yves Labouche). Le concours proprement dit débutait à 18h pour se finir à minuit. De nuit donc.
 				</p>
 
 
