@@ -8,7 +8,7 @@ $github_document = github_import('nuitducode/DOCUMENTATION/contents/regles-conse
 	@include('inc-meta')
     <title>Règles et conseils</title>
 </head>
-<body data-spy="scroll" data-target="#navbar-scrollspy" data-offset="90">
+<body data-spy="scroll" data-target="#navbar-scrollspy" data-offset="20">
 
 	<div class="container mb-5">
 

@@ -8,7 +8,7 @@ $github_document = github_import('nuitducode/www.nuitducode.net/contents/md/donn
 	@include('inc-meta')
     <title>Politique de protection des données</title>
 </head>
-<body data-spy="scroll" data-target="#navbar-scrollspy" data-offset="90">
+<body data-spy="scroll" data-target="#navbar-scrollspy" data-offset="20">
 
 	<div class="container mb-5">
 
