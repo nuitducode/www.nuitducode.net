@@ -25,6 +25,9 @@ Auth::routes(['verify' => true]);
 // HOMEPAGE
 Route::view('/', 'welcome');
 
+// EDITIONS EN VIDEO
+Route::view('/editions-en-video', 'editions-en-video');
+
 // DONNEE PERSONNELLES
 Route::view('/donnees-personnelles', 'donnees-personnelles')->name('donnees-personnelles');
 

@@ -1,6 +1,6 @@
 <?php
 include('github-import.php');
-$github_document = github_import('nuit-du-code/www.nuitducode.net/contents/md/donnees-personnelles.md');
+$github_document = github_import('nuitducode/www.nuitducode.net/contents/md/donnees-personnelles.md');
 ?>
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -8,13 +8,16 @@ $github_document = github_import('nuit-du-code/www.nuitducode.net/contents/md/do
 	@include('inc-meta')
     <title>Politique de protection des données</title>
 </head>
-<body data-spy="scroll" data-target="#navbar-scrollspy" data-offset="150">
-	@include('inc-nav')
-	<div class="container mt-5 mb-5">
+<body data-spy="scroll" data-target="#navbar-scrollspy" data-offset="90">
+
+	<div class="container mb-5">
 
 		<div class="row">
 			<div class="col-md-3">
-				<?php echo $github_document['menu'] ?>
+				<div class="sticky-top mb-5 pt-2">
+					@include('inc-nav')
+					<?php echo $github_document['menu'] ?>
+				</div>
 			</div>
 			<div class="col-md-9 text-justify">
 				<?php echo $github_document['content'] ?>

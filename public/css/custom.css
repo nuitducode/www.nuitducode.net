@@ -31,7 +31,7 @@ h1 {
 }
 
 h2 {
-	margin-top:50px;
+	padding-top:30px;
 	font-size: 18px;
 	text-transform: uppercase;
 	color: #3490dc;
@@ -77,11 +77,12 @@ h3 {
 	opacity:0.9;
 }
 /* [BOUTONS] */
-
+/*
 svg {
     fill: currentColor;
     stroke: currentColor;
 }
+*/
 
 .options a {
 	text-decoration: none;
