@@ -9,11 +9,11 @@
 
 	<div class="container mt-4 mb-5">
 
-		<div class="row mb-5">
+		<div class="row mb-4">
 
 			<div class="col-md-6 offset-md-1 text-center">
 				<img src="{{ asset('img/nuitducode.svg') }}" width="140" />
-				<p class="text-monospace small" style="margin-top:-10px;font-weight:bold">~ 6<sup>e</sup> édition ~</p>
+				<p class="text-monospace small" style="margin-top:-10px;font-weight:bold">~ 6<sup>e</sup> édition ~<br /><span style="color:silver;font-size:90%">2022</span></p>
 			</div>
 
 			<div class="col-md-3 text-center">
