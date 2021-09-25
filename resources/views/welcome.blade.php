@@ -63,7 +63,7 @@
 						<li class="mb-3">Chaque établissement pourra organiser l'épreuve <b style="color:#4cbf56">entre fin avril et fin mai 2022</b> (des dates plus précises seront fournies dans les  prochaines semaines).</li>
 						<li class="mb-3">Tous les établissements scolaires de l'étranger et de France peuvent s'inscrire.</li>
 						<li class="mb-3">À l’issue du jeu, chaque établissement sélectionne ses équipes championnes. Elles le représenteront pour le classement international.</li>
-						<li class="mb-3">Les champions réalisent une courte vidéo de leur projet (vidéo de type gaming).</li>
+						<li class="mb-3">Les champions réalisent une courte vidéo de leur projet (vidéo de type "gaming").</li>
 						<li class="mb-3">Le Lycée Français de Tokyo centralisera les jeux de toutes les équipes championnes.</li>
 						<li class="mb-3">Un classement international est établi par un jury d’enseignant.</li>
 					</ul>
