@@ -59,7 +59,7 @@
 				<p class="text-monospace text-muted small text-justify mt-2">
 					L'organisation de l'édition 2022 est similaire à celle de 2021:
 					<ul class="text-monospace text-muted small text-justify">
-						<li class="mb-3">Chaque établissement organisera sa <b>Nuit du c0de</b> avec tous les supports que nous fournirons. Le Lycée Français de Tokyo (qui prend cette année le relais du Lycée Français de Taipei), organisateur de l’évènement, se charge de l’élaboration et de la diffusion de tous les documents nécessaires à l’organisation du concours.</li>
+						<li class="mb-3">Chaque établissement organisera sa <b>Nuit du c0de</b>. Le Lycée Français de Tokyo (qui prend cette année le relais du Lycée Français de Taipei), organisateur de l’évènement, se charge de l’élaboration et de la diffusion de tous les documents nécessaires à l’organisation du concours.</li>
 						<li class="mb-3">Chaque établissement pourra organiser l'épreuve <b style="color:#4cbf56">entre fin avril et fin mai 2022</b> (des dates plus précises seront fournies dans les  prochaines semaines).</li>
 						<li class="mb-3">Tous les établissements scolaires de l'étranger et de France peuvent s'inscrire.</li>
 						<li class="mb-3">À l’issue du jeu, chaque établissement sélectionne ses équipes championnes. Elles le représenteront pour le classement international.</li>
