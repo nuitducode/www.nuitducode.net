@@ -11,7 +11,9 @@
 
 		<div class="row mb-5">
 			<div class="col-md-6 offset-md-1 text-center">
-				<img src="{{ asset('img/nuitducode.svg') }}" width="140" /></a>
+				<img src="{{ asset('img/nuitducode.svg') }}" width="140" />
+				<p class="text-monospace small" style="margin-top:-10px;font-weight:bold">~ 6<sup>e</sup> édition ~</p>
+
 			</div>
 			<div class="col-md-3 text-center">
 					<a href="https://twitter.com/nuitducode" target="_blank"><button type="button" class="btn btn-light btn-sm text-muted ml-1 pt-2"><i class="fab fa-twitter"></i></button></a>
