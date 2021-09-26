@@ -35,7 +35,7 @@
 			<div class="col-md-6 offset-md-1">
 
 				<p class="text-monospace text-muted small text-justify">
-					La <b>Nuit du c0de</b> est un concours de programmation <a href="https://scratch.mit.edu/" target="_blank"><img src="{{ asset('img/scratch.svg') }}" /></a>. Il s’adresse à tous les établissements scolaires de l'étranger et de France.
+					La <b>Nuit du c0de</b> est un concours de programmation <a href="https://scratch.mit.edu/" target="_blank"><img src="{{ asset('img/scratch.svg') }}" /></a>. Il s’adresse à tous les établissements scolaires français (cours moyen / collège / lycée) de l'étranger et de France.
 				</p>
 				<p class="text-monospace text-muted small text-justify">
 					Chaque établissement peut inscrire autant d’élèves qu’il le souhaite, il n’y a pas de limite sur le nombre de participants. Les inscriptions sont gratuites.
@@ -61,7 +61,7 @@
 					<ul class="text-monospace text-muted small text-justify">
 						<li class="mb-3">Chaque établissement organisera sa <b>Nuit du c0de</b>. Le Lycée Français de Tokyo (qui prend cette année le relais du Lycée Français de Taipei), organisateur de l’évènement, se charge de l’élaboration et de la diffusion de tous les documents et supports nécessaires à l’organisation du concours.</li>
 						<li class="mb-3">Chaque établissement pourra organiser l'épreuve <b style="color:#4cbf56">entre fin avril et fin mai 2022</b> (des dates plus précises seront fournies dans les  prochaines semaines).</li>
-						<li class="mb-3">Tous les établissements scolaires de l'étranger et de France peuvent s'inscrire.</li>
+						<li class="mb-3">Tous les établissements scolaires français (cours moyen / collège / lycée) de l'étranger et de France peuvent s'inscrire.</li>
 						<li class="mb-3">À l’issue du jeu, chaque établissement sélectionne ses équipes championnes. Elles le représenteront pour le classement international.</li>
 						<li class="mb-3">Les champions réalisent une courte vidéo de leur projet (vidéo de type "gaming").</li>
 						<li class="mb-3">Le Lycée Français de Tokyo centralisera les jeux de toutes les équipes championnes.</li>
