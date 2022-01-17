@@ -1,6 +1,6 @@
 <?php
 include('github-import.php');
-$github_document = github_import('nuit-du-code/DOCUMENTATION/contents/organisation.md');
+$github_document = github_import('nuitducode/DOCUMENTATION/contents/organisation.md');
 ?>
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -11,7 +11,7 @@ $github_document = github_import('nuit-du-code/DOCUMENTATION/contents/organisati
 <body data-spy="scroll" data-target="#navbar-scrollspy" data-offset="150">
 	@include('inc-nav')
 	<div class="container mt-5 mb-5">
-	
+
 		<div class="row">
 			<div class="col-md-3">
 				<?php echo $github_document['menu'] ?>
@@ -20,7 +20,7 @@ $github_document = github_import('nuit-du-code/DOCUMENTATION/contents/organisati
 				<?php echo $github_document['content'] ?>
 			</div>
 		</div>
-		
+
 	</div><!-- /container -->
 	@include('inc-bottom-js')
 </body>
