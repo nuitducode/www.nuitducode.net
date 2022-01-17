@@ -40,6 +40,9 @@ Route::view('/regles-conseils', 'regles-conseils');
 // ORGANISATION
 Route::view('/organisation', 'organisation');
 
+// ENTRAINEMENT
+Route::view('/entrainement', 'entrainement');
+
 // TEST
 Route::view('/test', 'test');
 

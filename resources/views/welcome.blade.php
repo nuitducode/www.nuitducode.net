@@ -79,9 +79,23 @@
 
 			<div class="col-md-3 text-center">
 
+				<!--
+				<div class="text-monospace text-right mx-auto" style="width:150px;color:#dadee2;font-size:70%;line-height: 1.1;">pour préparer<br />la prochaine édition</div>
+				<div class="bouton mt-1 mb-4">
+					<a href="https://www.tchap.gouv.fr/#/room/#NuitduCodePAxIB2sbtr1:agent.diplomatie.tchap.gouv.fr" target="_blank">
+						<svg xmlns="http://www.w3.org/2000/svg" width="150" viewBox="0 0 241 58">
+							<g aria-label="scratchbox" font-size="1.5em" color="#ffffff" fill="#ffffff" font-family="Nunito" font-weight="400" letter-spacing="0" style="line-height:1.25" word-spacing="0">
+						    	<path fill="#cf63cf" stroke="#bd42bd" d="M0.5 4.5a4 4 0 0 1 4-4h8c2 0 3 1 4 2l4 4c1 1 2 2 4 2h12c2 0 3-1 4-2l4-4c1-1 2-2 4-2h188a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-188c-2 0-3 1-4 2l-4 4c-1 1-2 2-4 2h-12c-2 0-3-1-4-2l-4-4c-1-1-2-2-4-2h-8a4 4 0 0 1-4-4z"/>
+								<text x="0.8em" y="1.6em">entraînements</text>
+							</g>
+						</svg>
+					</a>
+				</div>
+			-->
+
 				<div class="bouton">
 					<a href="editions-en-video">
-						<svg xmlns="http://www.w3.org/2000/svg" width="150" viewBox="0 0 241 57">
+						<svg xmlns="http://www.w3.org/2000/svg" width="150" viewBox="0 0 241 58">
 							<g aria-label="scratchbox" font-size="1.5em" color="#ffffff" fill="#ffffff" font-family="Nunito" font-weight="400" letter-spacing="0" style="line-height:1.25" word-spacing="0">
 								<path fill="#4c97ff" stroke="#3373cc" d="M0.5 4.5a4 4 0 0 1 4-4h8c2 0 3 1 4 2l4 4c1 1 2 2 4 2h12c2 0 3-1 4-2l4-4c1-1 2-2 4-2h188a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-188c-2 0-3 1-4 2l-4 4c-1 1-2 2-4 2h-12c-2 0-3-1-4-2l-4-4c-1-1-2-2-4-2h-8a4 4 0 0 1-4-4z"/>
 								<text x="0.8em" y="1.6em">éditions en vidéo</text>
@@ -92,7 +106,7 @@
 
 				<div class="bouton">
 					<a href="regles-conseils">
-						<svg xmlns="http://www.w3.org/2000/svg" width="150" viewBox="0 0 241 57">
+						<svg xmlns="http://www.w3.org/2000/svg" width="150" viewBox="0 0 241 58">
 							<g aria-label="scratchbox" font-size="1.5em" color="#ffffff" fill="#ffffff" font-family="Nunito" font-weight="400" letter-spacing="0" style="line-height:1.25" word-spacing="0">
 								<path fill="#4c97ff" stroke="#3373cc" d="M0.5 4.5a4 4 0 0 1 4-4h8c2 0 3 1 4 2l4 4c1 1 2 2 4 2h12c2 0 3-1 4-2l4-4c1-1 2-2 4-2h188a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-188c-2 0-3 1-4 2l-4 4c-1 1-2 2-4 2h-12c-2 0-3-1-4-2l-4-4c-1-1-2-2-4-2h-8a4 4 0 0 1-4-4z"/>
 								<text x="0.8em" y="1.6em">règles et conseils</text>
@@ -101,27 +115,18 @@
 					</a>
 				</div>
 
-				<div class="bouton">
+				<div class="bouton mt-3">
 					<a href="https://github.com/nuit-du-code/ORGANISATION/discussions" target="_blank">
-						<svg xmlns="http://www.w3.org/2000/svg" width="150" viewBox="0 0 241 57">
+						<svg xmlns="http://www.w3.org/2000/svg" width="150" viewBox="0 0 241 58">
 							<g aria-label="scratchbox" font-size="1.5em" color="#ffffff" fill="#ffffff" font-family="Nunito" font-weight="400" letter-spacing="0" style="line-height:1.25" word-spacing="0">
-						    	<path fill="#4c97ff" stroke="#3373cc" d="M0.5 4.5a4 4 0 0 1 4-4h8c2 0 3 1 4 2l4 4c1 1 2 2 4 2h12c2 0 3-1 4-2l4-4c1-1 2-2 4-2h188a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-188c-2 0-3 1-4 2l-4 4c-1 1-2 2-4 2h-12c-2 0-3-1-4-2l-4-4c-1-1-2-2-4-2h-8a4 4 0 0 1-4-4z"/>
+						    	<path fill="#9966ff" stroke="#774dcb" d="M0.5 4.5a4 4 0 0 1 4-4h8c2 0 3 1 4 2l4 4c1 1 2 2 4 2h12c2 0 3-1 4-2l4-4c1-1 2-2 4-2h188a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-188c-2 0-3 1-4 2l-4 4c-1 1-2 2-4 2h-12c-2 0-3-1-4-2l-4-4c-1-1-2-2-4-2h-8a4 4 0 0 1-4-4z"/>
 								<text x="0.8em" y="1.6em">discussions</text>
 							</g>
 						</svg>
 					</a>
 				</div>
 
-				<div class="bouton">
-					<a href="https://www.tchap.gouv.fr/#/room/#NuitduCodePAxIB2sbtr1:agent.diplomatie.tchap.gouv.fr" target="_blank">
-						<svg xmlns="http://www.w3.org/2000/svg" width="150" viewBox="0 0 241 57">
-							<g aria-label="scratchbox" font-size="1.5em" color="#ffffff" fill="#ffffff" font-family="Nunito" font-weight="400" letter-spacing="0" style="line-height:1.25" word-spacing="0">
-						    	<path fill="#4c97ff" stroke="#3373cc" d="M0.5 4.5a4 4 0 0 1 4-4h8c2 0 3 1 4 2l4 4c1 1 2 2 4 2h12c2 0 3-1 4-2l4-4c1-1 2-2 4-2h188a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-188c-2 0-3 1-4 2l-4 4c-1 1-2 2-4 2h-12c-2 0-3-1-4-2l-4-4c-1-1-2-2-4-2h-8a4 4 0 0 1-4-4z"/>
-								<text x="0.8em" y="1.6em">salon tchap</text>
-							</g>
-						</svg>
-					</a>
-				</div>
+
 
 				<!--
 				<div class="bouton"><a href="presentation"><img src="{{ asset('img/bouton_presentation.svg') }}" /></a></div>
