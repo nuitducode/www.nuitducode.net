@@ -79,7 +79,6 @@
 
 			<div class="col-md-3 text-center">
 
-				<!--
 				<div class="text-monospace text-right mx-auto" style="width:150px;color:#dadee2;font-size:70%;line-height: 1.1;">pour préparer<br />la prochaine édition</div>
 				<div class="bouton mt-1 mb-4">
 					<a href="https://www.tchap.gouv.fr/#/room/#NuitduCodePAxIB2sbtr1:agent.diplomatie.tchap.gouv.fr" target="_blank">
@@ -91,7 +90,6 @@
 						</svg>
 					</a>
 				</div>
-			-->
 
 				<div class="bouton">
 					<a href="editions-en-video">
