@@ -6,15 +6,18 @@ $github_document = github_import('nuitducode/DOCUMENTATION/contents/entrainement
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
 	@include('inc-meta')
-    <title>Organisation</title>
+    <title>Entraînement</title>
 </head>
-<body data-spy="scroll" data-target="#navbar-scrollspy" data-offset="150">
-	@include('inc-nav')
-	<div class="container mt-5 mb-5">
+<body data-spy="scroll" data-target="#navbar-scrollspy" data-offset="20">
+
+	<div class="container mb-5">
 
 		<div class="row">
 			<div class="col-md-3">
-				<?php echo $github_document['menu'] ?>
+				<div class="sticky-top mb-5 pt-2">
+					@include('inc-nav')
+					<?php echo $github_document['menu'] ?>
+				</div>
 			</div>
 			<div class="col-md-9 text-justify">
 				<?php echo $github_document['content'] ?>
