@@ -13,7 +13,8 @@
 
 			<div class="col-md-6 offset-md-1 text-center">
 				<img src="{{ asset('img/nuitducode.svg') }}" width="140" />
-				<p class="text-monospace small" style="margin-top:-10px;font-weight:bold">~ 6<sup>e</sup> édition ~<br /><span style="color:silver;font-size:90%">2022</span></p>
+				<p class="text-monospace small" style="margin-top:-10px;font-weight:bold">~ 6<sup>e</sup> édition ~<br />
+					<b style="color:#4cbf56">du 27 avril au 25 mai 2022</b>
 			</div>
 
 			<div class="col-md-3 text-center">
@@ -35,10 +36,10 @@
 			<div class="col-md-6 offset-md-1">
 
 				<p class="text-monospace text-muted small text-justify">
-					La <b>Nuit du c0de</b> est un concours de programmation <a href="https://scratch.mit.edu/" target="_blank"><img src="{{ asset('img/scratch.svg') }}" /></a>. Il s’adresse à tous les établissements scolaires français (cours moyen / collège / lycée) de l'étranger et de France.
+					La <b style="color:#2c3e50">Nuit du c0de</b> est un concours de programmation <a href="https://scratch.mit.edu/" target="_blank"><img src="{{ asset('img/scratch-logo.svg') }}" /></a> (et <a href="https://www.python.org/" target="_blank"><img src="{{ asset('img/python-logo.svg') }}" /></a>). Il s'adresse à tous les établissements scolaires français (cours moyen / collège / lycée) de l'étranger et de France.
 				</p>
 				<p class="text-monospace text-muted small text-justify">
-					Chaque établissement peut inscrire autant d’élèves qu’il le souhaite, il n’y a pas de limite sur le nombre de participants. Les inscriptions sont gratuites.
+					Chaque établissement peut inscrire autant d'élèves qu'il le souhaite, il n'y a pas de limite sur le nombre de participants. Les inscriptions sont gratuites.
 				</p>
 				<p class="text-center mt-3">
 					<span class="small" style="font-weight:bold;color:#d35400">{{ DB::table('users')->count(); }}</span>
@@ -54,25 +55,23 @@
 					<a class="btn btn-warning" href="register" role="button"><img src="{{ asset('img/icon-green-flag.svg') }}" width="12" class="mr-2" />inscrire un établissement</a>
 				</p>
 				<p class="text-monospace text-muted small text-justify mt-5">
-					Par équipes de deux ou trois réparties en plusieurs catégories, les élèves auront six heures pour programmer entièrement un jeu avec le logiciel Scratch à partir d’un univers de jeu fourni.
+					Par équipes de deux ou trois réparties en plusieurs catégories, les élèves auront six heures pour programmer entièrement un jeu avec le logiciel Scratch (ou en Python) à partir d'un univers de jeu fourni.
 				</p>
 				<p class="text-monospace text-muted small text-justify mt-2">
-					L'organisation de l'édition 2022 est similaire à celle de 2021:
+					Organisation de l'édition 2022:
 					<ul class="text-monospace text-muted small text-justify">
-						<li class="mb-3">Chaque établissement organisera sa <b>Nuit du c0de</b>. Le Lycée Français de Tokyo (qui prend cette année le relais du Lycée Français de Taipei), organisateur de l’évènement, se charge de l’élaboration et de la diffusion de tous les documents et supports nécessaires à l’organisation du concours.</li>
-						<li class="mb-3">Chaque établissement pourra organiser l'épreuve <b style="color:#4cbf56">entre fin avril et fin mai 2022</b> (des dates plus précises seront fournies dans les  prochaines semaines).</li>
+						<li class="mb-3">Chaque établissement organise sa <b style="color:#2c3e50">Nuit du c0de</b> entre <b style="color:#4cbf56">le 27 avril et le 25 mai 2022</b> (selon ses ressources et ses contraintes). Le Lycée Français de Tokyo (qui prend cette année le relais du Lycée Français de Taipei), organisateur de l'évènement, se charge de l'élaboration et de la diffusion de tous les documents et supports nécessaires à l'organisation du concours.</li>
 						<li class="mb-3">Tous les établissements scolaires français (cours moyen / collège / lycée) de l'étranger et de France peuvent s'inscrire.</li>
-						<li class="mb-3">À l’issue du jeu, chaque établissement sélectionne ses équipes championnes. Elles le représenteront pour le classement international.</li>
-						<li class="mb-3">Les champions réalisent une courte vidéo de leur projet (vidéo de type "gaming").</li>
+						<li class="mb-3">À l'issue du jeu, chaque établissement sélectionne ses équipes championnes. Elles le représenteront pour le classement international.</li>
 						<li class="mb-3">Le Lycée Français de Tokyo centralisera les jeux de toutes les équipes championnes.</li>
-						<li class="mb-3">Un classement international est établi par un jury d’enseignant.</li>
+						<li class="mb-3">Un classement international est établi par un jury d'enseignants.</li>
 					</ul>
 				</p>
 				<p class="text-monospace text-muted small text-justify mt-2">
-					La <b>Nuit du c0de</b> se déroule forcément la nuit ? Non. Heureusement. Chaque établissement organise sa <b>Nuit du c0de</b> en fonction de ses ressources et de ses contraintes. Le matin, l'après-midi, le soir, en semaine, le week-end, c'est selon.
+					La <b style="color:#2c3e50">Nuit du c0de</b> se déroule forcément la nuit ? Non. Heureusement. Chaque établissement organise sa <b style="color:#2c3e50">Nuit du c0de</b> en fonction de ses ressources et de ses contraintes. Le matin, l'après-midi, le soir, en semaine, le week-end, c'est selon.
 				</p>
 				<p class="text-monospace text-muted small text-justify mt-2">
-					Alors, pourquoi la <b><u>Nuit</u> du c0de</b> ? Car, lors des premières éditions, les établissements de la zone Asie-Pacifique se retrouvaient à Taipei le temps d'un week-end riche en rencontres et aventures (grâce à Alexis Kauffmann et Jean-Yves Labouche). Le concours proprement dit débutait à 18h pour se finir à minuit. De nuit donc.
+					Alors, pourquoi la <b style="color:#2c3e50"><u>Nuit</u> du c0de</b> ? Car, lors des premières éditions, les établissements de la zone Asie-Pacifique se retrouvaient à Taipei le temps d'un week-end riche en rencontres et aventures (grâce à Alexis Kauffmann et Jean-Yves Labouche). Le concours proprement dit débutait à 18h pour se finir à minuit. De nuit donc.
 				</p>
 
 			</div>
