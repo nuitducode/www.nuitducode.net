@@ -1,6 +1,6 @@
 <?php
 include('github-import.php');
-$github_document = github_import('nuitducode/DOCUMENTATION/contents/entrainement.md');
+$github_document = github_import('nuitducode/DOCUMENTATION/contents/entrainements.md');
 ?>
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
