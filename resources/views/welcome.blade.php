@@ -66,6 +66,7 @@
 						<li class="mb-3">Un classement international est établi par un jury d'enseignants.</li>
 					</ul>
 				</p>
+				<br />
 				<p class="text-monospace text-muted small text-justify mt-2">
 					La <b style="color:#2c3e50">Nuit du c0de</b> se déroule forcément la nuit ? Non. Heureusement. Chaque établissement organise sa <b style="color:#2c3e50">Nuit du c0de</b> en fonction de ses ressources et de ses contraintes. Le matin, l'après-midi, le soir, en semaine, le week-end, c'est selon.
 				</p>
