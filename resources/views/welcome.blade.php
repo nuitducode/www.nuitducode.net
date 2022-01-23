@@ -89,7 +89,7 @@
 						</svg>
 					</a>
 				</div>
-<!--
+
 				<div class="bouton mb-4">
 					<a href="affiches">
 						<svg xmlns="http://www.w3.org/2000/svg" width="150" viewBox="0 0 241 58">
@@ -99,7 +99,7 @@
 							</g>
 						</svg>
 					</a>
-				</div>-->
+				</div>
 
 				<div class="bouton">
 					<a href="editions-en-video">
