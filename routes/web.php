@@ -43,6 +43,9 @@ Route::view('/organisation', 'organisation');
 // ENTRAINEMENTS
 Route::view('/entrainements', 'entrainements');
 
+// AFFICHES
+Route::view('/affiches', 'affiches');
+
 // TEST
 Route::view('/test', 'test');
 
