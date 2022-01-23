@@ -39,7 +39,7 @@
 					La <b style="color:#2c3e50">Nuit du c0de</b> est un concours de programmation <a href="https://scratch.mit.edu/" target="_blank"><img src="{{ asset('img/scratch-logo.svg') }}" /></a> (et <a href="https://www.python.org/" target="_blank"><img src="{{ asset('img/python-logo.svg') }}" /></a>). Il s'adresse à tous les établissements scolaires français (cours moyen / collège / lycée) de l'étranger et de France.
 				</p>
 				<p class="text-monospace text-muted small text-justify">
-					Chaque établissement peut inscrire autant d'élèves qu'il le souhaite, il n'y a pas de limite sur le nombre de participants. Les inscriptions sont gratuites.
+					Chaque établissement peut inscrire autant d'élèves qu'il le souhaite. Il n'y a pas de limite sur le nombre de participants. Les inscriptions sont gratuites.
 				</p>
 				<p class="text-center mt-3">
 					<span class="small" style="font-weight:bold;color:#d35400">{{ DB::table('users')->count(); }}</span>
@@ -61,7 +61,6 @@
 					Organisation de l'édition 2022:
 					<ul class="text-monospace text-muted small text-justify">
 						<li class="mb-3">Chaque établissement organise sa <b style="color:#2c3e50">Nuit du c0de</b> entre <b style="color:#4cbf56">le 27 avril et le 28 mai 2022</b> (selon ses ressources et ses contraintes). Le Lycée Français de Tokyo (qui prend cette année le relais du Lycée Français de Taipei), organisateur de l'évènement, se charge de l'élaboration et de la diffusion de tous les documents et supports nécessaires à l'organisation du concours.</li>
-						<li class="mb-3">Tous les établissements scolaires français (cours moyen / collège / lycée) de l'étranger et de France peuvent s'inscrire.</li>
 						<li class="mb-3">À l'issue du jeu, chaque établissement sélectionne ses équipes championnes. Elles le représenteront pour le classement international.</li>
 						<li class="mb-3">Le Lycée Français de Tokyo centralisera les jeux de toutes les équipes championnes.</li>
 						<li class="mb-3">Un classement international est établi par un jury d'enseignants.</li>
