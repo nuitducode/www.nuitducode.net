@@ -14,7 +14,7 @@
 			<div class="col-md-6 offset-md-1 text-center">
 				<img src="{{ asset('img/nuitducode.svg') }}" width="140" />
 				<p class="text-monospace small" style="margin-top:-10px;font-weight:bold">~ 6<sup>e</sup> édition ~<br />
-					<b style="color:#4cbf56">du 27 avril au 25 mai 2022</b>
+					<b style="color:#4cbf56">du 27 avril au 28 mai 2022</b>
 			</div>
 
 			<div class="col-md-3 text-center">
@@ -60,7 +60,7 @@
 				<p class="text-monospace text-muted small text-justify mt-2">
 					Organisation de l'édition 2022:
 					<ul class="text-monospace text-muted small text-justify">
-						<li class="mb-3">Chaque établissement organise sa <b style="color:#2c3e50">Nuit du c0de</b> entre <b style="color:#4cbf56">le 27 avril et le 25 mai 2022</b> (selon ses ressources et ses contraintes). Le Lycée Français de Tokyo (qui prend cette année le relais du Lycée Français de Taipei), organisateur de l'évènement, se charge de l'élaboration et de la diffusion de tous les documents et supports nécessaires à l'organisation du concours.</li>
+						<li class="mb-3">Chaque établissement organise sa <b style="color:#2c3e50">Nuit du c0de</b> entre <b style="color:#4cbf56">le 27 avril et le 28 mai 2022</b> (selon ses ressources et ses contraintes). Le Lycée Français de Tokyo (qui prend cette année le relais du Lycée Français de Taipei), organisateur de l'évènement, se charge de l'élaboration et de la diffusion de tous les documents et supports nécessaires à l'organisation du concours.</li>
 						<li class="mb-3">Tous les établissements scolaires français (cours moyen / collège / lycée) de l'étranger et de France peuvent s'inscrire.</li>
 						<li class="mb-3">À l'issue du jeu, chaque établissement sélectionne ses équipes championnes. Elles le représenteront pour le classement international.</li>
 						<li class="mb-3">Le Lycée Français de Tokyo centralisera les jeux de toutes les équipes championnes.</li>
