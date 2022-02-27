@@ -9,11 +9,14 @@
 
     @include('inc-nav-console')
 
-	<div class="container mt-4 mb-5">
-		<div class="row pt-3">
-			<div class="col-md-2"></div>
+	<div class="container mt-5 mb-5">
+		<div class="row">
 
-			<div class="col-md-10 pl-5 pr-5">
+			<div class="col-md-2 mt-4">
+                <a class=" btn btn-light btn-sm" href="console/fiche-inscription" role="button"><i class="far fa-address-card pr-2"></i> fiche inscription</a>
+            </div>
+
+			<div class="col-md-10">
 
 				@if (session('status'))
 					<div class="text-success text-monospace text-center pb-4" role="alert">
@@ -21,48 +24,10 @@
 					</div>
 				@endif
 
-    			<div class="row mb-5">
-                    <div class="col-md-12">
 
-                        <h1>Fiche de renseignements</h1>
-
-                        <table class="table table-hover table-borderless text-muted" style="width:0;">
-                            <tr>
-                                <td class="text-center"><i class="fas fa-address-card"></i></td>
-                                <td>{{ Auth::user()->prenom }} {{ Auth::user()->nom }}</td>
-                            </tr>
-                            <tr>
-                                <td class="text-center"><i class="fas fa-briefcase"></i></td>
-                                <td>{{ Auth::user()->titre }}</td>
-                            </tr>
-                            <tr>
-                                <td class="text-center"><i class="fas fa-at"></i></td>
-                                <td>{{ Auth::user()->email }}</td>
-                            </tr>
-                            <tr>
-                                <td class="text-center"><i class="fas fa-school"></i></td>
-                                <td>{{ Auth::user()->etablissement }}</td>
-                            </tr>
-                            <tr>
-                                <td class="text-center"><i class="fas fa-check-square"></i></td>
-                                <td>{{ Auth::user()->nb_participants }}</td>
-                            </tr>
-                            <tr>
-                                <td class="text-center"><i class="fas fa-globe-americas"></i></td>
-                                <td>{{ Auth::user()->pays }}</td>
-                            </tr>
-                            <tr>
-                                <td class="text-center"><i class="fas fa-city"></i></td>
-                                <td>{{ Auth::user()->ville }}</td>
-                            </tr>
-                        </table>
-
-                        <a class="btn btn-primary mt-3" href="{{ route('renseignements-modifier_get') }}" role="button">modifier</a>
-
-    				</div>
-    			</div>
             </div>
-        </div>
+
+        </div><!-- /row -->
 	</div><!-- /container -->
 
 	@include('inc-bottom-js')

@@ -9,11 +9,11 @@
 
     @include('inc-nav-console')
 
-	<div class="container">
+	<div class="container mt-5 mb-5">
 		<div class="row">
 
-			<div class="col-md-2">
-
+			<div class="col-md-2 mt-4">
+                <a class="btn btn-light btn-sm" href="/console" role="button"><i class="fas fa-arrow-left"></i></a>
 			</div>
 
 			<div class="col-md-10">
@@ -24,11 +24,11 @@
 					</div>
 				@endif
 
-                <div class="card mt-5" style="background:none;border:none;">
+                <div class="card" style="background:none;border:none;">
 					<h1>Mise à jour</h1>
 
 					<div class="card-body">
-						<form method="POST" action="{{ route('renseignements-modifier_post') }}">
+						<form method="POST" action="{{ route('fiche-inscription-modifier_post') }}">
 							@csrf
 
 							<div class="form-group row">

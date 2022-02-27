@@ -74,5 +74,8 @@ Route::get('/direct-welcome', function(){
 
 Route::get('/console', [App\Http\Controllers\ConsoleController::class, 'console_get'])->name('console_get');
 
-Route::get('/console/renseignements-modifier', [App\Http\Controllers\ConsoleController::class, 'renseignements_modifier_get'])->name('renseignements-modifier_get');
-Route::post('/console/renseignements-modifier', [App\Http\Controllers\ConsoleController::class, 'renseignements_modifier_post'])->name('renseignements-modifier_post');
+Route::any('/console/fiche-inscription', [App\Http\Controllers\ConsoleController::class, 'fiche_inscription'])->name('fiche-inscription');
+Route::get('/console/fiche-inscription-modifier', [App\Http\Controllers\ConsoleController::class, 'fiche_inscription_modifier_get'])->name('fiche-inscription-modifier_get');
+Route::post('/console/fiche-inscription-modifier', [App\Http\Controllers\ConsoleController::class, 'fiche_inscription_modifier_post'])->name('fiche-inscription-modifier_post');
+
+Route::view('/console/notation-dev', 'notation-dev');
