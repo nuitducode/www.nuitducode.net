@@ -77,5 +77,6 @@ Route::get('/console', [App\Http\Controllers\ConsoleController::class, 'console_
 Route::any('/console/fiche-inscription', [App\Http\Controllers\ConsoleController::class, 'fiche_inscription'])->name('fiche-inscription');
 Route::get('/console/fiche-inscription-modifier', [App\Http\Controllers\ConsoleController::class, 'fiche_inscription_modifier_get'])->name('fiche-inscription-modifier_get');
 Route::post('/console/fiche-inscription-modifier', [App\Http\Controllers\ConsoleController::class, 'fiche_inscription_modifier_post'])->name('fiche-inscription-modifier_post');
+Route::post('/console/fiche-inscription-details', [App\Http\Controllers\ConsoleController::class, 'fiche_inscription_details_post'])->name('fiche-inscription-details_post');
 
 Route::view('/console/notation-dev', 'notation-dev');
