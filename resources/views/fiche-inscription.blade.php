@@ -27,7 +27,7 @@
     			<div class="row mb-5">
                     <div class="col-md-12">
 
-                        <h1>Fiche de renseignements</h1>
+                        <h1>Fiche d'inscription</h1>
 
                         <table class="table table-hover table-borderless text-muted" style="width:0;">
                             <tr>
