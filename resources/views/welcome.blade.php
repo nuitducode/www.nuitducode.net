@@ -36,7 +36,7 @@
 			<div class="col-md-6 offset-md-1">
 
 				<p class="text-monospace text-muted small text-justify">
-					La <b style="color:#2c3e50">Nuit du c0de</b> est un concours de programmation <a href="https://scratch.mit.edu/" target="_blank"><img src="{{ asset('img/scratch-logo.svg') }}" /></a> (et <a href="https://www.python.org/" target="_blank"><img src="{{ asset('img/python-logo.svg') }}" /></a>). Il s'adresse à tous les établissements scolaires français (cours moyen / collège / lycée) de l'étranger et de France.
+					La <b style="color:#2c3e50">Nuit du c0de</b> est un concours de programmation <a href="https://scratch.mit.edu/" target="_blank"><img src="{{ asset('img/scratch-logo.svg') }}" /></a> et <a href="https://www.python.org/" target="_blank"><img src="{{ asset('img/python-logo.svg') }}" /></a>. Il s'adresse à tous les établissements scolaires français (cours moyen / collège / lycée) de l'étranger et de France.
 				</p>
 				<p class="text-monospace text-muted small text-justify">
 					Chaque établissement peut inscrire autant d'élèves qu'il le souhaite. Il n'y a pas de limite sur le nombre de participants. Les inscriptions sont gratuites.
