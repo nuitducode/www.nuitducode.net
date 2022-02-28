@@ -12,7 +12,7 @@
 	<div class="container mt-3 mb-5">
 		<div class="row">
 
-			<div class="col-md-2 mt-4">
+			<div class="col-md-2 mt-5">
                 <a class=" btn btn-light btn-sm btn-block text-left" href="console/fiche-inscription" role="button"><i class="far fa-address-card pr-2"></i> fiche d'inscription</a>
                 <a class=" btn btn-light btn-sm btn-block text-left" href="https://github.com/nuitducode/ORGANISATION/discussions" target="_blank" role="button"><i class="far fa-comment-alt pr-2"></i> discussions</a>
             </div>
