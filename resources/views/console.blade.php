@@ -14,7 +14,6 @@
 
 			<div class="col-md-2 mt-4">
                 <a class=" btn btn-light btn-sm btn-block text-left" href="console/fiche-inscription" role="button"><i class="far fa-address-card pr-2"></i> fiche d'inscription</a>
-                <a class=" btn btn-light btn-sm btn-block text-left" href="https://nuitducode.github.io/DOCUMENTATION/" target="_blank"role="button"><i class="fas fa-gamepad pr-2"></i> préparation des élèves</a>
             </div>
 
 			<div class="col-md-9 offset-md-1">
@@ -24,6 +23,16 @@
 						{{ session('status') }}
 					</div>
 				@endif
+
+                <h2>ORGANISATION</h2>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center text-monospace text-muted small p-2"><span><i class="far fa-check-square"></i> Inscription de l'établissement</span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2"><span><i class="far fa-square"></i> Choix de la date de l'événement (saisir cette date dans la section "JOUR J")</span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2"><span><i class="far fa-square"></i> Préparation de l'événement dans l'établissement (date, lieux, autoriations, affiches, ordinateurs, nourriture, boissons, décoration...)</span><a class="btn btn-light btn-sm" style="padding:2px 10px 0px 10px" href="https://www.nuitducode.net/affiches" role="button" target="_blank"><i class="fas fa-book"></i></a></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2"><span><i class="far fa-square"></i> Entraînement des élèves</span><a class="btn btn-light btn-sm" style="padding:2px 10px 0px 10px" href="https://nuitducode.github.io/DOCUMENTATION/" target="_blank" role="button"><i class="fas fa-book"></i></a></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2"><span><i class="far fa-square"></i> Sélection des élèves (si le nombre d'élèves intéressés est trop grand)</span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2"><span><i class="far fa-square"></i> Création des équipes qui participeront à l'événement (indiquer, ci-dessous, le nombre d'équipes et d'élèves pour chaque catégories, mettre 0 pour les catégories sans participants)</span></li>
+                </ul>
 
                 <h2>JOUR J</h2>
                 <form method="POST" action="{{ route('fiche-inscription-details_post') }}">
