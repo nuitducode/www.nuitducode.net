@@ -8,6 +8,10 @@
     <title>notification</title>
 </head>
 <body>
-    <pre>{{ $data}}</pre>
+<pre>
+@foreach($data as $key => $value)
+{{$key}} : {{$value}}
+@endforeach
+</pre>
 </body>
 </html>
