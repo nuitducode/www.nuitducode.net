@@ -70,7 +70,8 @@ Route::get('/direct-welcome', function(){
 // == CONSOLE
 // ============================================================================
 
-
+// jeton generator - inutile l'an prochain
+Route::get('/console/jetons-generator', [App\Http\Controllers\ConsoleController::class, 'jetons_generator']);
 
 Route::get('/console', [App\Http\Controllers\ConsoleController::class, 'console_get'])->name('console_get');
 
