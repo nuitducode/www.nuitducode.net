@@ -54,7 +54,7 @@
                     <div class="form-group">
 						<div for="scratch_id" class="text-info">IDENTIFIANT DU PROJET <sup class="text-danger">*</sup></div>
                         <div class="text-monospace text-justify text-muted small mb-1">
-                            L'identifiant du projet est le la suite de chiffres présente dans son adresse. Exemple: si l'adresse est "scratch.mit.edu/projects/6535/", l'identifiant est "6535".
+                            L'identifiant du projet est le la suite de chiffres présente dans son adresse. Exemple: si l'adresse est "scratch.mit.edu/projects/6535/", l'identifiant est "6535"
                         </div>
 						<input id="scratch_id" name="scratch_id" type="text" class="form-control @error('scratch_id') is-invalid @enderror" value="{{ old('scratch_id') }}" autofocus>
 						@error('scratch_id')

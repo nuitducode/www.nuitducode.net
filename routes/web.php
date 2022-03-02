@@ -78,9 +78,12 @@ Route::post('/ndc', [App\Http\Controllers\SiteController::class, 'jeu_creer_post
 // ============================================================================
 
 // JEUX
-Route::view('/console/ndc', 'jeux')->middleware('auth');
-Route::view('/console/sltn', 'jeux')->middleware('auth');
-Route::view('/console/demo', 'jeux')->middleware('auth');
+Route::view('/console/ndc', 'jeux-console')->middleware('auth');
+Route::view('/console/sltn', 'jeux-console')->middleware('auth');
+Route::view('/console/demo', 'jeux-console')->middleware('auth');
+Route::view('/console/ndc/jeux', 'jeux')->middleware('auth');
+Route::view('/console/sltn/jeux', 'jeux')->middleware('auth');
+Route::view('/console/demo/jeux', 'jeux')->middleware('auth');
 
 // jeton generator - inutile l'an prochain
 Route::get('/console/jetons-generator', [App\Http\Controllers\ConsoleController::class, 'jetons_generator']);
