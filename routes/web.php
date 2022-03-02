@@ -65,10 +65,22 @@ Route::get('/direct-welcome', function(){
    return redirect('/');
 });
 
+Route::get('/ndc/{etablissement_jeton}', [App\Http\Controllers\SiteController::class, 'jeu_creer_get'])->name('jeu-creer_get');
+Route::get('/ndc', [App\Http\Controllers\SiteController::class, 'redirect']);
+Route::post('/ndc', [App\Http\Controllers\SiteController::class, 'jeu_creer_post'])->name('jeu-creer_post');
+
+
+
+
 
 // ============================================================================
 // == CONSOLE
 // ============================================================================
+
+// JEUX
+Route::view('/console/ndc', 'jeux')->middleware('auth');
+Route::view('/console/sltn', 'jeux')->middleware('auth');
+Route::view('/console/demo', 'jeux')->middleware('auth');
 
 // jeton generator - inutile l'an prochain
 Route::get('/console/jetons-generator', [App\Http\Controllers\ConsoleController::class, 'jetons_generator']);

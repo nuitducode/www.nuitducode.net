@@ -15,6 +15,10 @@
 			<div class="col-md-2 mt-5">
                 <a class=" btn btn-light btn-sm btn-block text-left" href="console/fiche-inscription" role="button"><i class="far fa-address-card pr-2"></i> fiche d'inscription</a>
                 <a class=" btn btn-light btn-sm btn-block text-left" href="https://github.com/nuitducode/ORGANISATION/discussions" target="_blank" role="button"><i class="far fa-comment-alt pr-2"></i> discussions</a>
+                <div class="text-monospace text-muted small mt-4">JEUX</div>
+                <a class=" btn btn-light btn-sm btn-block text-left" href="console/ndc" target="_blank" role="button">Nuit du c0de</a>
+                <a class=" btn btn-light btn-sm btn-block text-left mt-1" href="console/sltn" target="_blank" role="button">Sélections</a>
+                <a class=" btn btn-light btn-sm btn-block text-left mt-1" href="console/demo" target="_blank" role="button">Démo</a>
             </div>
 
 			<div class="col-md-9 offset-md-1">
