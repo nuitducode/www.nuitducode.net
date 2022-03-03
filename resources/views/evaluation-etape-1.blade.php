@@ -25,14 +25,33 @@
                     @endphp
                 @endif
 
-                <div class="text-center mb-4"><img src="{{ url('/')}}/img/nuitducode.svg" width="150" /></div>
+                <div class="text-center mb-1"><img src="{{ url('/')}}/img/nuitducode.svg" width="150" /></div>
 
 				<form method="POST" action="{{ route('evaluation-etape-1_post') }}">
 					@csrf
 
                     <div class="form-group">
-						<div for="jury_nom" class="text-info">NOM DE L'ÉQUIPE <sup class="text-danger">*</sup></div>
-                        <div class="text-monospace text-muted small mb-1">Saisir le nom de votre équipe</div>
+						@if (strtolower($token[1].$token[3].$token[5]) == 'hez')
+                            <div class="text-center mb-3 text-monospace">~ évaluation des jeux ~</div>
+                            <div class="text-center mb-4 font-weight-bold">ÉQUIPE D'ÉLÈVES</div>
+                            <div for="jury_nom" class="text-info">NOM DE L'ÉQUIPE <sup class="text-danger">*</sup></div>
+                            <div class="text-monospace text-muted small mb-1">Saisir le nom de votre équipe</div>
+                        @elseif (strtolower($token[1].$token[3].$token[5]) == 'jwa')
+                            <div class="text-center mb-3 text-monospace">~ évaluation des jeux ~</div>
+                            <div class="text-center mb-4 font-weight-bold">ENSEIGNANT</div>
+                            <div for="jury_nom" class="text-info">IDENTIFIANT <sup class="text-danger">*</sup></div>
+                            <div class="text-monospace text-muted small mb-1">Prénom, nom ou les deux</div>
+                        @else
+                            <div class="text-success text-monospace text-center mt-5 pb-4" role="alert">
+                                Adresse incorrecte
+                                <br />
+                                <a class="btn btn-light btn-sm mt-3" href="/" role="button"><i class="fas fa-arrow-left"></i></a>
+                            </div>
+                            @php
+                            exit;
+                            @endphp
+                        @endif
+
 						<input id="jury_nom" name="jury_nom" type="text" class="form-control" value="" required autofocus>
 					</div>
 
@@ -48,7 +67,11 @@
 					</div>
 
                     <input id="token" name="token" type="hidden" value="{{$token}}" />
-                    <input id="jury_type" name="jury_type" type="hidden" value="eleve" />
+                    @if (strtolower($token[1].$token[3].$token[5]) == 'hez')
+                        <input id="jury_type" name="jury_type" type="hidden" value="eleve" />
+                    @elseif (strtolower($token[1].$token[3].$token[5]) == 'jwa')
+                        <input id="jury_type" name="jury_type" type="hidden" value="enseignant" />
+                    @endif
 
 					<button type="submit" id="inscription" class="btn btn-primary"><i class="fas fa-check"></i></button>
 

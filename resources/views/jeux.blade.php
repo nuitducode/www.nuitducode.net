@@ -78,10 +78,10 @@
                                         <div class="text-monospace small">
                                             <div>Nombre d'évaluations d'élèves: <span class="text-primary font-weight-bold">{{ $nb_evaluations_eleves}}</span></div>
                                             <div>Nombre d'évaluations d'enseignants: <span class="text-primary font-weight-bold">{{ $nb_evaluations_enseignants}}</span></div>
-                                            <div>Note élèves: <span class="text-primary font-weight-bold">@if(count($note_eleves) != 0){{array_sum($note_eleves)/count($note_eleves)}} @else - @endif</span></div>
-                                            <div>Note enseignants: <span class="text-primary font-weight-bold">@if(count($note_enseignants) != 0) {{array_sum($note_enseignants)/count($note_enseignants)}} @else - @endif</span></div>
+                                            <div>Note élèves: <span class="text-primary font-weight-bold">@if(count($note_eleves) != 0){{ round(array_sum($note_eleves)/count($note_eleves), 1) }} @else - @endif</span></div>
+                                            <div>Note enseignants: <span class="text-primary font-weight-bold">@if(count($note_enseignants) != 0) {{ round(array_sum($note_enseignants)/count($note_enseignants),1) }} @else - @endif</span></div>
                                         </div>
-                                        <kbd>Note globale:<span class="text-primary font-weight-bold">@if(count($note_globale) != 0) {{array_sum($note_globale)/count($note_globale)}} @else - @endif</span></kbd>
+                                        <kbd>Note globale:<span class="text-primary font-weight-bold">@if(count($note_globale) != 0) {{ round(array_sum($note_globale)/count($note_globale),1) }} @else - @endif</span></kbd>
                                     </div>
                                 </div>
                             </div>
