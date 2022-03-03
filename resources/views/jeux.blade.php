@@ -36,7 +36,60 @@
                     @if(request()->segment(2) == 'sltn') Sélections 2022 @endif
                     @if(request()->segment(2) == 'demo') Démo @endif
                 </div>
+                <?php
+                $categories = ['C3' => 'Cycle 3', 'C4' => 'Cycle 4', 'LY' => 'Lycée'];
+                foreach ($categories AS $categorie_code => $categorie){
+                    $jeux = App\Models\Game::where([['etablissement_id', Auth::user()->id], ['type', request()->segment(2)], ['categorie', $categorie_code]])->get();
+                    ?>
+                    <h2>{{$categorie}}</h2>
+                    @if(count($jeux) == 0)
+                        <div class="text-monospace text-danger small">~ pas de jeux dans cette catégorie ~</div>
+                    @else
+                        @foreach($jeux AS $jeu)
+                            <div class="mb-5">
+                                <h3 class="mt-1" style="color:#4cbf56">{{$jeu->nom_equipe}}</h3>
+                                <div class="row">
+                                    <div class="col-md-auto">
+                                        <a href="https://scratch.mit.edu/projects/{{$jeu->scratch_id}}" target="_blank"><img src="https://uploads.scratch.mit.edu/get_image/project/{{$jeu->scratch_id}}_200x200.png" style="border-radius:4px;" /></a>
+                                    </div>
+                                    <div class="col">
+                                        <?php
+                                        $evaluations = App\Models\Evaluation::where([['etablissement_id', Auth::user()->id], ['game_id', $jeu->id]])->get();
+                                        $evaluations_eleves = App\Models\Evaluation::where([['etablissement_id', Auth::user()->id], ['game_id', $jeu->id], ['jury_type', 'eleve']])->get();
+                                        $evaluations_enseignants = App\Models\Evaluation::where([['etablissement_id', Auth::user()->id], ['game_id', $jeu->id], ['jury_type', 'enseignant']])->get();
 
+                                        $nb_evaluations_eleves = count($evaluations_eleves);
+                                        $nb_evaluations_enseignants = count($evaluations_enseignants);
+
+                                        $note_globale = [];
+                                        $note_eleves = [];
+                                        $note_enseignants = [];
+                                        foreach ($evaluations_eleves AS $evaluation) {
+                                            $note_globale[] = $evaluation->note;
+                                            $note_eleves[] = $evaluation->note;
+                                        }
+                                        foreach ($evaluations_enseignants AS $evaluation) {
+                                            $note_globale[] = $evaluation->note;
+                                            $note_enseignants[] = $evaluation->note;
+                                        }
+
+
+                                        ?>
+                                        <div class="text-monospace small">
+                                            <div>Nombre d'évaluations d'élèves: <span class="text-primary font-weight-bold">{{ $nb_evaluations_eleves}}</span></div>
+                                            <div>Nombre d'évaluations d'enseignants: <span class="text-primary font-weight-bold">{{ $nb_evaluations_enseignants}}</span></div>
+                                            <div>Note élèves: <span class="text-primary font-weight-bold">@if(count($note_eleves) != 0){{array_sum($note_eleves)/count($note_eleves)}} @else - @endif</span></div>
+                                            <div>Note enseignants: <span class="text-primary font-weight-bold">@if(count($note_enseignants) != 0) {{array_sum($note_enseignants)/count($note_enseignants)}} @else - @endif</span></div>
+                                        </div>
+                                        <kbd>Note globale:<span class="text-primary font-weight-bold">@if(count($note_globale) != 0) {{array_sum($note_globale)/count($note_globale)}} @else - @endif</span></kbd>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
+                    <?php
+                    }
+                    ?>
             </div>
 
         </div><!-- /row -->

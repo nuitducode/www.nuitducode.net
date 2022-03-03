@@ -34,18 +34,24 @@
                     if(request()->segment(2) == 'ndc') $type='Nuit du c0de 2022';
                     if(request()->segment(2) == 'sltn') $type='Sélections 2022';
                     if(request()->segment(2) == 'demo') $type='Démo';
+
+                    $jeton = Auth::user()->jeton;
+                    // salt eleve : 'hez'
+                    // salt enseignant : 'jwa'
+                    $token_eleve = $jeton[3].'h'.$jeton[2].'e'.$jeton[1].'z'.$jeton[0];
+                    $token_enseignant = $jeton[3].'j'.$jeton[2].'w'.$jeton[1].'a'.$jeton[0];
                 ?>
 
-                <h1 class="mb-0">{{$type}}</h1>
+                <h1>{{$type}}</h1>
 
-                <div class="font-weight-bold mt-3">Enregistrement des jeux</div>
-                <p>Lien à fournir aux élèves pour qu'ils enregistrent leurs jeux : <kbd><a href="https://www.nuitducode.net/ndc/{{Auth::user()->jeton}}" class="text-monospace text-light" target="_blank">https://www.nuitducode.net/ndc/{{Auth::user()->jeton}}</a></kbd></p>
+                <div class="font-weight-bold">Enregistrement des jeux</div>
+                <p>Lien à fournir aux élèves pour qu'ils enregistrent leurs jeux : <kbd><a href="https://www.nuitducode.net/{{request()->segment(2)}}/{{strtoupper(Auth::user()->jeton)}}" class="text-monospace text-light" target="_blank">https://www.nuitducode.net/{{request()->segment(2)}}/{{strtoupper(Auth::user()->jeton)}}</a></kbd></p>
 
                 <div class="font-weight-bold">Évaluation par les élèves</div>
-                <p>Lien à fournir aux élèves pour l'évaluation des jeux : <kbd><a href="https://www.nuitducode.net/ndc/{{Auth::user()->jeton}}" class="text-monospace text-light" target="_blank">https://www.nuitducode.net/ndc/{{Auth::user()->jeton}}</a></kbd></p>
+                <p>Lien à fournir aux élèves pour l'évaluation des jeux : <kbd><a href="https://www.nuitducode.net/{{request()->segment(2)}}/{{strtoupper($token_eleve)}}" class="text-monospace text-light" target="_blank">https://www.nuitducode.net/{{request()->segment(2)}}/{{strtoupper($token_eleve)}}</a></kbd></p>
 
                 <div class="font-weight-bold">Évaluation par les enseignants</div>
-                <p>Lien à fournir aux enseignants pour l'évaluation des jeux : <kbd><a href="https://www.nuitducode.net/ndc/{{Auth::user()->jeton}}" class="text-monospace text-light" target="_blank">https://www.nuitducode.net/ndc/{{Auth::user()->jeton}}</a></kbd></p>
+                <p>Lien à fournir aux enseignants pour l'évaluation des jeux : <kbd><a href="https://www.nuitducode.net/{{request()->segment(2)}}/{{strtoupper($token_enseignant)}}" class="text-monospace text-light" target="_blank">https://www.nuitducode.net/{{request()->segment(2)}}/{{strtoupper($token_enseignant)}}</a></kbd></p>
 
                 <div class="mt-4"><a class="btn btn-primary" href="/console/{{request()->segment(2)}}/jeux" role="button">JEUX</a></div>
 

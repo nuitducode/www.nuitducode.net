@@ -65,11 +65,11 @@ Route::get('/direct-welcome', function(){
    return redirect('/');
 });
 
-Route::get('/ndc/{etablissement_jeton}', [App\Http\Controllers\SiteController::class, 'jeu_creer_get'])->name('jeu-creer_get');
+Route::get('/ndc/{token}', [App\Http\Controllers\SiteController::class, 'jeux'])->name('jeux_get');
 Route::get('/ndc', [App\Http\Controllers\SiteController::class, 'redirect']);
-Route::post('/ndc', [App\Http\Controllers\SiteController::class, 'jeu_creer_post'])->name('jeu-creer_post');
-
-
+Route::post('/ndc/jeu-creer', [App\Http\Controllers\SiteController::class, 'jeu_creer_post'])->name('jeu-creer_post');
+Route::post('/ndc/evaluation', [App\Http\Controllers\SiteController::class, 'evaluation_etape_1_post'])->name('evaluation-etape-1_post');
+Route::post('/ndc/evaluation-creer', [App\Http\Controllers\SiteController::class, 'evaluation_etape_2_post'])->name('evaluation-etape-2_post');
 
 
 
@@ -94,5 +94,3 @@ Route::any('/console/fiche-inscription', [App\Http\Controllers\ConsoleController
 Route::get('/console/fiche-inscription-modifier', [App\Http\Controllers\ConsoleController::class, 'fiche_inscription_modifier_get'])->name('fiche-inscription-modifier_get');
 Route::post('/console/fiche-inscription-modifier', [App\Http\Controllers\ConsoleController::class, 'fiche_inscription_modifier_post'])->name('fiche-inscription-modifier_post');
 Route::post('/console/fiche-inscription-details', [App\Http\Controllers\ConsoleController::class, 'fiche_inscription_details_post'])->name('fiche-inscription-details_post');
-
-Route::view('/console/notation-dev', 'notation-dev');
