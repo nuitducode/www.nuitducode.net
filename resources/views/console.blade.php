@@ -18,7 +18,7 @@
                 <div class="text-monospace text-muted small mt-4">JEUX</div>
                 <a class=" btn btn-light btn-sm btn-block text-left" href="/console/ndc" role="button">Nuit du c0de</a>
                 <a class=" btn btn-light btn-sm btn-block text-left mt-1" href="/console/sltn" role="button">Sélections</a>
-                <a class=" btn btn-light btn-sm btn-block text-left mt-1" href="/console/demo" role="button">Démo</a>
+                <a class=" btn btn-light btn-sm btn-block text-left mt-3" href="/console/bas" role="button">Bac à sable</a>
             </div>
 
 			<div class="col-md-9 offset-md-1">
