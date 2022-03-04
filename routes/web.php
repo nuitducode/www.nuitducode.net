@@ -68,17 +68,21 @@ Route::get('/direct-welcome', function(){
 Route::get('/ndc/{token}', [App\Http\Controllers\SiteController::class, 'jeux'])->name('jeux_get');
 Route::get('/sltn/{token}', [App\Http\Controllers\SiteController::class, 'jeux'])->name('jeux_get');
 Route::get('/bas/{token}', [App\Http\Controllers\SiteController::class, 'jeux'])->name('jeux_get');
+
 Route::get('/ndc', [App\Http\Controllers\SiteController::class, 'redirect']);
 Route::get('/sltn', [App\Http\Controllers\SiteController::class, 'redirect']);
 Route::get('/bas', [App\Http\Controllers\SiteController::class, 'redirect']);
-Route::get('/ndc', [App\Http\Controllers\SiteController::class, 'redirect']);
+
 Route::post('/ndc/jeu-creer', [App\Http\Controllers\SiteController::class, 'jeu_creer_post'])->name('ndc-jeu-creer_post');
 Route::post('/sltn/jeu-creer', [App\Http\Controllers\SiteController::class, 'jeu_creer_post'])->name('sltn-jeu-creer_post');
 Route::post('/bas/jeu-creer', [App\Http\Controllers\SiteController::class, 'jeu_creer_post'])->name('bas-jeu-creer_post');
-Route::post('/ndc/evaluation', [App\Http\Controllers\SiteController::class, 'evaluation_etape_1_post'])->name('evaluation-etape-1_post');
-Route::post('/ndc/evaluation-creer', [App\Http\Controllers\SiteController::class, 'evaluation_etape_2_post'])->name('evaluation-etape-2_post');
 
-
+Route::post('/ndc/evaluation', [App\Http\Controllers\SiteController::class, 'evaluation_etape_1_post'])->name('ndc-evaluation-etape-1_post');
+Route::post('/ndc/evaluation-creer', [App\Http\Controllers\SiteController::class, 'evaluation_etape_2_post'])->name('ndc-evaluation-etape-2_post');
+Route::post('/sltn/evaluation', [App\Http\Controllers\SiteController::class, 'evaluation_etape_1_post'])->name('sltn-evaluation-etape-1_post');
+Route::post('/sltn/evaluation-creer', [App\Http\Controllers\SiteController::class, 'evaluation_etape_2_post'])->name('sltn-evaluation-etape-2_post');
+Route::post('/bas/evaluation', [App\Http\Controllers\SiteController::class, 'evaluation_etape_1_post'])->name('bas-evaluation-etape-1_post');
+Route::post('/bas/evaluation-creer', [App\Http\Controllers\SiteController::class, 'evaluation_etape_2_post'])->name('bas-evaluation-etape-2_post');
 
 // ============================================================================
 // == CONSOLE

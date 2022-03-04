@@ -28,11 +28,11 @@
 
                 <?php
                 $etablissement_jeton = $token[6].$token[4].$token[2].$token[0];
-                $jeux = App\Models\Game::where([['etablissement_jeton', $etablissement_jeton],['categorie', $categorie]])->get();
+                $jeux = App\Models\Game::where([['etablissement_jeton', $etablissement_jeton], ['type', request()->segment(1)], ['categorie', $categorie]])->get();
 
                 if (count($jeux) !== 0){
                     ?>
-                    <form method="POST" action="{{ route('evaluation-etape-2_post') }}">
+                    <form method="POST" action="{{ route(request()->segment(1).'-evaluation-etape-2_post') }}">
                         @csrf
 
                         <?php
