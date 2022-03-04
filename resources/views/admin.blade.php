@@ -46,44 +46,58 @@ if (Auth::user()->is_admin != 1) {
                         @foreach($etablissements AS $etablissement){{$etablissement->email}}; @endforeach
                     </div>
                 </div>
-                <div class="row mt-4">
-                    <div class="col-md-12">
-                        <div class="table-responsive">
-                            <table class="table table-borderless table-hover table-striped table-sm text-monospace text-muted small">
-                                <thead>
-                                    <tr>
-                                        <th scope="col"></th>
-                                        <th scope="col">Id</th>
-                                        <th scope="col">Jeton</th>
-                                        <th scope="col">Prénom</th>
-                                        <th scope="col">Nom</th>
-                                        <th scope="col">Pays</th>
-                                        <th scope="col">Ville</th>
-                                        <th scope="col">Courriel</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach($etablissements AS $etablissement)
-                                    <tr>
-                                        <td class="text-success">{{$loop->index + 1}}</td>
-                                        <td>{{$etablissement->id}}</td>
-                                        <td>{{$etablissement->jeton}}</td>
-                                        <td>{{$etablissement->prenom}}</td>
-                                        <td>{{$etablissement->nom}}</td>
-                                        <td>{{$etablissement->pays}}</td>
-                                        <td>{{$etablissement->ville}}</td>
-                                        <td>{{$etablissement->email}}</td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
 
             </div>
 
         </div><!-- /row -->
+
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-borderless table-hover table-striped table-sm text-monospace text-muted small">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Id</th>
+                                <th scope="col">Jeton</th>
+                                <th scope="col">Prénom</th>
+                                <th scope="col">Nom</th>
+                                <th scope="col">Pays</th>
+                                <th scope="col">Ville</th>
+                                <th scope="col">Courriel</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Éq. C3</th>
+                                <th scope="col">Éq. C4</th>
+                                <th scope="col">Éq. Lycée</th>
+                                <th scope="col">Éq. PI</th>
+                                <th scope="col">Éq. PO</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($etablissements AS $etablissement)
+                            <tr>
+                                <td class="text-success">{{$loop->index + 1}}</td>
+                                <td>{{$etablissement->id}}</td>
+                                <td>{{$etablissement->jeton}}</td>
+                                <td>{{$etablissement->prenom}}</td>
+                                <td>{{$etablissement->nom}}</td>
+                                <td>{{$etablissement->pays}}</td>
+                                <td>{{$etablissement->ville}}</td>
+                                <td>{{$etablissement->email}}</td>
+                                <td>{{$etablissement->ndc_date}}</td>
+                                <td>{{$etablissement->scratch_nb_equipes_c3}}</td>
+                                <td>{{$etablissement->scratch_nb_equipes_c4}}</td>
+                                <td>{{$etablissement->scratch_nb_equipes_lycee}}</td>
+                                <td>{{$etablissement->python_nb_equipes_pi}}</td>
+                                <td>{{$etablissement->python_nb_equipes_poo}}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div><!-- /row -->
+
 	</div><!-- /container -->
 
 	@include('inc-bottom-js')
