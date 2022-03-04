@@ -85,11 +85,11 @@ if (Auth::user()->is_admin != 1) {
                                 <td>{{$etablissement->ville}}</td>
                                 <td>{{substr($etablissement->email, 0, 20)}}@if(strlen($etablissement->email)>20)...@endif</td>
                                 <td>{{$etablissement->ndc_date}}</td>
-                                <td>{{$etablissement->scratch_nb_equipes_c3}}</td>
-                                <td>{{$etablissement->scratch_nb_equipes_c4}}</td>
-                                <td>{{$etablissement->scratch_nb_equipes_lycee}}</td>
-                                <td>{{$etablissement->python_nb_equipes_pi}}</td>
-                                <td>{{$etablissement->python_nb_equipes_poo}}</td>
+                                <td class="text-center">{{$etablissement->scratch_nb_equipes_c3}}</td>
+                                <td class="text-center">{{$etablissement->scratch_nb_equipes_c4}}</td>
+                                <td class="text-center">{{$etablissement->scratch_nb_equipes_lycee}}</td>
+                                <td class="text-center">{{$etablissement->python_nb_equipes_pi}}</td>
+                                <td class="text-center">{{$etablissement->python_nb_equipes_poo}}</td>
                             </tr>
                             @endforeach
                         </tbody>
