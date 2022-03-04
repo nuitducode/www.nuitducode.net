@@ -66,6 +66,11 @@ Route::get('/direct-welcome', function(){
 });
 
 Route::get('/ndc/{token}', [App\Http\Controllers\SiteController::class, 'jeux'])->name('jeux_get');
+Route::get('/sltn/{token}', [App\Http\Controllers\SiteController::class, 'jeux'])->name('jeux_get');
+Route::get('/bas/{token}', [App\Http\Controllers\SiteController::class, 'jeux'])->name('jeux_get');
+Route::get('/ndc', [App\Http\Controllers\SiteController::class, 'redirect']);
+Route::get('/sltn', [App\Http\Controllers\SiteController::class, 'redirect']);
+Route::get('/bas', [App\Http\Controllers\SiteController::class, 'redirect']);
 Route::get('/ndc', [App\Http\Controllers\SiteController::class, 'redirect']);
 Route::post('/ndc/jeu-creer', [App\Http\Controllers\SiteController::class, 'jeu_creer_post'])->name('jeu-creer_post');
 Route::post('/ndc/evaluation', [App\Http\Controllers\SiteController::class, 'evaluation_etape_1_post'])->name('evaluation-etape-1_post');
