@@ -65,7 +65,7 @@ if (Auth::user()->is_admin != 1) {
                                 <tbody>
                                     @foreach($etablissements AS $etablissement)
                                     <tr>
-                                        <td class="text-success">{{$loop->index}}</td>
+                                        <td class="text-success">{{$loop->index + 1}}</td>
                                         <td>{{$etablissement->id}}</td>
                                         <td>{{$etablissement->jeton}}</td>
                                         <td>{{$etablissement->prenom}}</td>
