@@ -58,7 +58,7 @@
                     <li>
                         Soit les élèves enregistrent eux-mêmes leur jeu : après avoir décidé du compte qui hébergera le jeu  (compte d'un des membres de l'équipe, ou compte fourni par les organisateurs) et après avoir "remixé" l'univers sur lequel l'équipe va travailler, l'équipe enregistre son jeu en utilisant l'adresse ci-dessous qui sera fournie aux élèves. L'enregistrement du jeu peut se faire en début ou en fin d'événement.<br />
                         <div class="p-3 text-center" style="background-color:white;border:1px silver solid; border-radius:4px;">
-                            Lien à fournir aux élèves pour qu'ils enregistrent leurs jeux : <kbd><a href="https://www.nuitducode.net/{{request()->segment(2)}}/{{strtoupper(Auth::user()->jeton)}}" class="text-monospace text-success" target="_blank">https://www.nuitducode.net/{{request()->segment(2)}}/{{strtoupper(Auth::user()->jeton)}}</a></kbd>
+                            Lien à fournir aux élèves pour qu'ils enregistrent leurs jeux : <kbd><a href="/{{request()->segment(2)}}/{{strtoupper(Auth::user()->jeton)}}" class="text-monospace text-success" target="_blank">https://www.nuitducode.net/{{request()->segment(2)}}/{{strtoupper(Auth::user()->jeton)}}</a></kbd>
                         </div>
                     </li>
                     <li class="mt-3">
@@ -158,13 +158,13 @@
                     Par équipe, les élèves évaluent les jeux des équipes appartenant à une catégorie différente de la leur. Le croisement des catégories sera défini par les organisateurs et communiqué aux élèves. Il est préférable que cette évaluation soit faite sous la surveillance des organisateurs pour éviter toute erreur de manipulation (évaluations multiples, équipes qui évaluent leurs propres jeux...). Les évaluations peuvent être organisées juste après la fin de l'événement ou un autre jour.
                 </div>
                 <div class="p-3 text-center" style="background-color:white;border:1px silver solid; border-radius:4px;">
-                    Lien à fournir aux élèves pour l'évaluation des jeux : <kbd><a href="https://www.nuitducode.net/{{request()->segment(2)}}/{{strtoupper($token_eleve)}}" class="text-monospace  text-success" target="_blank">https://www.nuitducode.net/{{request()->segment(2)}}/{{strtoupper($token_eleve)}}</a></kbd>
+                    Lien à fournir aux élèves pour l'évaluation des jeux : <kbd><a href="/{{request()->segment(2)}}/{{strtoupper($token_eleve)}}" class="text-monospace  text-success" target="_blank">https://www.nuitducode.net/{{request()->segment(2)}}/{{strtoupper($token_eleve)}}</a></kbd>
                 </div>
 
 
                 <h2>Évaluation par les enseignants</h2>
                 <div class="p-3 text-center" style="background-color:white;border:1px silver solid; border-radius:4px;">
-                    Lien à fournir aux enseignants pour l'évaluation des jeux : <kbd><a href="https://www.nuitducode.net/{{request()->segment(2)}}/{{strtoupper($token_enseignant)}}" class="text-monospace text-success" target="_blank">https://www.nuitducode.net/{{request()->segment(2)}}/{{strtoupper($token_enseignant)}}</a></kbd>
+                    Lien à fournir aux enseignants pour l'évaluation des jeux : <kbd><a href="/{{request()->segment(2)}}/{{strtoupper($token_enseignant)}}" class="text-monospace text-success" target="_blank">https://www.nuitducode.net/{{request()->segment(2)}}/{{strtoupper($token_enseignant)}}</a></kbd>
                 </div>
 
             </div>

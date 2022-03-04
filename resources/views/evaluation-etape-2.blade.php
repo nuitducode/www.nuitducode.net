@@ -41,6 +41,7 @@
                             if ($json !== FALSE) {
                                 $jeu_scratch = json_decode($json);
                                 ?>
+                                @if($jury_type != 'eleve')
                                 <div class="row">
                                     <div class="col-md-12">
                                         <h2 class="mb-1" style="color:#4cbf56">{{$jeu->nom_equipe}}</h2>
@@ -49,14 +50,17 @@
                                         <div class="text-monospace small">Derniere modification : {{$jeu_scratch->history->modified}}</div>
                                     </div>
                                 </div>
+                                @endif
                                 <div class="row">
                                     <div class="col-md-6">
                                         <iframe src="https://scratch.mit.edu/projects/{{$jeu->scratch_id}}/embed" allowtransparency="true" width="100%" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
                                         <div class="small text-monospace" style="border:1px solid silver; padding:10px;border-radius:4px; background-color:white;">{{$jeu_scratch->instructions}}</div>
+                                        @if($jury_type != 'eleve')
                                         <div class="text-monospace small text-muted pt-1 pl-1">
                                             <i class="fas fa-gamepad" style="font-size:140%;vertical-align:-1px;"></i> <a href="https://scratch.mit.edu/projects/{{$jeu_scratch->id}}" target="_blank">{{$jeu_scratch->id}}</a> ~
                                             <i class="fas fa-user-circle"></i> <a href="https://scratch.mit.edu/users/{{$jeu_scratch->author->username}}" target="_blank">{{$jeu_scratch->author->username}}</a>
                                         </div>
+                                        @endif
                                     </div>
                                     <div class="col-md-6">
                                         <?php
