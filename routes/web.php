@@ -85,6 +85,11 @@ Route::post('/bas/evaluation', [App\Http\Controllers\SiteController::class, 'eva
 Route::post('/bas/evaluation-creer', [App\Http\Controllers\SiteController::class, 'evaluation_etape_2_post'])->name('bas-evaluation-etape-2_post');
 
 // ============================================================================
+// == ADMIN
+// ============================================================================
+Route::view('/console/admin', 'admin')->middleware('auth');
+
+// ============================================================================
 // == CONSOLE
 // ============================================================================
 
