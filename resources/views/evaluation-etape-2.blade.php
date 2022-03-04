@@ -71,7 +71,7 @@
                                         ?>
                                         <div style="color:#cf63cf">Jouabilité</div>
                                         <div class="text-monospace text-muted small text-justify">
-                                            Les critères et leurs descriptions sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
+                                            Les critères et leur description sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
                                         </div>
                                         <div class="row mt-2 mb-3">
                                             <div class="col">
@@ -82,7 +82,7 @@
 
                                         <div style="color:#cf63cf">Richesse / complexité</div>
                                         <div class="text-monospace text-muted small text-justify">
-                                            Les critères et leurs descriptions sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
+                                            Les critères et leur description sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
                                         </div>
                                         <div class="row mt-2 mb-3">
                                             <div class="col">
@@ -93,7 +93,7 @@
 
                                         <div style="color:#cf63cf">Utilisation des lutins</div>
                                         <div class="text-monospace text-muted small text-justify">
-                                            Les critères et leurs descriptions sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
+                                            Les critères et leur description sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
                                         </div>
                                         <div class="row mt-2 mb-3">
                                             <div class="col">
@@ -104,7 +104,7 @@
 
                                         <div style="color:#cf63cf">Originalité</div>
                                         <div class="text-monospace text-muted small text-justify">
-                                            Les critères et leurs descriptions sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
+                                            Les critères et leur description sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
                                         </div>
                                         <div class="row mt-2 mb-3">
                                             <div class="col">
