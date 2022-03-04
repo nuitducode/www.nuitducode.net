@@ -43,7 +43,7 @@ if (Auth::user()->is_admin != 1) {
                 ?>
                 <div class="row mt-4 p-3">
                     <div class="col-md-12 p-3 text-monospace small text-muted" style="background-color:white;border:1px silver solid;border-radius:4px;">
-                        @foreach($etablissements AS $etablissement){{$etablissement->email}};@endforeach
+                        @foreach($etablissements AS $etablissement){{$etablissement->email}}; @endforeach
                     </div>
                 </div>
                 <div class="row mt-4">
@@ -52,6 +52,7 @@ if (Auth::user()->is_admin != 1) {
                             <table class="table table-borderless table-hover table-striped table-sm text-monospace text-muted small">
                                 <thead>
                                     <tr>
+                                        <th scope="col"></th>
                                         <th scope="col">Id</th>
                                         <th scope="col">Jeton</th>
                                         <th scope="col">Prénom</th>
@@ -64,6 +65,7 @@ if (Auth::user()->is_admin != 1) {
                                 <tbody>
                                     @foreach($etablissements AS $etablissement)
                                     <tr>
+                                        <td class="text-success">{{$loop->index}}</td>
                                         <td>{{$etablissement->id}}</td>
                                         <td>{{$etablissement->jeton}}</td>
                                         <td>{{$etablissement->prenom}}</td>
