@@ -27,7 +27,7 @@
 
                 <div class="text-center mb-4"><img src="{{ url('/')}}/img/nuitducode.svg" width="150" /></div>
 
-				<form method="POST" action="{{ route('jeu-creer_post') }}">
+				<form method="POST" action="{{ route(request()->segment(1).'-jeu-creer_post') }}">
 					@csrf
 
                     <div class="form-group">
