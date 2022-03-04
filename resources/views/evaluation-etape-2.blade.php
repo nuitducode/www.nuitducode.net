@@ -70,7 +70,9 @@
                                         */
                                         ?>
                                         <div style="color:#cf63cf">Jouabilité</div>
-                                        <div class="text-monospace text-muted small text-justify">Cette note de 1 à 5 mesure le degré de complexité des mécanismes du jeu, qui influence le temps d'explication ou de compréhension des règles et la maîtrise des détails.</div>
+                                        <div class="text-monospace text-muted small text-justify">
+                                            Les critères et leurs descriptions sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
+                                        </div>
                                         <div class="row mt-2 mb-3">
                                             <div class="col">
                                                 <input type="range" id="{{$jeu->scratch_id}}_critere1" name="evaluation[{{$jeu->scratch_id}}]['critere1']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
@@ -79,7 +81,9 @@
                                         </div>
 
                                         <div style="color:#cf63cf">Richesse / complexité</div>
-                                        <div class="text-monospace text-muted small text-justify">Cette note de 1 à 5 mesure le degré de complexité des mécanismes du jeu, qui influence le temps d'explication ou de compréhension des règles et la maîtrise des détails.</div>
+                                        <div class="text-monospace text-muted small text-justify">
+                                            Les critères et leurs descriptions sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
+                                        </div>
                                         <div class="row mt-2 mb-3">
                                             <div class="col">
                                                 <input type="range" id="{{$jeu->scratch_id}}_critere2" name="evaluation[{{$jeu->scratch_id}}]['critere2']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
@@ -88,7 +92,9 @@
                                         </div>
 
                                         <div style="color:#cf63cf">Utilisation des lutins</div>
-                                        <div class="text-monospace text-muted small text-justify">Cette note de 1 à 5 mesure le degré de complexité des mécanismes du jeu, qui influence le temps d'explication ou de compréhension des règles et la maîtrise des détails.</div>
+                                        <div class="text-monospace text-muted small text-justify">
+                                            Les critères et leurs descriptions sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
+                                        </div>
                                         <div class="row mt-2 mb-3">
                                             <div class="col">
                                                 <input type="range" id="{{$jeu->scratch_id}}_critere3" name="evaluation[{{$jeu->scratch_id}}]['critere3']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
@@ -97,7 +103,9 @@
                                         </div>
 
                                         <div style="color:#cf63cf">Originalité</div>
-                                        <div class="text-monospace text-muted small text-justify">Cette note de 1 à 5 mesure le degré de complexité des mécanismes du jeu, qui influence le temps d'explication ou de compréhension des règles et la maîtrise des détails.</div>
+                                        <div class="text-monospace text-muted small text-justify">
+                                            Les critères et leurs descriptions sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
+                                        </div>
                                         <div class="row mt-2 mb-3">
                                             <div class="col">
                                                 <input type="range" id="{{$jeu->scratch_id}}_critere4" name="evaluation[{{$jeu->scratch_id}}]['critere4']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
