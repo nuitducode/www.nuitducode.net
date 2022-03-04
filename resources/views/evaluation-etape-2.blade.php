@@ -37,78 +37,84 @@
 
                         <?php
                         foreach ($jeux AS $jeu) {
-                            ?>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <?php
-                                    $json = file_get_contents("https://api.scratch.mit.edu/projects/".$jeu->scratch_id);
-                                    $jeu_scratch = json_decode($json);
-                                    ?>
-                                    <h2 class="mb-1" style="color:#4cbf56">{{$jeu->nom_equipe}}</h2>
-                                    <h3 class="mb-1 mt-1">[NdC 2022 - C3] {{$jeu_scratch->title}}</h3>
-                                    <div class="text-monospace small">Création : {{$jeu_scratch->history->created}}</div>
-                                    <div class="text-monospace small">Derniere modification : {{$jeu_scratch->history->modified}}</div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <iframe src="https://scratch.mit.edu/projects/{{$jeu->scratch_id}}/embed" allowtransparency="true" width="100%" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
-                                    <div class="small text-monospace" style="border:1px solid silver; padding:10px;border-radius:4px; background-color:white;">{{$jeu_scratch->instructions}}</div>
-                                    <div class="text-monospace small text-muted pt-1 pl-1">
-                                        <i class="fas fa-gamepad" style="font-size:140%;vertical-align:-1px;"></i> <a href="https://scratch.mit.edu/projects/{{$jeu_scratch->id}}" target="_blank">{{$jeu_scratch->id}}</a> ~
-                                        <i class="fas fa-user-circle"></i> <a href="https://scratch.mit.edu/users/{{$jeu_scratch->author->username}}" target="_blank">{{$jeu_scratch->author->username}}</a>
+                            $json = @file_get_contents("https://api.scratch.mit.edu/projects/".$jeu->scratch_id);
+                            if ($json !== FALSE) {
+                                $jeu_scratch = json_decode($json);
+                                ?>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h2 class="mb-1" style="color:#4cbf56">{{$jeu->nom_equipe}}</h2>
+                                        <h3 class="mb-1 mt-1">[NdC 2022 - C3] {{$jeu_scratch->title}}</h3>
+                                        <div class="text-monospace small">Création : {{$jeu_scratch->history->created}}</div>
+                                        <div class="text-monospace small">Derniere modification : {{$jeu_scratch->history->modified}}</div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <?php
-                                    /*
-                                    https://www.jeuxdenim.be/news-404
-                                    https://dane.ac-bordeaux.fr/robotique/wp-content/uploads/sites/7/2021/03/Grille-devaluation-des-jeux-par-jury.docx.pdf
-                                    */
-                                    ?>
-                                    <div style="color:#cf63cf">Jouabilité</div>
-                                    <div class="text-monospace text-muted small text-justify">Cette note de 1 à 5 mesure le degré de complexité des mécanismes du jeu, qui influence le temps d'explication ou de compréhension des règles et la maîtrise des détails.</div>
-                                    <div class="row mt-2 mb-3">
-                                        <div class="col">
-                                            <input type="range" id="{{$jeu->scratch_id}}_critere1" name="evaluation[{{$jeu->scratch_id}}]['critere1']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <iframe src="https://scratch.mit.edu/projects/{{$jeu->scratch_id}}/embed" allowtransparency="true" width="100%" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                                        <div class="small text-monospace" style="border:1px solid silver; padding:10px;border-radius:4px; background-color:white;">{{$jeu_scratch->instructions}}</div>
+                                        <div class="text-monospace small text-muted pt-1 pl-1">
+                                            <i class="fas fa-gamepad" style="font-size:140%;vertical-align:-1px;"></i> <a href="https://scratch.mit.edu/projects/{{$jeu_scratch->id}}" target="_blank">{{$jeu_scratch->id}}</a> ~
+                                            <i class="fas fa-user-circle"></i> <a href="https://scratch.mit.edu/users/{{$jeu_scratch->author->username}}" target="_blank">{{$jeu_scratch->author->username}}</a>
                                         </div>
-                                        <div class="col-auto text-secondary text-center" id="{{$jeu->scratch_id}}_critere1_note" style="width:40px;">0</div>
                                     </div>
-
-                                    <div style="color:#cf63cf">Richesse / complexité</div>
-                                    <div class="text-monospace text-muted small text-justify">Cette note de 1 à 5 mesure le degré de complexité des mécanismes du jeu, qui influence le temps d'explication ou de compréhension des règles et la maîtrise des détails.</div>
-                                    <div class="row mt-2 mb-3">
-                                        <div class="col">
-                                            <input type="range" id="{{$jeu->scratch_id}}_critere2" name="evaluation[{{$jeu->scratch_id}}]['critere2']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                    <div class="col-md-6">
+                                        <?php
+                                        /*
+                                        https://www.jeuxdenim.be/news-404
+                                        https://dane.ac-bordeaux.fr/robotique/wp-content/uploads/sites/7/2021/03/Grille-devaluation-des-jeux-par-jury.docx.pdf
+                                        */
+                                        ?>
+                                        <div style="color:#cf63cf">Jouabilité</div>
+                                        <div class="text-monospace text-muted small text-justify">Cette note de 1 à 5 mesure le degré de complexité des mécanismes du jeu, qui influence le temps d'explication ou de compréhension des règles et la maîtrise des détails.</div>
+                                        <div class="row mt-2 mb-3">
+                                            <div class="col">
+                                                <input type="range" id="{{$jeu->scratch_id}}_critere1" name="evaluation[{{$jeu->scratch_id}}]['critere1']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                            </div>
+                                            <div class="col-auto text-secondary text-center" id="{{$jeu->scratch_id}}_critere1_note" style="width:40px;">0</div>
                                         </div>
-                                        <div class="col-auto text-secondary text-center" id="{{$jeu->scratch_id}}_critere2_note" style="width:40px;">0</div>
-                                    </div>
 
-                                    <div style="color:#cf63cf">Utilisation des lutins</div>
-                                    <div class="text-monospace text-muted small text-justify">Cette note de 1 à 5 mesure le degré de complexité des mécanismes du jeu, qui influence le temps d'explication ou de compréhension des règles et la maîtrise des détails.</div>
-                                    <div class="row mt-2 mb-3">
-                                        <div class="col">
-                                            <input type="range" id="{{$jeu->scratch_id}}_critere3" name="evaluation[{{$jeu->scratch_id}}]['critere3']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                        <div style="color:#cf63cf">Richesse / complexité</div>
+                                        <div class="text-monospace text-muted small text-justify">Cette note de 1 à 5 mesure le degré de complexité des mécanismes du jeu, qui influence le temps d'explication ou de compréhension des règles et la maîtrise des détails.</div>
+                                        <div class="row mt-2 mb-3">
+                                            <div class="col">
+                                                <input type="range" id="{{$jeu->scratch_id}}_critere2" name="evaluation[{{$jeu->scratch_id}}]['critere2']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                            </div>
+                                            <div class="col-auto text-secondary text-center" id="{{$jeu->scratch_id}}_critere2_note" style="width:40px;">0</div>
                                         </div>
-                                        <div class="col-auto text-secondary text-center" id="{{$jeu->scratch_id}}_critere3_note" style="width:40px;">0</div>
-                                    </div>
 
-                                    <div style="color:#cf63cf">Originalité</div>
-                                    <div class="text-monospace text-muted small text-justify">Cette note de 1 à 5 mesure le degré de complexité des mécanismes du jeu, qui influence le temps d'explication ou de compréhension des règles et la maîtrise des détails.</div>
-                                    <div class="row mt-2 mb-3">
-                                        <div class="col">
-                                            <input type="range" id="{{$jeu->scratch_id}}_critere4" name="evaluation[{{$jeu->scratch_id}}]['critere4']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                        <div style="color:#cf63cf">Utilisation des lutins</div>
+                                        <div class="text-monospace text-muted small text-justify">Cette note de 1 à 5 mesure le degré de complexité des mécanismes du jeu, qui influence le temps d'explication ou de compréhension des règles et la maîtrise des détails.</div>
+                                        <div class="row mt-2 mb-3">
+                                            <div class="col">
+                                                <input type="range" id="{{$jeu->scratch_id}}_critere3" name="evaluation[{{$jeu->scratch_id}}]['critere3']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                            </div>
+                                            <div class="col-auto text-secondary text-center" id="{{$jeu->scratch_id}}_critere3_note" style="width:40px;">0</div>
                                         </div>
-                                        <div class="col-auto text-secondary text-center" id="{{$jeu->scratch_id}}_critere4_note" style="width:40px;">0</div>
-                                    </div>
 
+                                        <div style="color:#cf63cf">Originalité</div>
+                                        <div class="text-monospace text-muted small text-justify">Cette note de 1 à 5 mesure le degré de complexité des mécanismes du jeu, qui influence le temps d'explication ou de compréhension des règles et la maîtrise des détails.</div>
+                                        <div class="row mt-2 mb-3">
+                                            <div class="col">
+                                                <input type="range" id="{{$jeu->scratch_id}}_critere4" name="evaluation[{{$jeu->scratch_id}}]['critere4']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                            </div>
+                                            <div class="col-auto text-secondary text-center" id="{{$jeu->scratch_id}}_critere4_note" style="width:40px;">0</div>
+                                        </div>
+
+                                    </div>
                                 </div>
-                            </div>
-                            <br />
-                            <br />
+                                <br />
+                                <br />
 
 
-                        <?php
+                            <?php
+                            } else {
+                                ?>
+                                <div class="text-monospace small text-danger">Cet identifiant Scratch n'existe pas! [{{$jeu->scratch_id}}]</div>
+                                <br />
+                                <br />
+                                <?php
+                            }
                         }
                         ?>
                         <input id="etablissement_jeton" name="etablissement_jeton" type="hidden" value="{{$etablissement_jeton}}" />
