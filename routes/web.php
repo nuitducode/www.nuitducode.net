@@ -77,13 +77,29 @@ Route::post('/ndc/evaluation-creer', [App\Http\Controllers\SiteController::class
 // == CONSOLE
 // ============================================================================
 
-// JEUX
+// JEUX & EVALUATIONS
 Route::view('/console/ndc', 'jeux-console')->middleware('auth');
 Route::view('/console/sltn', 'jeux-console')->middleware('auth');
 Route::view('/console/bas', 'jeux-console')->middleware('auth');
-Route::view('/console/ndc/jeux', 'jeux')->middleware('auth');
-Route::view('/console/sltn/jeux', 'jeux')->middleware('auth');
-Route::view('/console/bas/jeux', 'jeux')->middleware('auth');
+Route::view('/console/ndc/jeux-evaluations', 'jeux-evaluations')->middleware('auth');
+Route::view('/console/sltn/jeux-evaluations', 'jeux-evaluations')->middleware('auth');
+Route::view('/console/bas/jeux-evaluations', 'jeux-evaluations')->middleware('auth');
+Route::view('/console/ndc/liste-jeux', 'liste-jeux')->middleware('auth');
+Route::view('/console/sltn/liste-jeux', 'liste-jeux')->middleware('auth');
+Route::view('/console/bas/liste-jeux', 'liste-jeux')->middleware('auth');
+Route::view('/console/ndc/liste-evaluations', 'liste-evaluations')->middleware('auth');
+Route::view('/console/sltn/liste-evaluations', 'liste-evaluations')->middleware('auth');
+Route::view('/console/bas/liste-evaluations', 'liste-evaluations')->middleware('auth');
+
+// supprimer jeu
+Route::any('/console/supprimer-jeu', [App\Http\Controllers\ConsoleController::class, 'redirect']);
+Route::any('/console/supprimer-jeu/{jeu_id}', [App\Http\Controllers\ConsoleController::class, 'supprimer_jeu'])->name('supprimer-jeu');
+
+// supprimer evaluation
+Route::any('/console/supprimer-evaluation', [App\Http\Controllers\ConsoleController::class, 'redirect']);
+Route::any('/console/supprimer-evaluation/{evaluation_id}', [App\Http\Controllers\ConsoleController::class, 'supprimer_evaluation'])->name('supprimer-evaluation');
+
+Route::post('/console/jeu-ajouter', [App\Http\Controllers\ConsoleController::class, 'jeux_lot_ajouter_post'])->name('jeux-lot-ajouter_post');
 
 // jeton generator - inutile l'an prochain
 Route::get('/console/jetons-generator', [App\Http\Controllers\ConsoleController::class, 'jetons_generator']);

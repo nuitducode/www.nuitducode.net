@@ -24,12 +24,6 @@
 
             <div class="col-md-9 offset-md-1">
 
-                @if (session('status'))
-                    <div class="text-success text-monospace text-center pb-4" role="alert">
-                        {{ session('status') }}
-                    </div>
-                @endif
-
                 <?php
                 if(request()->segment(2) == 'ndc') $type='Nuit du c0de 2022';
                 if(request()->segment(2) == 'sltn') $type='Sélections 2022';
@@ -53,7 +47,11 @@
                 <div class="text-danger text-monospace small">Cette section peut être utilisée pour se familiariser avec les outils ou faire des tests.</div>
                 @endif
 
-                <div class="mt-4 mb-1 text-center"><a class="btn btn-primary" href="/console/{{request()->segment(2)}}/jeux" role="button">LISTE DES JEUX</a></div>
+                <div class="mt-4 mb-1 text-center">
+                    <a class="btn btn-primary mr-1" href="/console/{{request()->segment(2)}}/jeux-evaluations" role="button">JEUX & ÉVALUATIONS</a>
+                    <a class="btn btn-light ml-1" href="/console/{{request()->segment(2)}}/liste-jeux" role="button">LISTE DES JEUX</a>
+                    <a class="btn btn-light ml-1" href="/console/{{request()->segment(2)}}/liste-evaluations" role="button">LISTE DES ÉVALUATIONS</a>
+                </div>
 
                 <h2>Enregistrement des jeux</h2>
                 <ul class="text-justify">
@@ -65,9 +63,92 @@
                     </li>
                     <li class="mt-3">
                         Soit les organisateurs enregistrent les jeux par lots depuis cette interface en cliquant sur "enregistrer des jeux". Pour ce faire, chaque équipe devra partager son jeu et envoyer aux organisateurs le lien ou l'identifiant du jeu. Les organisateurs peuvent enregistrer directement ces identifiants, ou "remixer" d'abord tous les jeux dans un "studio" Scratch créé pour l'occasion puis ensuite enregistrer les identifiant des jeux "remixés".
-                        <div class="p-1 text-center">
-                            <a class="btn btn-success btn-sm text-monospace" href="#" role="button">enregister des jeux</a>
+                        <div class="mt-2 text-center">
+                            <a class="btn btn-success btn-sm text-monospace" data-toggle="collapse" href="#collapse" role="button" aria-expanded="false" aria-controls="collapse">enregistrer des jeux</a>
                         </div>
+                        @if (session('message'))
+                            <div class="text-success text-monospace text-center pb-4" role="alert">
+                                {{ session('message') }}
+                            </div>
+                        @endif
+
+                        <div class="mt-3 collapse @if($errors->any()) show @endif" id="collapse">
+                            <div class="card card-body">
+                                <form method="POST" action="{{ route('jeux-lot-ajouter_post') }}">
+                                    @csrf
+
+                                    <div class="table-responsive">
+                                        <table class="table table-borderless">
+                                            <tr>
+                                                <td class="text-left">
+                                                    <div for="categorie" class="text-info mb-1">CATÉGORIE <sup class="text-danger">*</sup></div>
+                                                    <div class="form-group">
+                                                        <select id="categorie" name="categorie" class="custom-select @error('categorie') is-invalid @enderror" required>
+                                                            <option selected disabled value="">choisir...</option>
+                                                            <option value="C3" @if(old('categorie') == 'C3') selected @endif>Cycle 3 : CM1 > 6e</option>
+                                                            <option value="C4" @if(old('categorie') == 'C4') selected @endif>Cycle 4 : 5e > 3e</option>
+                                                            <option value="LY" @if(old('categorie') == 'LY') selected @endif>Lycée</option>
+                                                        </select>
+                                                    </div>
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div for="nom_equipe" class="text-info">NOM DE L'ÉQUIPE <sup class="text-danger">*</sup></div>
+                                                    <div class="text-monospace text-muted small text-justify">
+                                                        Choisir un nom d'équipe de 20 caractères maximum et sans caractères spéciaux.
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div for="scratch_id" class="text-info">IDENTIFIANT DU PROJET <sup class="text-danger">*</sup></div>
+                                                    <div class="text-monospace text-muted small text-justify">
+                                                        L'identifiant du projet est le la suite de chiffres présente dans son adresse. Exemple: si l'adresse est "scratch.mit.edu/projects/6535/", l'identifiant est "6535"
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-left">
+                                                    <input id="nom_equipe" name="nom_equipe[]" type="text" class="form-control @error('nom_equipe.0') is-invalid d-block @enderror" value="{{ old('nom_equipe.0') }}" />
+                                                    @error('nom_equipe.0')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </td>
+                                                <td class="text-left">
+                                                    <input id="scratch_id" name="scratch_id[]" type="text" class="form-control @error('scratch_id.0') is-invalid d-block @enderror" value="{{ old('scratch_id.0') }}" />
+                                                    @error('scratch_id.0')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><input id="nom_equipe" name="nom_equipe[]" type="text" class="form-control" value="{{ old('nom_equipe.1') }}"></td>
+                                                <td><input id="scratch_id" name="scratch_id[]" type="text" class="form-control" value="{{ old('scratch_id.1') }}"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input id="nom_equipe" name="nom_equipe[]" type="text" class="form-control" value="{{ old('nom_equipe.2') }}"></td>
+                                                <td><input id="scratch_id" name="scratch_id[]" type="text" class="form-control" value="{{ old('scratch_id.2') }}"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input id="nom_equipe" name="nom_equipe[]" type="text" class="form-control" value="{{ old('nom_equipe.3') }}"></td>
+                                                <td><input id="scratch_id" name="scratch_id[]" type="text" class="form-control" value="{{ old('scratch_id.3') }}"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input id="nom_equipe" name="nom_equipe[]" type="text" class="form-control" value="{{ old('nom_equipe.4') }}"></td>
+                                                <td><input id="scratch_id" name="scratch_id[]" type="text" class="form-control" value="{{ old('scratch_id.4') }}"></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <input id="type" name="type" type="hidden" value="{{request()->segment(2)}}" />
+                                    <div class="text-center"><button type="submit" class="btn btn-primary btn-sm mb-2 pl-5 pr-5"><i class="fas fa-check"></i></button></div>
+                                </form>
+                            </div>
+                        </div>
+
                     </li>
                 </ul>
 

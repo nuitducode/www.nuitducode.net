@@ -60,7 +60,6 @@
                                     <img src="https://uploads.scratch.mit.edu/get_image/project/{{$jeu->scratch_id}}_282x218.png" class="img-fluid" style="border-radius:4px;" width="100%" />
                                 </div>
 
-
                                 <?php
                                 $evaluations = App\Models\Evaluation::where([['etablissement_id', Auth::user()->id], ['game_id', $jeu->id]])->get();
                                 $evaluations_eleves = App\Models\Evaluation::where([['etablissement_id', Auth::user()->id], ['game_id', $jeu->id], ['jury_type', 'eleve']])->get();
@@ -80,9 +79,8 @@
                                     $note_globale[] = $evaluation->note;
                                     $note_enseignants[] = $evaluation->note;
                                 }
-
-
                                 ?>
+                                
                                 <div class="mt-2 text-monospace small">
                                     <div>Nb d'évaluations élèves: <span class="text-primary font-weight-bold">{{ $nb_evaluations_eleves}}</span></div>
                                     <div>Nb d'évaluations enseignants: <span class="text-primary font-weight-bold">{{ $nb_evaluations_enseignants}}</span></div>

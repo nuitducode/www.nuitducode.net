@@ -32,7 +32,7 @@
 
                     <div class="form-group">
 						<div for="nom_equipe" class="text-info">NOM DE L'ÉQUIPE <sup class="text-danger">*</sup></div>
-                        <div class="text-monospace text-muted small mb-1">Choisir un nom d'équipe sans caractères spéciaux, ni chiffres. 20 caractères max.</div>
+                        <div class="text-monospace text-muted small mb-1">Choisir un nom d'équipe de 20 caractères maximum et sans caractères spéciaux.</div>
 						<input id="nom_equipe" name="nom_equipe" type="text" class="form-control @error('nom_equipe') is-invalid @enderror" value="{{ old('nom_equipe') }}" autofocus>
 						@error('nom_equipe')
 							<span class="invalid-feedback" role="alert">
