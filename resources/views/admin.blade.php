@@ -68,7 +68,7 @@ if (Auth::user()->is_admin != 1) {
                                 <th scope="col">Date</th>
                                 <th scope="col">Éq. C3</th>
                                 <th scope="col">Éq. C4</th>
-                                <th scope="col">Éq. Lycée</th>
+                                <th scope="col">Éq. LY</th>
                                 <th scope="col">Éq. PI</th>
                                 <th scope="col">Éq. PO</th>
                             </tr>
