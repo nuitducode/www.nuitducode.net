@@ -28,7 +28,7 @@ if (Auth::user()->is_admin != 1) {
                 <a class=" btn btn-light btn-sm btn-block text-left mt-3" href="/console/bas" role="button">Bac à sable</a>
             </div>
 
-			<div class="col-md-10 pl-3">
+			<div class="col-md-10">
 
                 <h1 class="mb-0">ADMIN</h1>
 
@@ -36,7 +36,7 @@ if (Auth::user()->is_admin != 1) {
                 $etablissements = App\Models\User::all();
 				$nb_valide = App\Models\User::where('ndc_date', '!=', 'NULL')->count();
                 ?>
-                <div class="row mt-1">
+                <div class="row mt-1 p-3">
 					<div class="text-monospace font-weight-bold text-success mb-3">{{$nb_valide }}</div>
                     <div class="col-md-12 p-3 text-monospace small text-muted" style="background-color:white;border:1px silver solid;border-radius:4px;">
                         @foreach($etablissements AS $etablissement)
@@ -50,7 +50,7 @@ if (Auth::user()->is_admin != 1) {
 
         </div><!-- /row -->
 
-        <div class="row">
+        <div class="row p-3">
             <div class="col-md-12 p-3 text-monospace small text-muted" style="background-color:white;border:1px silver solid;border-radius:4px;">
                 @foreach($etablissements AS $etablissement)
                     @if ($etablissement->ndc_date == NULL AND !in_array($etablissement->email, ['labbal@lfitokyo.org', 'laurentabbal@gmail.com', 'liban2@nuitducode.net', 'liban3@nuitducode.net', 'liban4@nuitducode.net', 'liban5@nuitducode.net']))
