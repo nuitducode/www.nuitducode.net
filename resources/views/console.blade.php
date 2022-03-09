@@ -13,7 +13,7 @@
 		<div class="row">
 
             <div class="col-md-2 mt-5">
-                @if (Auth::user()->is_admin == 1) {      
+                @if (Auth::user()->is_admin == 1)  
                     <a class=" btn btn-alert btn-sm btn-block text-left" href="/console/admin" role="button"><i class="fas fa-shield-alt pr-2"></i> admin</a>
                 @endif
                 <a class=" btn btn-light btn-sm btn-block text-left" href="/console/fiche-inscription" role="button"><i class="far fa-address-card pr-2"></i> fiche d'inscription</a>
