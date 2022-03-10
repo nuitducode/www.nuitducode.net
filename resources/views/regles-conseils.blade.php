@@ -1,6 +1,6 @@
 <?php
 include('github-import.php');
-$github_document = github_import('nuitducode/DOCUMENTATION/contents/regles-conseils.md');
+$github_document = github_import('nuitducode/DOCUMENTATION/contents/regles-conseils-v2.md');
 ?>
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
