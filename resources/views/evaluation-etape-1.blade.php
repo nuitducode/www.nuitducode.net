@@ -60,9 +60,11 @@
                         <div class="text-monospace text-muted small mb-1">Catégorie à évaluer</div>
                         <select id="categorie" name="categorie" class="custom-select @error('categorie') is-invalid @enderror" required>
                             <option selected disabled value="">choisir...</option>
-                            <option value="C3">Cycle 3 : CM1 > 6e</option>
-                            <option value="C4">Cycle 4 : 5e > 3e</option>
-                            <option value="LY">Lycée</option>
+                            <option value="C3">SCRATCH - Cycle 3 : CM1 > 6e</option>
+                            <option value="C4">SCRATCH - Cycle 4 : 5e > 3e</option>
+                            <option value="LY">SCRATCH - Lycée</option>
+                            <option value="PI">PYTHON - Première</option>
+                            <option value="POO">PYTHON - Terminale</option>
                         </select>
 					</div>
 

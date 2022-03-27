@@ -1,9 +1,9 @@
 @include('inc-top')
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="fr">
 <head>
     @include('inc-meta')
-    <title>{{ config('app.name', 'Laravel') }} | console</title>
+    <title>NdC Console</title>
 </head>
 <body>
 
@@ -13,7 +13,7 @@
 		<div class="row">
 
             <div class="col-md-2 mt-4">
-                @if (Auth::user()->is_admin == 1)    
+                @if (Auth::user()->is_admin == 1)
                     <a class=" btn btn-danger btn-sm btn-block text-left mb-3" href="/console/admin" role="button"><i class="fas fa-shield-alt pr-2"></i> ADMIN</a>
                 @endif
                 <a class=" btn btn-light btn-sm btn-block text-left" href="/console/fiche-inscription" role="button"><i class="far fa-address-card pr-2"></i> fiche d'inscription</a>

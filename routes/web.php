@@ -46,6 +46,11 @@ Route::view('/entrainements', 'entrainements');
 // AFFICHES
 Route::view('/affiches', 'affiches');
 
+// DEPOT CONFIRMATION
+Route::view('/jeu-depot-confirmation', 'jeu-depot-confirmation');
+
+
+
 // TEST
 Route::view('/test', 'test');
 
@@ -65,18 +70,28 @@ Route::get('/direct-welcome', function(){
    return redirect('/');
 });
 
+// Redirect
+Route::get('/ndc', [App\Http\Controllers\SiteController::class, 'redirect']);
+Route::get('/sltn', [App\Http\Controllers\SiteController::class, 'redirect']);
+Route::get('/bas', [App\Http\Controllers\SiteController::class, 'redirect']);
+Route::get('/ndc/evaluation', [App\Http\Controllers\SiteController::class, 'redirect']);
+Route::get('/sltn/evaluation', [App\Http\Controllers\SiteController::class, 'redirect']);
+Route::get('/bas/evaluation', [App\Http\Controllers\SiteController::class, 'redirect']);
+
+// Depot jeu
 Route::get('/ndc/{token}', [App\Http\Controllers\SiteController::class, 'jeux'])->name('jeux_get');
 Route::get('/sltn/{token}', [App\Http\Controllers\SiteController::class, 'jeux'])->name('jeux_get');
 Route::get('/bas/{token}', [App\Http\Controllers\SiteController::class, 'jeux'])->name('jeux_get');
 
-Route::get('/ndc', [App\Http\Controllers\SiteController::class, 'redirect']);
-Route::get('/sltn', [App\Http\Controllers\SiteController::class, 'redirect']);
-Route::get('/bas', [App\Http\Controllers\SiteController::class, 'redirect']);
+Route::get('/ndc/{langage}/{token}', [App\Http\Controllers\SiteController::class, 'jeu_deposer_get'])->name('jeu-deposer_get');
+Route::get('/sltn/{langage}/{token}', [App\Http\Controllers\SiteController::class, 'jeu_deposer_get'])->name('jeu-deposer_get');
+Route::get('/bas/{langage}/{token}', [App\Http\Controllers\SiteController::class, 'jeu_deposer_get'])->name('jeu-deposer_get');
 
-Route::post('/ndc/jeu-creer', [App\Http\Controllers\SiteController::class, 'jeu_creer_post'])->name('ndc-jeu-creer_post');
-Route::post('/sltn/jeu-creer', [App\Http\Controllers\SiteController::class, 'jeu_creer_post'])->name('sltn-jeu-creer_post');
-Route::post('/bas/jeu-creer', [App\Http\Controllers\SiteController::class, 'jeu_creer_post'])->name('bas-jeu-creer_post');
+Route::post('/ndc/jeu-deposer', [App\Http\Controllers\SiteController::class, 'jeu_deposer_post'])->name('ndc-jeu-deposer_post');
+Route::post('/sltn/jeu-deposer', [App\Http\Controllers\SiteController::class, 'jeu_deposer_post'])->name('sltn-jeu-deposer_post');
+Route::post('/bas/jeu-deposer', [App\Http\Controllers\SiteController::class, 'jeu_deposer_post'])->name('bas-jeu-deposer_post');
 
+// Evaluations
 Route::post('/ndc/evaluation', [App\Http\Controllers\SiteController::class, 'evaluation_etape_1_post'])->name('ndc-evaluation-etape-1_post');
 Route::post('/ndc/evaluation-creer', [App\Http\Controllers\SiteController::class, 'evaluation_etape_2_post'])->name('ndc-evaluation-etape-2_post');
 Route::post('/sltn/evaluation', [App\Http\Controllers\SiteController::class, 'evaluation_etape_1_post'])->name('sltn-evaluation-etape-1_post');
@@ -106,6 +121,11 @@ Route::view('/console/bas/liste-jeux', 'liste-jeux')->middleware('auth');
 Route::view('/console/ndc/liste-evaluations', 'liste-evaluations')->middleware('auth');
 Route::view('/console/sltn/liste-evaluations', 'liste-evaluations')->middleware('auth');
 Route::view('/console/bas/liste-evaluations', 'liste-evaluations')->middleware('auth');
+
+// JOUER JEU PYXEL
+Route::get('/console/jouer-jeu-pyxel/{jeu_id}', function ($jeu_id) {
+    return view('jouer-jeu-pyxel', ['jeu_id' => $jeu_id]);
+})->middleware('auth');
 
 // supprimer jeu
 Route::any('/console/supprimer-jeu', [App\Http\Controllers\ConsoleController::class, 'redirect']);

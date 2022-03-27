@@ -29,114 +29,230 @@
                 <?php
                 $etablissement_jeton = $token[6].$token[4].$token[2].$token[0];
                 $jeux = App\Models\Game::where([['etablissement_jeton', $etablissement_jeton], ['type', request()->segment(1)], ['categorie', $categorie]])->get();
+                if (count($jeux) !== 0) {
 
-                if (count($jeux) !== 0){
-                    ?>
-                    <form method="POST" action="{{ route(request()->segment(1).'-evaluation-etape-2_post') }}">
-                        @csrf
+                    // SCRATCH
+                    if (in_array($categorie, ['C3', 'C4', 'LY'])) {
+                        ?>
 
-                        <?php
-                        foreach ($jeux AS $jeu) {
-                            $json = @file_get_contents("https://api.scratch.mit.edu/projects/".$jeu->scratch_id);
-                            if ($json !== FALSE) {
-                                $jeu_scratch = json_decode($json);
-                                ?>
-                                @if($jury_type != 'eleve')
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h2 class="mb-1" style="color:#4cbf56">{{$jeu->nom_equipe}}</h2>
-                                        <h3 class="mb-1 mt-1">[NdC 2022 - C3] {{$jeu_scratch->title}}</h3>
-                                        <div class="text-monospace small">Création : {{$jeu_scratch->history->created}}</div>
-                                        <div class="text-monospace small">Derniere modification : {{$jeu_scratch->history->modified}}</div>
-                                    </div>
-                                </div>
-                                @endif
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <iframe src="https://scratch.mit.edu/projects/{{$jeu->scratch_id}}/embed" allowtransparency="true" width="100%" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
-                                        <div class="small text-monospace" style="border:1px solid silver; padding:10px;border-radius:4px; background-color:white;">{{$jeu_scratch->instructions}}</div>
-                                        @if($jury_type != 'eleve')
-                                        <div class="text-monospace small text-muted pt-1 pl-1">
-                                            <i class="fas fa-gamepad" style="font-size:140%;vertical-align:-1px;"></i> <a href="https://scratch.mit.edu/projects/{{$jeu_scratch->id}}" target="_blank">{{$jeu_scratch->id}}</a> ~
-                                            <i class="fas fa-user-circle"></i> <a href="https://scratch.mit.edu/users/{{$jeu_scratch->author->username}}" target="_blank">{{$jeu_scratch->author->username}}</a>
-                                        </div>
-                                        @endif
-                                    </div>
-                                    <div class="col-md-6">
-                                        <?php
-                                        /*
-                                        https://www.jeuxdenim.be/news-404
-                                        https://dane.ac-bordeaux.fr/robotique/wp-content/uploads/sites/7/2021/03/Grille-devaluation-des-jeux-par-jury.docx.pdf
-                                        */
-                                        ?>
-                                        <div style="color:#cf63cf">Jouabilité</div>
-                                        <div class="text-monospace text-muted small text-justify">
-                                            Les critères et leur description sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
-                                        </div>
-                                        <div class="row mt-2 mb-3">
-                                            <div class="col">
-                                                <input type="range" id="{{$jeu->scratch_id}}_critere1" name="evaluation[{{$jeu->scratch_id}}]['critere1']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
-                                            </div>
-                                            <div class="col-auto text-secondary text-center" id="{{$jeu->scratch_id}}_critere1_note" style="width:40px;">0</div>
-                                        </div>
-
-                                        <div style="color:#cf63cf">Richesse / complexité</div>
-                                        <div class="text-monospace text-muted small text-justify">
-                                            Les critères et leur description sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
-                                        </div>
-                                        <div class="row mt-2 mb-3">
-                                            <div class="col">
-                                                <input type="range" id="{{$jeu->scratch_id}}_critere2" name="evaluation[{{$jeu->scratch_id}}]['critere2']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
-                                            </div>
-                                            <div class="col-auto text-secondary text-center" id="{{$jeu->scratch_id}}_critere2_note" style="width:40px;">0</div>
-                                        </div>
-
-                                        <div style="color:#cf63cf">Utilisation des lutins</div>
-                                        <div class="text-monospace text-muted small text-justify">
-                                            Les critères et leur description sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
-                                        </div>
-                                        <div class="row mt-2 mb-3">
-                                            <div class="col">
-                                                <input type="range" id="{{$jeu->scratch_id}}_critere3" name="evaluation[{{$jeu->scratch_id}}]['critere3']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
-                                            </div>
-                                            <div class="col-auto text-secondary text-center" id="{{$jeu->scratch_id}}_critere3_note" style="width:40px;">0</div>
-                                        </div>
-
-                                        <div style="color:#cf63cf">Originalité</div>
-                                        <div class="text-monospace text-muted small text-justify">
-                                            Les critères et leur description sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
-                                        </div>
-                                        <div class="row mt-2 mb-3">
-                                            <div class="col">
-                                                <input type="range" id="{{$jeu->scratch_id}}_critere4" name="evaluation[{{$jeu->scratch_id}}]['critere4']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
-                                            </div>
-                                            <div class="col-auto text-secondary text-center" id="{{$jeu->scratch_id}}_critere4_note" style="width:40px;">0</div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <br />
-                                <br />
-
+                        <form method="POST" action="{{ route(request()->segment(1).'-evaluation-etape-2_post') }}">
+                            @csrf
 
                             <?php
-                            } else {
+                            foreach ($jeux AS $jeu) {
+                                $json = @file_get_contents("https://api.scratch.mit.edu/projects/".$jeu->scratch_id);
+                                if ($json !== FALSE) {
+                                    $jeu_scratch = json_decode($json);
+                                    ?>
+                                    @if($jury_type != 'eleve')
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h2 class="mb-1" style="color:#4cbf56">{{$jeu->nom_equipe}}</h2>
+                                            <h3 class="mb-1 mt-1">[NdC 2022 - C3] {{$jeu_scratch->title}}</h3>
+                                            <div class="text-monospace small">Création : {{$jeu_scratch->history->created}}</div>
+                                            <div class="text-monospace small">Derniere modification : {{$jeu_scratch->history->modified}}</div>
+                                        </div>
+                                    </div>
+                                    @endif
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <iframe src="https://scratch.mit.edu/projects/{{$jeu->scratch_id}}/embed" allowtransparency="true" width="100%" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                                            <div class="small text-monospace" style="border:1px solid silver; padding:10px;border-radius:4px; background-color:white;">{{$jeu_scratch->instructions}}</div>
+                                            @if($jury_type != 'eleve')
+                                            <div class="text-monospace small text-muted pt-1 pl-1">
+                                                <i class="fas fa-gamepad" style="font-size:140%;vertical-align:-1px;"></i> <a href="https://scratch.mit.edu/projects/{{$jeu_scratch->id}}" target="_blank">{{$jeu_scratch->id}}</a> ~
+                                                <i class="fas fa-user-circle"></i> <a href="https://scratch.mit.edu/users/{{$jeu_scratch->author->username}}" target="_blank">{{$jeu_scratch->author->username}}</a>
+                                            </div>
+                                            @endif
+                                        </div>
+                                        <div class="col-md-6">
+                                            <?php
+                                            /*
+                                            https://www.jeuxdenim.be/news-404
+                                            https://dane.ac-bordeaux.fr/robotique/wp-content/uploads/sites/7/2021/03/Grille-devaluation-des-jeux-par-jury.docx.pdf
+                                            */
+                                            ?>
+                                            <div style="color:#cf63cf">Jouabilité</div>
+                                            <div class="text-monospace text-muted small text-justify">
+                                                Les critères et leur description sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
+                                            </div>
+                                            <div class="row mt-2 mb-3">
+                                                <div class="col">
+                                                    <input type="range" id="{{$jeu->scratch_id}}_critere1" name="evaluation[{{$jeu->scratch_id}}]['critere1']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                                </div>
+                                                <div class="col-auto text-secondary text-center" id="{{$jeu->scratch_id}}_critere1_note" style="width:40px;">0</div>
+                                            </div>
+
+                                            <div style="color:#cf63cf">Richesse / complexité</div>
+                                            <div class="text-monospace text-muted small text-justify">
+                                                Les critères et leur description sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
+                                            </div>
+                                            <div class="row mt-2 mb-3">
+                                                <div class="col">
+                                                    <input type="range" id="{{$jeu->scratch_id}}_critere2" name="evaluation[{{$jeu->scratch_id}}]['critere2']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                                </div>
+                                                <div class="col-auto text-secondary text-center" id="{{$jeu->scratch_id}}_critere2_note" style="width:40px;">0</div>
+                                            </div>
+
+                                            <div style="color:#cf63cf">Utilisation des lutins</div>
+                                            <div class="text-monospace text-muted small text-justify">
+                                                Les critères et leur description sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
+                                            </div>
+                                            <div class="row mt-2 mb-3">
+                                                <div class="col">
+                                                    <input type="range" id="{{$jeu->scratch_id}}_critere3" name="evaluation[{{$jeu->scratch_id}}]['critere3']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                                </div>
+                                                <div class="col-auto text-secondary text-center" id="{{$jeu->scratch_id}}_critere3_note" style="width:40px;">0</div>
+                                            </div>
+
+                                            <div style="color:#cf63cf">Originalité</div>
+                                            <div class="text-monospace text-muted small text-justify">
+                                                Les critères et leur description sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
+                                            </div>
+                                            <div class="row mt-2 mb-3">
+                                                <div class="col">
+                                                    <input type="range" id="{{$jeu->scratch_id}}_critere4" name="evaluation[{{$jeu->scratch_id}}]['critere4']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                                </div>
+                                                <div class="col-auto text-secondary text-center" id="{{$jeu->scratch_id}}_critere4_note" style="width:40px;">0</div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <br />
+
+
+                                <?php
+                                } else {
+                                    ?>
+                                    <div class="text-monospace small text-danger">Cet identifiant Scratch n'existe pas! [{{$jeu->scratch_id}}]</div>
+                                    <br />
+                                    <br />
+                                    <?php
+                                }
+                            }
+                            ?>
+                            <input id="etablissement_jeton" name="etablissement_jeton" type="hidden" value="{{$etablissement_jeton}}" />
+                            <input id="categorie" name="categorie" type="hidden" value="{{$categorie}}" />
+                            <input id="jury_nom" name="jury_nom" type="hidden" value="{{$jury_nom}}" />
+                            <input id="jury_type" name="jury_type" type="hidden" value="{{$jury_type}}" />
+                            <input id="langage" name="langage" type="hidden" value="scratch" />
+                            <input id="jeu_id" name="jeu_id" type="hidden" value="{{Crypt::encryptString($jeu->id)}}" />
+                            <button type="submit" id="inscription" class="btn btn-primary"><i class="fas fa-check"></i></button>
+                        </form>
+
+                        <?php
+                    }
+
+                    // PYTHON
+                    if (in_array($categorie, ['PI', 'POO'])) {
+                        ?>
+
+                        <form method="POST" action="{{ route(request()->segment(1).'-evaluation-etape-2_post') }}">
+                            @csrf
+
+                            <?php
+                            foreach ($jeux AS $jeu) {
                                 ?>
-                                <div class="text-monospace small text-danger">Cet identifiant Scratch n'existe pas! [{{$jeu->scratch_id}}]</div>
-                                <br />
-                                <br />
+                                    @if($jury_type != 'eleve')
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h2 class="mb-1" style="color:#4cbf56">{{$jeu->nom_equipe}}</h2>
+                                        </div>
+                                    </div>
+                                    @endif
+                                    <div class="row">
+                                        <div class="col-md-6">
+<pre class="m-0"><code id="htmlViewer" style="color:rgb(216, 222, 233); font-weight:400;background-color:rgb(46, 52, 64);background:rgb(46, 52, 64);display:block;padding: 1.5em;border-radius:5px;"><span style="color:rgb(129, 161, 193); font-weight:400;">import</span> requests
+<span style="color:rgb(129, 161, 193); font-weight:400;">import</span> os
+
+# ================
+code = <span style="color:rgb(163, 190, 140); font-weight:400;">'{{$jeu->etablissement_jeton}}-{{$jeu->python_id}}'</span>
+# ================
+
+url = <span style="color:rgb(163, 190, 140); font-weight:400;">'https://www.nuitducode.net/storage/pyxapp/'</span>
+jeu = <span style="color:rgb(163, 190, 140); font-weight:400;">'jeu_'</span> + code + <span style="color:rgb(163, 190, 140); font-weight:400;">'.pyxapp'</span>
+<span style="color:rgb(129, 161, 193); font-weight:400;">data</span> = requests.<span style="color:rgb(129, 161, 193); font-weight:400;">get</span>(url + jeu)
+with <span style="color:rgb(129, 161, 193); font-weight:400;">open</span>(jeu, <span style="color:rgb(163, 190, 140); font-weight:400;">'wb'</span>) <span style="color:rgb(129, 161, 193); font-weight:400;">as</span> file:
+    file.write(<span style="color:rgb(129, 161, 193); font-weight:400;">data</span>.content)
+os.system(<span style="color:rgb(163, 190, 140); font-weight:400;">'pyxel play '</span> + jeu)</code></pre>
+<div class="text-monospace text-muted p-2" style="text-align:justify;font-size:70%;">
+    Copier-coller ce code dans un environnement Python possédant la bibliothèque <a href="https://github.com/kitao/pyxel/" target="_blank">Pyxel</a> pour lancer le jeu.<br />
+    Pour installer un environnement Python + Pyxel, voir la <a href="https://nuitducode.github.io/DOCUMENTATION/PYTHON/02-installation/" target="_blank">documentation</a>.
+</div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <?php
+                                            /*
+                                            https://www.jeuxdenim.be/news-404
+                                            https://dane.ac-bordeaux.fr/robotique/wp-content/uploads/sites/7/2021/03/Grille-devaluation-des-jeux-par-jury.docx.pdf
+                                            */
+                                            ?>
+                                            <div style="color:#cf63cf">Jouabilité</div>
+                                            <div class="text-monospace text-muted small text-justify">
+                                                Les critères et leur description sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
+                                            </div>
+                                            <div class="row mt-2 mb-3">
+                                                <div class="col">
+                                                    <input type="range" id="{{$jeu->python_id}}_critere1" name="evaluation[{{$jeu->python_id}}]['critere1']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                                </div>
+                                                <div class="col-auto text-secondary text-center" id="{{$jeu->python_id}}_critere1_note" style="width:40px;">0</div>
+                                            </div>
+
+                                            <div style="color:#cf63cf">Richesse / complexité</div>
+                                            <div class="text-monospace text-muted small text-justify">
+                                                Les critères et leur description sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
+                                            </div>
+                                            <div class="row mt-2 mb-3">
+                                                <div class="col">
+                                                    <input type="range" id="{{$jeu->python_id}}_critere2" name="evaluation[{{$jeu->python_id}}]['critere2']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                                </div>
+                                                <div class="col-auto text-secondary text-center" id="{{$jeu->python_id}}_critere2_note" style="width:40px;">0</div>
+                                            </div>
+
+                                            <div style="color:#cf63cf">Utilisation des lutins</div>
+                                            <div class="text-monospace text-muted small text-justify">
+                                                Les critères et leur description sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
+                                            </div>
+                                            <div class="row mt-2 mb-3">
+                                                <div class="col">
+                                                    <input type="range" id="{{$jeu->python_id}}_critere3" name="evaluation[{{$jeu->python_id}}]['critere3']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                                </div>
+                                                <div class="col-auto text-secondary text-center" id="{{$jeu->python_id}}_critere3_note" style="width:40px;">0</div>
+                                            </div>
+
+                                            <div style="color:#cf63cf">Originalité</div>
+                                            <div class="text-monospace text-muted small text-justify">
+                                                Les critères et leur description sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
+                                            </div>
+                                            <div class="row mt-2 mb-3">
+                                                <div class="col">
+                                                    <input type="range" id="{{$jeu->python_id}}_critere4" name="evaluation[{{$jeu->python_id}}]['critere4']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                                </div>
+                                                <div class="col-auto text-secondary text-center" id="{{$jeu->python_id}}_critere4_note" style="width:40px;">0</div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <br />
+
+
                                 <?php
                             }
-                        }
-                        ?>
-                        <input id="etablissement_jeton" name="etablissement_jeton" type="hidden" value="{{$etablissement_jeton}}" />
-                        <input id="categorie" name="categorie" type="hidden" value="{{$categorie}}" />
-                        <input id="jury_nom" name="jury_nom" type="hidden" value="{{$jury_nom}}" />
-                        <input id="jury_type" name="jury_type" type="hidden" value="{{$jury_type}}" />
-                        <button type="submit" id="inscription" class="btn btn-primary"><i class="fas fa-check"></i></button>
-                    </form>
+                            ?>
+                            <input id="etablissement_jeton" name="etablissement_jeton" type="hidden" value="{{$etablissement_jeton}}" />
+                            <input id="categorie" name="categorie" type="hidden" value="{{$categorie}}" />
+                            <input id="jury_nom" name="jury_nom" type="hidden" value="{{$jury_nom}}" />
+                            <input id="jury_type" name="jury_type" type="hidden" value="{{$jury_type}}" />
+                            <input id="langage" name="langage" type="hidden" value="python" />
+                            <input id="jeu_id" name="jeu_id" type="hidden" value="{{Crypt::encryptString($jeu->id)}}" />
+                            <button type="submit" id="inscription" class="btn btn-primary"><i class="fas fa-check"></i></button>
+                        </form>
 
-                    <?php
+                        <?php
+                    }
+
                 } else {
                     ?>
 

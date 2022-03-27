@@ -56,15 +56,15 @@
                 <h2>Enregistrement des jeux</h2>
                 <ul class="text-justify">
                     <li>
-                        Soit les élèves enregistrent eux-mêmes leur jeu : après avoir décidé du compte qui hébergera le jeu  (compte d'un des membres de l'équipe, ou compte fourni par les organisateurs) et après avoir "remixé" l'univers sur lequel l'équipe va travailler, l'équipe enregistre son jeu en utilisant l'adresse ci-dessous qui sera fournie aux élèves. L'enregistrement du jeu peut se faire en début ou en fin d'événement.<br />
+                        Soit les élèves enregistrent eux-mêmes leur jeu Scratch ou Python.<br /><u>Pour Scratch</u><br />Après avoir décidé du compte qui hébergera le jeu  (compte d'un des membres de l'équipe, ou compte fourni par les organisateurs) et après avoir "remixé" l'univers sur lequel l'équipe va travailler, l'équipe enregistre son jeu en utilisant l'adresse ci-dessous qui sera fournie aux élèves.<br /><u>Pour Python</u><br />...<br />L'enregistrement du jeu peut se faire en début ou en fin d'événement.<br />
                         <div class="p-3 text-center" style="background-color:white;border:1px silver solid; border-radius:4px;">
                             Lien à fournir aux élèves pour qu'ils enregistrent leurs jeux : <kbd><a href="/{{request()->segment(2)}}/{{strtoupper(Auth::user()->jeton)}}" class="text-monospace text-success" target="_blank">https://www.nuitducode.net/{{request()->segment(2)}}/{{strtoupper(Auth::user()->jeton)}}</a></kbd>
                         </div>
                     </li>
                     <li class="mt-3">
-                        Soit les organisateurs enregistrent les jeux par lots depuis cette interface en cliquant sur "enregistrer des jeux". Pour ce faire, chaque équipe devra partager son jeu et envoyer aux organisateurs le lien ou l'identifiant du jeu. Les organisateurs peuvent enregistrer directement ces identifiants, ou "remixer" d'abord tous les jeux dans un "studio" Scratch créé pour l'occasion puis ensuite enregistrer les identifiant des jeux "remixés".
+                        Soit les organisateurs enregistrent les jeux par lots depuis cette interface en cliquant sur "enregistrer des jeux".<br />Pour ce faire, chaque équipe devra partager son jeu et envoyer aux organisateurs le lien ou l'identifiant du jeu. Les organisateurs peuvent enregistrer directement ces identifiants, ou "remixer" d'abord tous les jeux dans un "studio" Scratch créé pour l'occasion puis ensuite enregistrer les identifiant des jeux "remixés".
                         <div class="mt-2 text-center">
-                            <a class="btn btn-success btn-sm text-monospace" data-toggle="collapse" href="#collapse" role="button" aria-expanded="false" aria-controls="collapse">enregistrer des jeux</a>
+                            <a class="btn btn-success btn-sm text-monospace" data-toggle="collapse" href="#collapse" role="button" aria-expanded="false" aria-controls="collapse">Enregistrer des jeux Scratch</a>
                         </div>
                         @if (session('message'))
                             <div class="text-success text-monospace text-center pb-4" role="alert">

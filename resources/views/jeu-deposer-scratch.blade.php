@@ -1,9 +1,11 @@
 @include('inc-top')
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="fr">
 <head>
     @include('inc-meta')
-    <title>{{ config('app.name', 'Laravel') }} | Nouveau jeu</title>
+    <link href="{{ asset('css/dropzone-basic.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/dropzone.css') }}" rel="stylesheet">
+    <title>Nuit du c0de | Dépôt jeu SCRATCH</title>
 </head>
 <body>
 
@@ -25,9 +27,10 @@
                     @endphp
                 @endif
 
-                <div class="text-center mb-4"><img src="{{ url('/')}}/img/nuitducode.svg" width="150" /></div>
+                <div class="text-center mb-4"><img src="{{ url('/')}}/img/nuitducode-scratch-ptyhon.svg" width="320" /></div>
 
-				<form method="POST" action="{{ route(request()->segment(1).'-jeu-creer_post') }}">
+                <form id="scratch_submit" method="POST" action="{{ route(request()->segment(1).'-jeu-deposer_post') }}">
+
 					@csrf
 
                     <div class="form-group">
@@ -54,7 +57,7 @@
                     <div class="form-group">
 						<div for="scratch_id" class="text-info">IDENTIFIANT DU PROJET <sup class="text-danger">*</sup></div>
                         <div class="text-monospace text-justify text-muted small mb-1">
-                            L'identifiant du projet est le la suite de chiffres présente dans son adresse. Exemple: si l'adresse est "scratch.mit.edu/projects/6535/", l'identifiant est "6535"
+                            L'identifiant du projet est la suite de chiffres présente dans son adresse.<br />Exemple: si l'adresse est "scratch.mit.edu/projects/6535/", l'identifiant est "6535"
                         </div>
 						<input id="scratch_id" name="scratch_id" type="text" class="form-control @error('scratch_id') is-invalid @enderror" value="{{ old('scratch_id') }}" autofocus>
 						@error('scratch_id')
@@ -65,8 +68,9 @@
 					</div>
 
                     <input id="etablissement_jeton" name="etablissement_jeton" type="hidden" value="{{$etablissement_jeton}}" />
+                    <input id="langage" name="langage" type="hidden" value="scratch" />
 
-					<button type="submit" id="inscription" class="btn btn-primary"><i class="fas fa-check"></i></button>
+					<button type="submit" class="btn btn-primary" form="scratch_submit"><i class="fas fa-check"></i></button>
 
 				</form>
 
