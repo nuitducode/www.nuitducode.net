@@ -1,9 +1,9 @@
 @include('inc-top')
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="fr">
 <head>
     @include('inc-meta')
-    <title>{{ config('app.name', 'Laravel') }} | Évaluation - étape 2</title>
+    <title>Nuit du c0de | Évaluation - étape 2</title>
 </head>
 <body>
 
@@ -32,6 +32,15 @@
                 if (count($jeux) !== 0) {
 
                     // SCRATCH
+                    $critere1_scratch_titre = "Jouabilité";
+                    $critere1_scratch_description = "";
+                    $critere2_scratch_titre = "Richesse / Complexité";
+                    $critere2_scratch_description = "";
+                    $critere3_scratch_titre = "Originalité / Créativité";
+                    $critere3_scratch_description = "";
+                    $critere4_scratch_titre = "Respect des consignes";
+                    $critere4_scratch_description = "";
+
                     if (in_array($categorie, ['C3', 'C4', 'LY'])) {
                         ?>
 
@@ -66,54 +75,53 @@
                                             @endif
                                         </div>
                                         <div class="col-md-6">
-                                            <?php
-                                            /*
-                                            https://www.jeuxdenim.be/news-404
-                                            https://dane.ac-bordeaux.fr/robotique/wp-content/uploads/sites/7/2021/03/Grille-devaluation-des-jeux-par-jury.docx.pdf
-                                            */
-                                            ?>
-                                            <div style="color:#cf63cf">Jouabilité</div>
-                                            <div class="text-monospace text-muted small text-justify">
-                                                Les critères et leur description sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
+
+                                            <div class="text-uppercase" style="color:#cf63cf">
+                                                {{$critere1_scratch_titre}} <sup class="ml-1" style="color:silver;cursor:pointer;"><i class="fas fa-question-circle" data-toggle="popover" data-trigger="hover" data-html="true" data-placement="right" data-content="{{$critere1_scratch_description}}"></i></sup>
                                             </div>
                                             <div class="row mt-2 mb-3">
                                                 <div class="col">
-                                                    <input type="range" id="{{$jeu->scratch_id}}_critere1" name="evaluation[{{$jeu->scratch_id}}]['critere1']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                                    <input type="range" id="{{$jeu->scratch_id}}_critere1" name="evaluation[{{$jeu->scratch_id}}]['critere1']" class="custom-range" value="-1" min="-1" max="5" step="1" oninput="curseur(this.id, this.value);">
                                                 </div>
-                                                <div class="col-auto text-secondary text-center" id="{{$jeu->scratch_id}}_critere1_note" style="width:40px;">0</div>
+                                                <div class="col-auto text-secondary text-center font-weight-bold" id="{{$jeu->scratch_id}}_critere1_note" style="width:40px;">
+                                                    <i class="fas fa-times text-danger"></i>
+                                                </div>
                                             </div>
 
-                                            <div style="color:#cf63cf">Richesse / complexité</div>
-                                            <div class="text-monospace text-muted small text-justify">
-                                                Les critères et leur description sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
+                                            <div class="text-uppercase" style="color:#cf63cf">
+                                                {{$critere2_scratch_titre}} <sup class="ml-1" style="color:silver;cursor:pointer;"><i class="fas fa-question-circle" data-toggle="popover" data-trigger="hover" data-html="true" data-placement="right" data-content="{{$critere2_scratch_description}}"></i></sup>
                                             </div>
                                             <div class="row mt-2 mb-3">
                                                 <div class="col">
-                                                    <input type="range" id="{{$jeu->scratch_id}}_critere2" name="evaluation[{{$jeu->scratch_id}}]['critere2']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                                    <input type="range" id="{{$jeu->scratch_id}}_critere2" name="evaluation[{{$jeu->scratch_id}}]['critere2']" class="custom-range" value="-1" min="-1" max="5" step="1" oninput="curseur(this.id, this.value);">
                                                 </div>
-                                                <div class="col-auto text-secondary text-center" id="{{$jeu->scratch_id}}_critere2_note" style="width:40px;">0</div>
+                                                <div class="col-auto text-secondary text-center font-weight-bold" id="{{$jeu->scratch_id}}_critere2_note" style="width:40px;">
+                                                    <i class="fas fa-times text-danger"></i>
+                                                </div>
                                             </div>
 
-                                            <div style="color:#cf63cf">Utilisation des lutins</div>
-                                            <div class="text-monospace text-muted small text-justify">
-                                                Les critères et leur description sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
+                                            <div class="text-uppercase" style="color:#cf63cf">
+                                                {{$critere3_scratch_titre}} <sup class="ml-1" style="color:silver;cursor:pointer;"><i class="fas fa-question-circle" data-toggle="popover" data-trigger="hover" data-html="true" data-placement="right" data-content="{{$critere3_scratch_description}}"></i></sup>
                                             </div>
                                             <div class="row mt-2 mb-3">
                                                 <div class="col">
-                                                    <input type="range" id="{{$jeu->scratch_id}}_critere3" name="evaluation[{{$jeu->scratch_id}}]['critere3']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                                    <input type="range" id="{{$jeu->scratch_id}}_critere3" name="evaluation[{{$jeu->scratch_id}}]['critere3']" class="custom-range" value="-1" min="-1" max="5" step="1" oninput="curseur(this.id, this.value);">
                                                 </div>
-                                                <div class="col-auto text-secondary text-center" id="{{$jeu->scratch_id}}_critere3_note" style="width:40px;">0</div>
+                                                <div class="col-auto text-secondary text-center font-weight-bold" id="{{$jeu->scratch_id}}_critere3_note" style="width:40px;">
+                                                    <i class="fas fa-times text-danger"></i>
+                                                </div>
                                             </div>
 
-                                            <div style="color:#cf63cf">Originalité</div>
-                                            <div class="text-monospace text-muted small text-justify">
-                                                Les critères et leur description sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
+                                            <div class="text-uppercase" style="color:#cf63cf">
+                                                {{$critere4_scratch_titre}} <sup class="ml-1" style="color:silver;cursor:pointer;"><i class="fas fa-question-circle" data-toggle="popover" data-trigger="hover" data-html="true" data-placement="right" data-content="{{$critere4_scratch_description}}"></i></sup>
                                             </div>
                                             <div class="row mt-2 mb-3">
                                                 <div class="col">
-                                                    <input type="range" id="{{$jeu->scratch_id}}_critere4" name="evaluation[{{$jeu->scratch_id}}]['critere4']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                                    <input type="range" id="{{$jeu->scratch_id}}_critere4" name="evaluation[{{$jeu->scratch_id}}]['critere4']" class="custom-range" value="-1" min="-1" max="5" step="1" oninput="curseur(this.id, this.value);">
                                                 </div>
-                                                <div class="col-auto text-secondary text-center" id="{{$jeu->scratch_id}}_critere4_note" style="width:40px;">0</div>
+                                                <div class="col-auto text-secondary text-center font-weight-bold" id="{{$jeu->scratch_id}}_critere4_note" style="width:40px;">
+                                                    <i class="fas fa-times text-danger"></i>
+                                                </div>
                                             </div>
 
                                         </div>
@@ -138,13 +146,22 @@
                             <input id="jury_type" name="jury_type" type="hidden" value="{{$jury_type}}" />
                             <input id="langage" name="langage" type="hidden" value="scratch" />
                             <input id="jeu_id" name="jeu_id" type="hidden" value="{{Crypt::encryptString($jeu->id)}}" />
-                            <button type="submit" id="inscription" class="btn btn-primary"><i class="fas fa-check"></i></button>
+                            <button type="submit" id="submit_jeu" class="btn btn-primary" disabled><i class="fas fa-check"></i></button>
                         </form>
 
                         <?php
                     }
 
                     // PYTHON
+                    $critere1_python_titre = "Jouabilité";
+                    $critere1_python_description = "";
+                    $critere2_python_titre = "Richesse / complexité";
+                    $critere2_python_description = "";
+                    $critere3_python_titre = "Originalité / créativité";
+                    $critere3_python_description = "";
+                    $critere4_python_titre = "Respect des consignes";
+                    $critere4_python_description = "";
+
                     if (in_array($categorie, ['PI', 'POO'])) {
                         ?>
 
@@ -182,54 +199,53 @@ os.system(<span style="color:rgb(163, 190, 140); font-weight:400;">'pyxel play '
 </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <?php
-                                            /*
-                                            https://www.jeuxdenim.be/news-404
-                                            https://dane.ac-bordeaux.fr/robotique/wp-content/uploads/sites/7/2021/03/Grille-devaluation-des-jeux-par-jury.docx.pdf
-                                            */
-                                            ?>
-                                            <div style="color:#cf63cf">Jouabilité</div>
-                                            <div class="text-monospace text-muted small text-justify">
-                                                Les critères et leur description sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
+
+                                            <div class="text-uppercase" style="color:#cf63cf">
+                                                {{$critere1_python_titre}} <sup class="ml-1" style="color:silver;cursor:pointer;"><i class="fas fa-question-circle" data-toggle="popover" data-trigger="hover" data-html="true" data-placement="right" data-content="{{$critere1_python_description}}"></i></sup>
                                             </div>
                                             <div class="row mt-2 mb-3">
                                                 <div class="col">
-                                                    <input type="range" id="{{$jeu->python_id}}_critere1" name="evaluation[{{$jeu->python_id}}]['critere1']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                                    <input type="range" id="{{$jeu->python_id}}_critere1" name="evaluation[{{$jeu->python_id}}]['critere1']" class="custom-range" value="-1" min="-1" max="5" step="1" oninput="curseur(this.id, this.value);">
                                                 </div>
-                                                <div class="col-auto text-secondary text-center" id="{{$jeu->python_id}}_critere1_note" style="width:40px;">0</div>
+                                                <div class="col-auto text-secondary text-center font-weight-bold" id="{{$jeu->python_id}}_critere1_note" style="width:40px;">
+                                                    <i class="fas fa-times text-danger"></i>
+                                                </div>
                                             </div>
 
-                                            <div style="color:#cf63cf">Richesse / complexité</div>
-                                            <div class="text-monospace text-muted small text-justify">
-                                                Les critères et leur description sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
+                                            <div class="text-uppercase" style="color:#cf63cf">
+                                                {{$critere2_python_titre}} <sup class="ml-1" style="color:silver;cursor:pointer;"><i class="fas fa-question-circle" data-toggle="popover" data-trigger="hover" data-html="true" data-placement="right" data-content="{{$critere2_python_description}}"></i></sup>
                                             </div>
                                             <div class="row mt-2 mb-3">
                                                 <div class="col">
-                                                    <input type="range" id="{{$jeu->python_id}}_critere2" name="evaluation[{{$jeu->python_id}}]['critere2']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                                    <input type="range" id="{{$jeu->python_id}}_critere2" name="evaluation[{{$jeu->python_id}}]['critere2']" class="custom-range" value="-1" min="-1" max="5" step="1" oninput="curseur(this.id, this.value);">
                                                 </div>
-                                                <div class="col-auto text-secondary text-center" id="{{$jeu->python_id}}_critere2_note" style="width:40px;">0</div>
+                                                <div class="col-auto text-secondary text-center font-weight-bold" id="{{$jeu->python_id}}_critere2_note" style="width:40px;">
+                                                    <i class="fas fa-times text-danger"></i>
+                                                </div>
                                             </div>
 
-                                            <div style="color:#cf63cf">Utilisation des lutins</div>
-                                            <div class="text-monospace text-muted small text-justify">
-                                                Les critères et leur description sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
+                                            <div class="text-uppercase" style="color:#cf63cf">
+                                                {{$critere3_python_titre}} <sup class="ml-1" style="color:silver;cursor:pointer;"><i class="fas fa-question-circle" data-toggle="popover" data-trigger="hover" data-html="true" data-placement="right" data-content="{{$critere3_python_description}}"></i></sup>
                                             </div>
                                             <div class="row mt-2 mb-3">
                                                 <div class="col">
-                                                    <input type="range" id="{{$jeu->python_id}}_critere3" name="evaluation[{{$jeu->python_id}}]['critere3']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                                    <input type="range" id="{{$jeu->python_id}}_critere3" name="evaluation[{{$jeu->python_id}}]['critere3']" class="custom-range" value="-1" min="-1" max="5" step="1" oninput="curseur(this.id, this.value);">
                                                 </div>
-                                                <div class="col-auto text-secondary text-center" id="{{$jeu->python_id}}_critere3_note" style="width:40px;">0</div>
+                                                <div class="col-auto text-secondary text-center font-weight-bold" id="{{$jeu->python_id}}_critere3_note" style="width:40px;">
+                                                    <i class="fas fa-times text-danger"></i>
+                                                </div>
                                             </div>
 
-                                            <div style="color:#cf63cf">Originalité</div>
-                                            <div class="text-monospace text-muted small text-justify">
-                                                Les critères et leur description sont en cours de rédaction. Voir cette <a href="https://github.com/nuitducode/ORGANISATION/discussions/6" target="_blank">discussion</a>. Toutes les remarques, suggestions et contributions sont les bienvenues.
+                                            <div class="text-uppercase" style="color:#cf63cf">
+                                                {{$critere4_python_titre}} <sup class="ml-1" style="color:silver;cursor:pointer;"><i class="fas fa-question-circle" data-toggle="popover" data-trigger="hover" data-html="true" data-placement="right" data-content="{{$critere4_python_description}}"></i></sup>
                                             </div>
                                             <div class="row mt-2 mb-3">
                                                 <div class="col">
-                                                    <input type="range" id="{{$jeu->python_id}}_critere4" name="evaluation[{{$jeu->python_id}}]['critere4']" class="custom-range" value="0" min="0" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                                    <input type="range" id="{{$jeu->python_id}}_critere4" name="evaluation[{{$jeu->python_id}}]['critere4']" class="custom-range" value="-1" min="-1" max="5" step="1" oninput="curseur(this.id, this.value);">
                                                 </div>
-                                                <div class="col-auto text-secondary text-center" id="{{$jeu->python_id}}_critere4_note" style="width:40px;">0</div>
+                                                <div class="col-auto text-secondary text-center font-weight-bold" id="{{$jeu->python_id}}_critere4_note" style="width:40px;">
+                                                    <i class="fas fa-times text-danger"></i>
+                                                </div>
                                             </div>
 
                                         </div>
@@ -247,7 +263,7 @@ os.system(<span style="color:rgb(163, 190, 140); font-weight:400;">'pyxel play '
                             <input id="jury_type" name="jury_type" type="hidden" value="{{$jury_type}}" />
                             <input id="langage" name="langage" type="hidden" value="python" />
                             <input id="jeu_id" name="jeu_id" type="hidden" value="{{Crypt::encryptString($jeu->id)}}" />
-                            <button type="submit" id="inscription" class="btn btn-primary"><i class="fas fa-check"></i></button>
+                            <button type="submit" id="submit_jeu" class="btn btn-primary" disabled><i class="fas fa-check"></i></button>
                         </form>
 
                         <?php
@@ -272,7 +288,18 @@ os.system(<span style="color:rgb(163, 190, 140); font-weight:400;">'pyxel play '
 
     <script>
     function curseur(id, note) {
-        document.getElementById(id+"_note").innerHTML = note;
+        if (note == "-1") {
+            document.getElementById(id+"_note").innerHTML = '<i class="fas fa-times text-danger">';
+        }else {
+            document.getElementById(id+"_note").innerHTML = note;
+        }
+        var inputs, index, values;
+        values = []
+        inputs = document.getElementsByTagName('input');
+        for (index = 0; index < inputs.length; ++index) {
+            values.push(inputs[index].value);
+        }
+        document.getElementById('submit_jeu').disabled = values.includes("-1");
     }
     </script>
 

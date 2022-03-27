@@ -1,9 +1,9 @@
 @include('inc-top')
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="fr">
 <head>
     @include('inc-meta')
-    <title>{{ config('app.name', 'Laravel') }} | Évaluation - étape 1</title>
+    <title>Nuit du c0de | Évaluation - étape 1</title>
 </head>
 <body>
 
