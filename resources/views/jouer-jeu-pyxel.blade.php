@@ -32,7 +32,7 @@ code = <span style="color:rgb(163, 190, 140); font-weight:400;">'{{$jeu_id}}'</s
 # ================
 
 url = <span style="color:rgb(163, 190, 140); font-weight:400;">'https://www.nuitducode.net/storage/pyxapp/'</span>
-jeu = <span style="color:rgb(163, 190, 140); font-weight:400;">'jeu_'</span> + code + <span style="color:rgb(163, 190, 140); font-weight:400;">'.pyxapp'</span>
+jeu = code + <span style="color:rgb(163, 190, 140); font-weight:400;">'.pyxapp'</span>
 <span style="color:rgb(129, 161, 193); font-weight:400;">data</span> = requests.<span style="color:rgb(129, 161, 193); font-weight:400;">get</span>(url + jeu)
 with <span style="color:rgb(129, 161, 193); font-weight:400;">open</span>(jeu, <span style="color:rgb(163, 190, 140); font-weight:400;">'wb'</span>) <span style="color:rgb(129, 161, 193); font-weight:400;">as</span> file:
     file.write(<span style="color:rgb(129, 161, 193); font-weight:400;">data</span>.content)
