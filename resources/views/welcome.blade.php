@@ -14,7 +14,7 @@
 			<div class="col-md-6 offset-md-1 text-center">
 				<img src="{{ asset('img/nuitducode.svg') }}" width="140" />
 				<p class="text-monospace small" style="margin-top:-10px;font-weight:bold">~ 6<sup>e</sup> édition ~<br />
-					<b style="color:#4cbf56">du 23 avril au 11 juin 2022</b>
+					<b style="color:#4cbf56">du 30 avril au 11 juin 2022</b>
 			</div>
 
 			<div class="col-md-3 text-center">
@@ -36,7 +36,7 @@
 			<div class="col-md-6 offset-md-1">
 
 				<p class="text-monospace text-muted small text-justify">
-					La <b style="color:#2c3e50">Nuit du c0de</b> est un concours de programmation <a href="https://scratch.mit.edu/" target="_blank"><img src="{{ asset('img/scratch-logo.svg') }}" /></a> et <a href="https://www.python.org/" target="_blank"><img src="{{ asset('img/python-logo.svg') }}" /></a>. Il s'adresse à tous les établissements scolaires français (cours moyen / collège / lycée) de l'étranger et de France.
+					La <b style="color:#2c3e50">Nuit du c0de</b> est un marathon de programmation <a href="https://scratch.mit.edu/" target="_blank"><img src="{{ asset('img/scratch-logo.svg') }}" /></a> et <a href="https://www.python.org/" target="_blank"><img src="{{ asset('img/python-logo.svg') }}" /></a>. Il s'adresse à tous les établissements scolaires français (cours moyen / collège / lycée) de l'étranger et de France.
 				</p>
 				<p class="text-monospace text-muted small text-justify">
 					Chaque établissement peut inscrire autant d'élèves qu'il le souhaite. Il n'y a pas de limite sur le nombre de participants. Les inscriptions sont gratuites.
@@ -60,7 +60,7 @@
 				<p class="text-monospace text-muted small text-justify mt-2">
 					Organisation de l'édition 2022:
 					<ul class="text-monospace text-muted small text-justify">
-						<li class="mb-3">Chaque établissement organise sa <b style="color:#2c3e50">Nuit du c0de</b> entre <b style="color:#4cbf56">le 23 avril et le 11 juin 2022</b> (selon ses ressources et ses contraintes). Le Lycée Français de Tokyo (qui prend cette année le relais du Lycée Français de Taipei), organisateur de l'évènement, se charge de l'élaboration et de la diffusion de tous les documents et supports nécessaires à l'organisation du concours.</li>
+						<li class="mb-3">Chaque établissement organise sa <b style="color:#2c3e50">Nuit du c0de</b> entre <b style="color:#4cbf56">le 30 avril et le 11 juin 2022</b> (selon ses ressources et ses contraintes). Le Lycée Français de Tokyo (qui prend cette année le relais du Lycée Français de Taipei), organisateur de l'évènement, se charge de l'élaboration et de la diffusion de tous les documents et supports nécessaires à l'organisation du concours.</li>
 						<li class="mb-3">À l'issue du jeu, chaque établissement sélectionne ses équipes championnes. Elles le représenteront pour le classement international.</li>
 						<li class="mb-3">Le Lycée Français de Tokyo centralisera les jeux de toutes les équipes championnes.</li>
 						<li class="mb-3">Un classement international est établi par un jury d'enseignants.</li>
