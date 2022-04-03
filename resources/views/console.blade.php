@@ -14,7 +14,7 @@
 
             <div class="col-md-2 mt-4">
                 @if (Auth::user()->is_admin == 1)
-                    <a class=" btn btn-danger btn-sm btn-block text-left mb-3" href="/console/admin" role="button"><i class="fas fa-shield-alt pr-2"></i> ADMIN</a>
+                    <a class=" btn btn-danger btn-sm text-left mb-3" href="/console/admin" role="button"><i class="fas fa-shield-alt"></i></a>
                 @endif
 
                 <a class=" btn btn-info btn-sm btn-block text-left" href="https://nuitducode.github.io/DOCUMENTATION/organisation/" role="button" target="_blank">organisation</a>
