@@ -83,11 +83,11 @@
                             $mois = $datetime->format('m');
                             $heure = $datetime->format('H').':'.$datetime->format('i');
                             ?>
-                            <table class="table table-borderless table-sm table-responsive">
+                            <table class="table table-borderless table-sm table-responsive mt-1">
                                 <tr>
                                     <td></td>
-                                    <td class="small text-center text-muted"><br />Jour</td>
-                                    <td class="small text-center text-muted"><br />Mois</td>
+                                    <td class="text-center text-muted" style="line-height:1em;font-size:70%"><br />Jour</td>
+                                    <td class="text-center text-muted" style="line-height:1em;font-size:70%"><br />Mois</td>
                                 </tr>
                                 <tr>
                                     <td class="text-right">Date</td>
@@ -125,11 +125,11 @@
                         <div class="col-md-4">
 
                             <h3 class="m-0">SCRATCH</h3>
-                            <table class="table table-borderless table-sm table-responsive">
+                            <table class="table table-borderless table-sm table-responsive mt-1">
                                 <tr>
                                     <td></td>
-                                    <td class="small text-center text-muted">Nombre<br />d'équipes</td>
-                                    <td class="small text-center text-muted">Nombre<br />d'élèves</td>
+                                    <td class="text-center text-muted" style="line-height:1em;font-size:70%">Nombre<br />d'équipes</td>
+                                    <td class="text-center text-muted" style="line-height:1em;font-size:70%">Nombre<br />d'élèves</td>
                                 </tr>
                                 <tr>
                                     <td class="text-right" style="line-height:1em">Cycle 3<br /><span style="font-size:70%;color:gray">CM1 > 6<sup>e</sup></span></td>
@@ -153,11 +153,11 @@
                         <div class="col-md-4">
 
                             <h3 class="m-0">PYTHON</h3>
-                            <table class="table table-borderless table-sm table-responsive">
+                            <table class="table table-borderless table-sm table-responsive mt-1">
                                 <tr>
                                     <td></td>
-                                    <td class="small text-center text-muted">Nombre<br />d'équipes</td>
-                                    <td class="small text-center text-muted">Nombre<br />d'élèves</td>
+                                    <td class="text-center text-muted" style="line-height:1em;font-size:70%">Nombre<br />d'équipes</td>
+                                    <td class="text-center text-muted" style="line-height:1em;font-size:70%">Nombre<br />d'élèves</td>
                                 </tr>
                                 <tr>
                                     <td class="text-right">1<sup>re</sup> NSI <sup><i class="fas fa-question-circle text-muted" data-boundary="window" data-toggle="tooltip" data-placement="auto" title="Élèves de Première NSI ou élèves ayant les connaissances suffisantes en programmation impérative Python"></i></sup></td>
