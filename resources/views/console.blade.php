@@ -9,14 +9,10 @@
 
     @include('inc-nav-console')
 
-	<div class="container mt-3 mb-5">
+	<div class="container mb-5">
 		<div class="row">
 
-            <div class="col-md-2 mt-4">
-                @if (Auth::user()->is_admin == 1)
-                    <a class=" btn btn-danger btn-sm text-left mb-3" href="/console/admin" role="button"><i class="fas fa-shield-alt"></i></a>
-                @endif
-
+            <div class="col-md-2 mt-5">
                 <a class=" btn btn-info btn-sm btn-block text-left" href="https://nuitducode.github.io/DOCUMENTATION/organisation/" role="button" target="_blank">organisation</a>
                 <a class=" btn btn-info btn-sm btn-block text-left" href="https://nuitducode.github.io/DOCUMENTATION/regles-conseils/" role="button" target="_blank">règles et conseils</a>
                 <a class=" btn btn-info btn-sm btn-block text-left" href="https://www.nuitducode.net/affiches" role="button" target="_blank">affiches</a>
@@ -26,6 +22,10 @@
 
                 <a class=" btn btn-light btn-sm btn-block text-left mt-4" href="/console/fiche-inscription" role="button"><i class="far fa-address-card pr-2"></i> fiche d'inscription</a>
                 <a class=" btn btn-light btn-sm btn-block text-left" href="https://github.com/nuitducode/ORGANISATION/discussions" target="_blank" role="button"><i class="far fa-comment-alt pr-2"></i> discussions</a>
+
+                @if (Auth::user()->is_admin == 1)
+                    <a class=" btn btn-danger btn-sm text-left mt-3" href="/console/admin" role="button"><i class="fas fa-shield-alt"></i></a>
+                @endif
 
             </div>
 
@@ -39,7 +39,7 @@
 
                 <h2>ENREGISTREMENT ET ÉVALUATION DES JEUX</h2>
                 <div class="row">
-                    <div class="col-md-4 offset-md-4">
+                    <div class="col-md-4 offset-md-4 mt-2 mb-3">
                         <a class=" btn btn-success btn-block" href="/console/ndc" role="button">Nuit du c0de</a>
                         <a class=" btn btn-light btn-sm btn-block" href="/console/sltn" role="button">Sélections</a>
                         <a class=" btn btn-light btn-sm btn-block mt-2" style="opacity:0.8" href="/console/bas" role="button">Bac à sable</a>
