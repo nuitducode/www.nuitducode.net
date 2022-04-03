@@ -86,23 +86,23 @@
                             <table class="table table-borderless table-sm table-responsive mt-1">
                                 <tr>
                                     <td></td>
-                                    <td class="text-center text-muted" style="line-height:1em;font-size:70%"><br />Jour</td>
                                     <td class="text-center text-muted" style="line-height:1em;font-size:70%"><br />Mois</td>
+                                    <td class="text-center text-muted" style="line-height:1em;font-size:70%"><br />Jour</td>
                                 </tr>
                                 <tr>
                                     <td class="text-right">Date</td>
-                                    <td class="text-center">
-                                        <select id="ndc_jour" name="ndc_jour" class="form-control form-control-sm">
-                                            @for ($j = 1; $j <= 31; $j++)
-                                            <option value="{{$j}}" @if($jour == $j) selected @endif>{{ $j }}</option>
-                                            @endfor
-                                        </select>
-                                    </td>
                                     <td class="text-center">
                                         <select id="ndc_mois" name="ndc_mois" class="form-control form-control-sm">
                                             <option value="04" @if($mois == '04') selected @endif>avril</option>
                                             <option value="05" @if($mois == '05') selected @endif>mai</option>
                                             <option value="06" @if($mois == '06') selected @endif>juin</option>
+                                        </select>
+                                    </td>
+                                    <td class="text-center">
+                                        <select id="ndc_jour" name="ndc_jour" class="form-control form-control-sm">
+                                            @for ($j = 1; $j <= 31; $j++)
+                                            <option value="{{$j}}" @if($jour == $j) selected @endif>{{ $j }}</option>
+                                            @endfor
                                         </select>
                                     </td>
                                 </tr>
