@@ -38,16 +38,13 @@
 				@endif
 
                 <h2>ENREGISTREMENT ET ÉVALUATION DES JEUX</h2>
-
-                    <div class="row">
-
-                        <div class="col-md-4 offset-md-4">
-                            <a class=" btn btn-success btn-block" href="/console/ndc" role="button">Nuit du c0de</a>
-                            <a class=" btn btn-light btn-sm btn-block" href="/console/sltn" role="button">Sélections</a>
-                            <a class=" btn btn-light btn-sm btn-block mt-2" style="opacity:0.8" href="/console/bas" role="button">Bac à sable</a>
-                        </div>
+                <div class="row">
+                    <div class="col-md-4 offset-md-4">
+                        <a class=" btn btn-success btn-block" href="/console/ndc" role="button">Nuit du c0de</a>
+                        <a class=" btn btn-light btn-sm btn-block" href="/console/sltn" role="button">Sélections</a>
+                        <a class=" btn btn-light btn-sm btn-block mt-2" style="opacity:0.8" href="/console/bas" role="button">Bac à sable</a>
                     </div>
-
+                </div>
 
 
                 <h2>PRÉPARATION</h2>
@@ -71,7 +68,7 @@
                 <h2 class="mb-0">DONNÉES<sup class="text-danger">*</sup></h2>
                 <div class="text-danger text-monospace" style="font-size:70%">à mettre à jour au fur et à mesure que les données sont connues</div>
 
-                <form method="POST" action="{{ route('fiche-inscription-details_post') }}" style="border:1px solid #dfdfdf;border-radius:4px;padding:10px;">
+                <form method="POST" action="{{ route('fiche-inscription-details_post') }}" style="border:1px solid #dfdfdf;border-radius:4px;padding:20px;">
                     @csrf
 
                     <div class="row">
