@@ -71,7 +71,7 @@
                 <h2 class="mb-0">DONNÉES<sup class="text-danger">*</sup></h2>
                 <div class="text-danger text-monospace" style="font-size:70%">à mettre à jour au fur et à mesure que les données sont connues</div>
 
-                <form method="POST" action="{{ route('fiche-inscription-details_post') }}" style="border:1px solid #dfdfdf;border-radius:4px;padding:20px;">
+                <form method="POST" action="{{ route('fiche-inscription-details_post') }}" style="border:1px solid #dfdfdf;border-radius:4px;padding:10px;">
                     @csrf
 
                     <div class="row">
@@ -110,7 +110,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="text-right pt-3">Heure de fin</td>
+                                    <td class="text-right pt-3">Cloture</td>
                                     <td class="text-center pt-3">
                                         <select id="ndc_heure_fin" name="ndc_heure_fin" class="form-control form-control-sm">
                                             @for ($h = 12; $h <= 23; $h++)
@@ -135,12 +135,12 @@
                                     <td class="small text-center text-muted">Nombre<br />d'élèves</td>
                                 </tr>
                                 <tr>
-                                    <td class="text-right">Cycle 3 <small>(CM1 > 6<sup>e</sup>)</small></td>
+                                    <td class="text-right" style="line-height:1em">Cycle 3 <small>(CM1 > 6<sup>e</sup>)</small></td>
                                     <td class="text-center"><input id="scratch_nb_equipes_c3" name="scratch_nb_equipes_c3" class="form-control form-control-sm" style="display:inline;width:40px" value="{{Auth::user()->scratch_nb_equipes_c3}}" /></td>
                                     <td class="text-center"><input id="scratch_nb_eleves_c3" name="scratch_nb_eleves_c3" class="form-control form-control-sm" style="display:inline;width:40px" value="{{Auth::user()->scratch_nb_eleves_c3}}" /></td>
                                 </tr>
                                 <tr>
-                                    <td class="text-right">Cycle 4 <small>(5<sup>e</sup> > 3<sup>e</sup>)</small></td>
+                                    <td class="text-right" style="line-height:1em">Cycle 4 <small>(5<sup>e</sup> > 3<sup>e</sup>)</small></td>
                                     <td class="text-center"><input id="scratch_nb_equipes_c4" name="scratch_nb_equipes_c4" class="form-control form-control-sm" style="display:inline;width:40px" value="{{Auth::user()->scratch_nb_equipes_c4}}" /></td>
                                     <td class="text-center"><input id="scratch_nb_eleves_c4" name="scratch_nb_eleves_c4" class="form-control form-control-sm" style="display:inline;width:40px" value="{{Auth::user()->scratch_nb_eleves_c4}}" /></td>
                                 </tr>
@@ -163,12 +163,12 @@
                                     <td class="small text-center text-muted">Nombre<br />d'élèves</td>
                                 </tr>
                                 <tr>
-                                    <td class="text-right">Première NSI <sup><i class="fas fa-question-circle text-muted" data-boundary="window" data-toggle="tooltip" data-placement="auto" title="Élèves de Première NSI ou élèves ayant les connaissances suffisantes en programmation impérative Python"></i></sup></td>
+                                    <td class="text-right">1<sup>re</sup> NSI <sup><i class="fas fa-question-circle text-muted" data-boundary="window" data-toggle="tooltip" data-placement="auto" title="Élèves de Première NSI ou élèves ayant les connaissances suffisantes en programmation impérative Python"></i></sup></td>
                                     <td class="text-center"><input  id="python_nb_equipes_pi" name="python_nb_equipes_pi" class="form-control form-control-sm" style="display:inline;width:40px" value="{{Auth::user()->python_nb_equipes_pi}}" /></td>
                                     <td class="text-center"><input  id="python_nb_eleves_pi" name="python_nb_eleves_pi" class="form-control form-control-sm" style="display:inline;width:40px" value="{{Auth::user()->python_nb_eleves_pi}}" /></td>
                                 </tr>
                                 <tr>
-                                    <td class="text-right">Terminale NSI <sup><i class="fas fa-question-circle text-muted" data-boundary="window" data-toggle="tooltip" data-placement="auto" title="Élèves de Terminale NSI ou élèves ayant les connaissances suffisantes en programmation orientée objet Python"></i></sup></td>
+                                    <td class="text-right">Tle NSI <sup><i class="fas fa-question-circle text-muted" data-boundary="window" data-toggle="tooltip" data-placement="auto" title="Élèves de Terminale NSI ou élèves ayant les connaissances suffisantes en programmation orientée objet Python"></i></sup></td>
                                     <td class="text-center"><input  id="python_nb_equipes_poo" name="python_nb_equipes_poo" class="form-control form-control-sm" style="display:inline;width:40px" value="{{Auth::user()->python_nb_equipes_poo}}" /></td>
                                     <td class="text-center"><input  id="python_nb_eleves_poo" name="python_nb_eleves_poo" class="form-control form-control-sm" style="display:inline;width:40px" value="{{Auth::user()->python_nb_eleves_poo}}" /></td>
                                 </tr>
