@@ -68,7 +68,7 @@
                 <h2 class="mb-0">DONNÉES<sup class="text-danger">*</sup></h2>
                 <div class="text-danger text-monospace" style="font-size:70%">à mettre à jour au fur et à mesure que les données sont connues</div>
 
-                <form method="POST" action="{{ route('fiche-inscription-details_post') }}" style="border:1px solid #dfdfdf;border-radius:4px;padding:20px;">
+                <form method="POST" action="{{ route('fiche-inscription-details_post') }}" style="border:1px solid #dfdfdf;border-radius:4px;padding:20px;background-color:#f3f5f7;">
                     @csrf
 
                     <div class="row">
