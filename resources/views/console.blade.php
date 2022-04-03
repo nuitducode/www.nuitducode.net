@@ -12,7 +12,7 @@
 	<div class="container mt-3 mb-5">
 		<div class="row">
 
-            <div class="col-md-2 mt-4 pl-4 pr-4">
+            <div class="col-md-2 mt-4">
                 @if (Auth::user()->is_admin == 1)
                     <a class=" btn btn-danger btn-sm btn-block text-left mb-3" href="/console/admin" role="button"><i class="fas fa-shield-alt pr-2"></i> ADMIN</a>
                 @endif
@@ -29,7 +29,7 @@
 
             </div>
 
-			<div class="col-md-10">
+			<div class="col-md-9 offset-md-1">
 
 				@if (session('status'))
 					<div class="text-success text-monospace text-center pb-4" role="alert">
