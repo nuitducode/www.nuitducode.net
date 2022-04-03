@@ -85,7 +85,7 @@
 						<svg xmlns="http://www.w3.org/2000/svg" width="150" viewBox="0 0 241 58">
 							<g aria-label="scratchbox" font-size="1.5em" color="#ffffff" fill="#ffffff" font-family="Nunito" font-weight="400" letter-spacing="0" style="line-height:1.25" word-spacing="0">
 						    	<path fill="#cf63cf" stroke="#bd42bd" d="M0.5 4.5a4 4 0 0 1 4-4h8c2 0 3 1 4 2l4 4c1 1 2 2 4 2h12c2 0 3-1 4-2l4-4c1-1 2-2 4-2h188a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-188c-2 0-3 1-4 2l-4 4c-1 1-2 2-4 2h-12c-2 0-3-1-4-2l-4-4c-1-1-2-2-4-2h-8a4 4 0 0 1-4-4z"/>
-								<text x="0.8em" y="1.6em">présentation</text>
+								<text x="0.7em" y="1.6em">Présentation</text>
 							</g>
 						</svg>
 					</a>
@@ -96,7 +96,7 @@
 						<svg xmlns="http://www.w3.org/2000/svg" width="150" viewBox="0 0 241 58">
 							<g aria-label="scratchbox" font-size="1.5em" color="#ffffff" fill="#ffffff" font-family="Nunito" font-weight="400" letter-spacing="0" style="line-height:1.25" word-spacing="0">
 						    	<path fill="#cf63cf" stroke="#bd42bd" d="M0.5 4.5a4 4 0 0 1 4-4h8c2 0 3 1 4 2l4 4c1 1 2 2 4 2h12c2 0 3-1 4-2l4-4c1-1 2-2 4-2h188a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-188c-2 0-3 1-4 2l-4 4c-1 1-2 2-4 2h-12c-2 0-3-1-4-2l-4-4c-1-1-2-2-4-2h-8a4 4 0 0 1-4-4z"/>
-								<text x="0.8em" y="1.6em">organisation</text>
+								<text x="0.7em" y="1.6em">Organisation</text>
 							</g>
 						</svg>
 					</a>
@@ -107,7 +107,7 @@
 						<svg xmlns="http://www.w3.org/2000/svg" width="150" viewBox="0 0 241 58">
 							<g aria-label="scratchbox" font-size="1.5em" color="#ffffff" fill="#ffffff" font-family="Nunito" font-weight="400" letter-spacing="0" style="line-height:1.25" word-spacing="0">
 						    	<path fill="#cf63cf" stroke="#bd42bd" d="M0.5 4.5a4 4 0 0 1 4-4h8c2 0 3 1 4 2l4 4c1 1 2 2 4 2h12c2 0 3-1 4-2l4-4c1-1 2-2 4-2h188a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-188c-2 0-3 1-4 2l-4 4c-1 1-2 2-4 2h-12c-2 0-3-1-4-2l-4-4c-1-1-2-2-4-2h-8a4 4 0 0 1-4-4z"/>
-								<text x="0.8em" y="1.6em">règles et conseils</text>
+								<text x="0.7em" y="1.6em">Règles et conseils</text>
 							</g>
 						</svg>
 					</a>
@@ -118,7 +118,7 @@
 						<svg xmlns="http://www.w3.org/2000/svg" width="150" viewBox="0 0 241 58">
 							<g aria-label="scratchbox" font-size="1.5em" color="#ffffff" fill="#ffffff" font-family="Nunito" font-weight="400" letter-spacing="0" style="line-height:1.25" word-spacing="0">
 						    	<path fill="#cf63cf" stroke="#bd42bd" d="M0.5 4.5a4 4 0 0 1 4-4h8c2 0 3 1 4 2l4 4c1 1 2 2 4 2h12c2 0 3-1 4-2l4-4c1-1 2-2 4-2h188a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-188c-2 0-3 1-4 2l-4 4c-1 1-2 2-4 2h-12c-2 0-3-1-4-2l-4-4c-1-1-2-2-4-2h-8a4 4 0 0 1-4-4z"/>
-								<text x="0.8em" y="1.6em">éditions en vidéo</text>
+								<text x="0.7em" y="1.6em">Éditions en vidéo</text>
 							</g>
 						</svg>
 					</a>
@@ -129,7 +129,7 @@
 						<svg xmlns="http://www.w3.org/2000/svg" width="150" viewBox="0 0 241 58">
 							<g aria-label="scratchbox" font-size="1.5em" color="#ffffff" fill="#ffffff" font-family="Nunito" font-weight="400" letter-spacing="0" style="line-height:1.25" word-spacing="0">
 						    	<path fill="#cf63cf" stroke="#bd42bd" d="M0.5 4.5a4 4 0 0 1 4-4h8c2 0 3 1 4 2l4 4c1 1 2 2 4 2h12c2 0 3-1 4-2l4-4c1-1 2-2 4-2h188a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-188c-2 0-3 1-4 2l-4 4c-1 1-2 2-4 2h-12c-2 0-3-1-4-2l-4-4c-1-1-2-2-4-2h-8a4 4 0 0 1-4-4z"/>
-								<text x="0.8em" y="1.6em">affiches</text>
+								<text x="0.7em" y="1.6em">Affiches</text>
 							</g>
 						</svg>
 					</a>
@@ -140,7 +140,7 @@
 						<svg xmlns="http://www.w3.org/2000/svg" width="150" viewBox="0 0 241 58">
 							<g aria-label="scratchbox" font-size="1.5em" color="#ffffff" fill="#ffffff" font-family="Nunito" font-weight="400" letter-spacing="0" style="line-height:1.25" word-spacing="0">
 								<path fill="#4c97ff" stroke="#3373cc" d="M0.5 4.5a4 4 0 0 1 4-4h8c2 0 3 1 4 2l4 4c1 1 2 2 4 2h12c2 0 3-1 4-2l4-4c1-1 2-2 4-2h188a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-188c-2 0-3 1-4 2l-4 4c-1 1-2 2-4 2h-12c-2 0-3-1-4-2l-4-4c-1-1-2-2-4-2h-8a4 4 0 0 1-4-4z"/>
-								<text x="0.8em" y="1.6em">entrainement Scratch</text>
+								<text x="0.7em" y="1.6em">Entraînement Scratch</text>
 							</g>
 						</svg>
 					</a>
@@ -151,7 +151,7 @@
 						<svg xmlns="http://www.w3.org/2000/svg" width="150" viewBox="0 0 241 58">
 							<g aria-label="scratchbox" font-size="1.5em" color="#ffffff" fill="#ffffff" font-family="Nunito" font-weight="400" letter-spacing="0" style="line-height:1.25" word-spacing="0">
 								<path fill="#4c97ff" stroke="#3373cc" d="M0.5 4.5a4 4 0 0 1 4-4h8c2 0 3 1 4 2l4 4c1 1 2 2 4 2h12c2 0 3-1 4-2l4-4c1-1 2-2 4-2h188a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-188c-2 0-3 1-4 2l-4 4c-1 1-2 2-4 2h-12c-2 0-3-1-4-2l-4-4c-1-1-2-2-4-2h-8a4 4 0 0 1-4-4z"/>
-								<text x="0.8em" y="1.6em">entrainement Python</text>
+								<text x="0.7em" y="1.6em">Entraînement Python</text>
 							</g>
 						</svg>
 					</a>
@@ -162,7 +162,7 @@
 						<svg xmlns="http://www.w3.org/2000/svg" width="150" viewBox="0 0 241 58">
 							<g aria-label="scratchbox" font-size="1.5em" color="#ffffff" fill="#ffffff" font-family="Nunito" font-weight="400" letter-spacing="0" style="line-height:1.25" word-spacing="0">
 						    	<path fill="#9966ff" stroke="#774dcb" d="M0.5 4.5a4 4 0 0 1 4-4h8c2 0 3 1 4 2l4 4c1 1 2 2 4 2h12c2 0 3-1 4-2l4-4c1-1 2-2 4-2h188a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-188c-2 0-3 1-4 2l-4 4c-1 1-2 2-4 2h-12c-2 0-3-1-4-2l-4-4c-1-1-2-2-4-2h-8a4 4 0 0 1-4-4z"/>
-								<text x="0.8em" y="1.6em">discussions</text>
+								<text x="0.7em" y="1.6em">Discussions</text>
 							</g>
 						</svg>
 					</a>
