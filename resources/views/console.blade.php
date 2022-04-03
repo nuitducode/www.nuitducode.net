@@ -132,12 +132,12 @@
                                     <td class="small text-center text-muted">Nombre<br />d'élèves</td>
                                 </tr>
                                 <tr>
-                                    <td class="text-right" style="line-height:1em">Cycle 3 <small>(CM1 > 6<sup>e</sup>)</small></td>
+                                    <td class="text-right" style="line-height:1em">Cycle 3<br /><span style="font-size:70%;color:gray">CM1 > 6<sup>e</sup></span></td>
                                     <td class="text-center"><input id="scratch_nb_equipes_c3" name="scratch_nb_equipes_c3" class="form-control form-control-sm" style="display:inline;width:40px" value="{{Auth::user()->scratch_nb_equipes_c3}}" /></td>
                                     <td class="text-center"><input id="scratch_nb_eleves_c3" name="scratch_nb_eleves_c3" class="form-control form-control-sm" style="display:inline;width:40px" value="{{Auth::user()->scratch_nb_eleves_c3}}" /></td>
                                 </tr>
                                 <tr>
-                                    <td class="text-right" style="line-height:1em">Cycle 4 <small>(5<sup>e</sup> > 3<sup>e</sup>)</small></td>
+                                    <td class="text-right" style="line-height:1em">Cycle 4<br /><span style="font-size:70%;color:gray">5<sup>e</sup> > 3<sup>e</sup></span></td>
                                     <td class="text-center"><input id="scratch_nb_equipes_c4" name="scratch_nb_equipes_c4" class="form-control form-control-sm" style="display:inline;width:40px" value="{{Auth::user()->scratch_nb_equipes_c4}}" /></td>
                                     <td class="text-center"><input id="scratch_nb_eleves_c4" name="scratch_nb_eleves_c4" class="form-control form-control-sm" style="display:inline;width:40px" value="{{Auth::user()->scratch_nb_eleves_c4}}" /></td>
                                 </tr>
