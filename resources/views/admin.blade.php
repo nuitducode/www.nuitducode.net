@@ -62,7 +62,7 @@ if (Auth::user()->is_admin != 1) {
                 }
                 @endphp
             </div>
-            {{$n}}
+            <small class="text-muted">{{$n}}</small>
         </div>
 
         <div class="row mt-4">
