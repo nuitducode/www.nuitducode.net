@@ -52,11 +52,16 @@ if (Auth::user()->is_admin != 1) {
 
         <div class="row p-3">
             <div class="col-md-12 p-3 text-monospace small text-muted" style="background-color:white;border:1px silver solid;border-radius:4px;">
-                @foreach($etablissements AS $etablissement)
-                    @if ($etablissement->ndc_date == NULL AND !in_array($etablissement->email, ['labbal@lfitokyo.org', 'laurentabbal@gmail.com', 'liban2@nuitducode.net', 'liban3@nuitducode.net', 'liban4@nuitducode.net', 'liban5@nuitducode.net']))
-                        {{$etablissement->email}};
-                    @endif
-                @endforeach
+                @php
+                $n = 0;
+                foreach($etablissements AS $etablissement){
+                    if ($etablissement->ndc_date == NULL AND !in_array($etablissement->email, ['labbal@lfitokyo.org', 'laurentabbal@gmail.com', 'liban1@nuitducode.net', 'liban2@nuitducode.net', 'liban3@nuitducode.net', 'liban4@nuitducode.net', 'liban5@nuitducode.net', 'liban6@nuitducode.net', 'liban7@nuitducode.net', 'liban8@nuitducode.net', 'liban9@nuitducode.net', 'liban10@nuitducode.net','schaffhauserzell@orange.fr'])){
+                        echo $etablissement->email;
+                        $n++
+                    }
+                }
+                echo $n;
+                @endphp
             </div>
         </div>
 
