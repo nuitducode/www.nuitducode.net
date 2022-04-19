@@ -60,9 +60,9 @@ if (Auth::user()->is_admin != 1) {
                         $n++;
                     }
                 }
-                echo $n;
                 @endphp
             </div>
+            {{$n}}
         </div>
 
         <div class="row mt-4">
