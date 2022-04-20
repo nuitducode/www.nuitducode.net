@@ -37,8 +37,9 @@ if (Auth::user()->is_admin != 1) {
 				$nb_valide = App\Models\User::where('ndc_date', '!=', 'NULL')->count();
 
 
-
-dump($etablissements);
+echo "<pre>";
+print_r($etablissements);
+echo "</pre>";
 
                 ?>
                 <div class="row mt-1 p-3">
