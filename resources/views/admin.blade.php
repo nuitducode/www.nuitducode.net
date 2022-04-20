@@ -36,6 +36,7 @@ if (Auth::user()->is_admin != 1) {
                 $etablissements = App\Models\User::orderBy('ndc_date')->get();
 				$nb_valide = App\Models\User::where('ndc_date', '!=', 'NULL')->count();
                 ?>
+
                 <div class="row mt-1 p-3">
 					<div class="text-monospace font-weight-bold text-success mb-3">{{$nb_valide }}</div>
                     <div class="col-md-12 p-3 text-monospace small text-muted" style="background-color:white;border:1px silver solid;border-radius:4px;">
@@ -105,7 +106,7 @@ if (Auth::user()->is_admin != 1) {
                                 <td class="text-center">{{$etablissement->python_nb_equipes_pi}}</td>
                                 <td class="text-center">{{$etablissement->python_nb_equipes_poo}}</td>
                             </tr>
-                            @endforeach
+                            @endforeach                            
                         </tbody>
                     </table>
                 </div>
