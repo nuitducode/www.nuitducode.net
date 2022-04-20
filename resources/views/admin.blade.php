@@ -6,10 +6,10 @@ if (Auth::user()->is_admin != 1) {
 
 @include('inc-top')
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="fr">
 <head>
     @include('inc-meta')
-    <title>{{ config('app.name', 'Laravel') }} | ADMIN</title>
+    <title>ADMIN</title>
 </head>
 <body>
 
