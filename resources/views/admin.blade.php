@@ -33,14 +33,8 @@ if (Auth::user()->is_admin != 1) {
                 <h1 class="mb-0">ADMIN</h1>
 
                 <?php
-                $etablissements = App\Models\User::all();
+                $etablissements = App\Models\User::orderBy('ndc_date')->get();
 				$nb_valide = App\Models\User::where('ndc_date', '!=', 'NULL')->count();
-
-
-echo "<pre>";
-print_r($etablissements);
-echo "</pre>";
-
                 ?>
                 <div class="row mt-1 p-3">
 					<div class="text-monospace font-weight-bold text-success mb-3">{{$nb_valide }}</div>
