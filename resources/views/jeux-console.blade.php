@@ -56,13 +56,20 @@
                 <h2>Enregistrement des jeux</h2>
                 <ul class="text-justify">
                     <li>
-                        Soit les élèves enregistrent eux-mêmes leur jeu Scratch ou Python.<br /><u>Pour Scratch</u><br />Après avoir décidé du compte qui hébergera le jeu  (compte d'un des membres de l'équipe, ou compte fourni par les organisateurs) et après avoir "remixé" l'univers sur lequel l'équipe va travailler, l'équipe enregistre son jeu en utilisant l'adresse ci-dessous qui sera fournie aux élèves.<br /><u>Pour Python</u><br />...<br />L'enregistrement du jeu peut se faire en début ou en fin d'événement.<br />
-                        <div class="p-3 text-center" style="background-color:white;border:1px silver solid; border-radius:4px;">
+                        <u>Pour Scratch</u><br />
+                        Après avoir décidé du compte qui hébergera le jeu  (compte d'un des membres de l'équipe ou compte fourni par les organisateurs) et après avoir "remixé" l'univers avec lequel l'équipe va travailler, l'équipe enregistre son jeu en utilisant le lien ci-dessous qui sera fourni aux élèves.<br />
+                        <u>Pour Python / Pyxel</u><br />
+                        Avant d'être déposé sur le site, le jeu doit être mis au format <code>.pyxapp</code> avec la commande suivante :
+                        <div class="text-center code"><code>pyxel package APP_ROOT_DIR STARTUP_SCRIPT_FILE</code></div>
+                        Si l'application doit inclure des ressources ou des modules additionnels, ils doivent être mis dans le dossier de l'application. Ensuite, l’application créée peut être exécutée avec la commande suivante :
+                        <div class="text-center code"><code>pyxel play PYXEL_APP_FILE</code></div>
+                        L'équipe dépose son jeu au format <code>.pyxapp</code> en utilisant le lien ci-dessous qui sera fourni aux élèves.
+                        <div class="mt-1 p-3 text-center" style="background-color:white;border:1px silver solid; border-radius:4px;">
                             Lien à fournir aux élèves pour qu'ils enregistrent leurs jeux : <kbd><a href="/{{request()->segment(2)}}/{{strtoupper(Auth::user()->jeton)}}" class="text-monospace text-success" target="_blank">https://www.nuitducode.net/{{request()->segment(2)}}/{{strtoupper(Auth::user()->jeton)}}</a></kbd>
                         </div>
                     </li>
                     <li class="mt-3">
-                        Soit les organisateurs enregistrent les jeux par lots depuis cette interface en cliquant sur "enregistrer des jeux".<br />Pour ce faire, chaque équipe devra partager son jeu et envoyer aux organisateurs le lien ou l'identifiant du jeu. Les organisateurs peuvent enregistrer directement ces identifiants, ou "remixer" d'abord tous les jeux dans un "studio" Scratch créé pour l'occasion puis ensuite enregistrer les identifiant des jeux "remixés".
+                        Les organisateurs peuvent enregistrer eux-mêmes les jeux Scratch par lots en cliquant sur le bouton "Enregistrer des jeux Scratch" ci-dessous. Pour ce faire, chaque équipe devra partager son jeu et envoyer aux organisateurs le lien ou l'identifiant du jeu. Les organisateurs peuvent enregistrer directement ces identifiants, ou "remixer" d'abord tous les jeux dans un "studio" Scratch créé pour l'occasion puis ensuite enregistrer les identifiant des jeux "remixés".
                         <div class="mt-2 text-center">
                             <a class="btn btn-success btn-sm text-monospace" data-toggle="collapse" href="#collapse" role="button" aria-expanded="false" aria-controls="collapse">Enregistrer des jeux Scratch</a>
                         </div>

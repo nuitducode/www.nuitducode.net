@@ -37,12 +37,24 @@
 					</div>
 				@endif
 
-                <h2>ENREGISTREMENT ET ÉVALUATION DES JEUX</h2>
-                <div class="row">
-                    <div class="col-md-4 offset-md-4 mt-2 mb-3">
-                        <a class=" btn btn-success btn-block" href="/console/ndc" role="button">Nuit du c0de</a>
-                        <a class=" btn btn-light btn-sm btn-block" href="/console/sltn" role="button">Sélections</a>
-                        <a class=" btn btn-light btn-sm btn-block mt-2" style="opacity:0.8" href="/console/bas" role="button">Bac à sable</a>
+                <h2 class="m-0">NUIT DU C0DE 2022</h2>
+                <div class="small text-monospace" style="color:silver">2 mai - 11 juin</div>
+                <div style="border:1px solid #dfdfdf;border-radius:4px;padding:20px;">
+                    <div class="row">
+                        <div class="col-md-4 mt-2">
+                            <a class=" btn btn-success btn-block" href="/console/ndc" role="button">Enregistrement et Évaluation<br />des Jeux</a>
+                        </div>
+                        <div class="col-md-4 mt-2">
+                            <a class=" btn btn-light btn-block" href="https://github.com/nuitducode/DOCUMENTATION/raw/main/regles-et-conseils-scratch.pdf" role="button">Règles et Conseils<br />Scratch</a>
+                        </div>
+                        <div class="col-md-4 mt-2">
+                            <a class=" btn btn-light btn-block" href="https://github.com/nuitducode/DOCUMENTATION/raw/main/regles-et-conseils-python.pdf" role="button">Règles et Conseils<br />Python</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 text-center text-monospace small" style="color:silver;font-size:70%"></div>
+                        <div class="col-md-4 text-center text-monospace small" style="color:silver;font-size:70%">à imprimer et distribuer</div>
+                        <div class="col-md-4 text-center text-monospace small" style="color:silver;font-size:70%">à imprimer et distribuer</div>
                     </div>
                 </div>
 
@@ -64,6 +76,14 @@
                     <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2"><span><i class="fas fa-angle-right text-danger"></i> Sélection des élèves (si le nombre d'élèves intéressés est trop grand)</span></li>
                     <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2"><span><i class="fas fa-angle-right text-danger"></i> Création des équipes qui participeront à l'événement (indiquer, ci-dessous, le nombre d'équipes et d'élèves pour chaque catégories, mettre 0 pour les catégories sans participants)</span></li>
                 </ul>
+
+                <h2 class="m-0">SÉLECTIONS</h2>
+                <div class="row">
+                    <div class="col-md-4 offset-md-4 mt-2 mb-3">
+                        <a class=" btn btn-light btn-sm btn-block" href="/console/sltn" role="button">Enregistrement et évaluation des jeux</a>
+                        <a class=" btn btn-light btn-sm btn-block mt-2" style="opacity:0.8" href="/console/bas" role="button">Bac à sable</a>
+                    </div>
+                </div>
 
                 <h2 class="mb-0">DONNÉES<sup class="text-danger">*</sup></h2>
                 <div class="text-danger text-monospace" style="font-size:70%">à mettre à jour au fur et à mesure que les données sont connues</div>
