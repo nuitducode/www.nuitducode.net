@@ -39,22 +39,27 @@
 
                 <h2 class="m-0">NUIT DU C0DE 2022</h2>
                 <div class="small text-monospace" style="color:silver">2 mai - 11 juin</div>
-                <div style="border:1px solid #dfdfdf;border-radius:4px;padding:20px;">
+                <div style="border:1px solid #dfdfdf;border-radius:4px;padding:10px;">
                     <div class="row">
-                        <div class="col-md-4 mt-2">
-                            <a class=" btn btn-success btn-block" href="/console/ndc" role="button">Enregistrement et Évaluation<br />des Jeux</a>
+                        <div class="col-4">
+                            <a class=" btn btn-success btn-block" href="/console/ndc" role="button">Enregistrement<br />et Évaluation<br />des Jeux</a>
                         </div>
-                        <div class="col-md-4 mt-2">
-                            <a class=" btn btn-light btn-block" href="https://github.com/nuitducode/DOCUMENTATION/raw/main/regles-et-conseils-scratch.pdf" role="button">Règles et Conseils<br />Scratch</a>
+                        <div class="col-2">
+                            <a class=" btn btn-light btn-sm" href="https://github.com/nuitducode/DOCUMENTATION/raw/main/regles-et-conseils-scratch.pdf" role="button">Règles et Conseils<br /><span style="font-size:80%;color:gray">Scratch</span></a>
+                            <div class="text-center text-monospace mt-1" style="color:silver;font-size:55%">à distribuer (format papier ou numérique)</div>
                         </div>
-                        <div class="col-md-4 mt-2">
-                            <a class=" btn btn-light btn-block" href="https://github.com/nuitducode/DOCUMENTATION/raw/main/regles-et-conseils-python.pdf" role="button">Règles et Conseils<br />Python</a>
+                        <div class="col-2">
+                            <a class=" btn btn-light btn-block btn-sm" href="https://github.com/nuitducode/DOCUMENTATION/raw/main/regles-et-conseils-python.pdf" role="button">Règles et Conseils<br /><span style="font-size:80%;color:gray">Python</span></a>
+                            <div class="text-center text-monospace mt-1" style="color:silver;font-size:55%">à distribuer (format papier ou numérique)</div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4 text-center text-monospace small" style="color:silver;font-size:70%"></div>
-                        <div class="col-md-4 text-center text-monospace small" style="color:silver;font-size:70%">à imprimer et distribuer</div>
-                        <div class="col-md-4 text-center text-monospace small" style="color:silver;font-size:70%">à imprimer et distribuer</div>
+                        <div class="col-2">
+                            <a class=" btn btn-light btn-block btn-sm" href="https://github.com/nuitducode/DOCUMENTATION/raw/main/carnet-de-bord-scratch.pdf" role="button">Carnet de<br />bord<br /><span style="font-size:80%;color:gray">Scratch</span></a>
+                            <div class="text-center text-monospace mt-1" style="color:silver;font-size:55%">optionnel : à imprimer et distribuer</div>
+                        </div>
+                        <div class="col-2">
+                            <a class=" btn btn-light btn-block btn-sm" href="https://github.com/nuitducode/DOCUMENTATION/raw/main/carnet-de-bord-python.pdf" role="button">Carnet de<br />bord<br /><span style="font-size:80%;color:gray">Python</span></a>
+                            <div class="text-center text-monospace mt-1" style="color:silver;font-size:55%">optionnel : à imprimer et distribuer</div>
+                        </div>
                     </div>
                 </div>
 
