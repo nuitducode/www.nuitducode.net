@@ -27,8 +27,8 @@
 		<div class="row mb-4">
 
 			<div class="col-md-6 offset-md-1 text-center">
-				<img src="{{ asset('img/nuitducode.svg') }}" width="140" />
-				<p class="text-monospace small" style="margin-top:-10px;font-weight:bold">~ 6<sup>e</sup> édition ~<br />
+				<img src="{{ asset('img/nuitducode-scratch-python.svg') }}" width="260" />
+				<p class="text-monospace small" style="font-weight:bold">~ 6<sup>e</sup> édition ~<br />
 					<b style="color:#4cbf56">du 2 mai au 11 juin 2022</b>
 			</div>
 
