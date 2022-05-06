@@ -54,9 +54,10 @@
 					</div>
 
                     <!-- dropzone field -->
-                   <div class="text-info">FICHIER PYXEL <sup class="text-danger">*</sup></div>
+                   <div class="text-info">FICHIERS PYXEL <sup class="text-danger">*</sup></div>
+                   <div class="text-monospace text-muted small mb-1">Déposer ci-dessous le fichier <kbd>.py</kbd> du jeu et, s'il existe, le fichier <kbd>.pyxres</kbd>.</div>
                    <div id="formdropzone" class="dropzone"></div>
-                    <div id="alert_one_file" class="mt-2 text-danger text-monospace small"></div>
+                    <div id="alert_two_files" class="mt-2 text-danger text-monospace small"></div>
 
 					<button type="submit" id="submit_request" class="btn btn-primary mt-3"><i class="fas fa-check"></i></button>
 
@@ -89,17 +90,17 @@
         $(document).ready(function() {
             var formdropzone = new Dropzone("#formdropzone", {
                 url: "{{ route(request()->segment(1).'-jeu-deposer_post') }}",
-                paramName: "pyxapp",
+                paramName: "fichiers_pyxel",
                 autoProcessQueue: false,
                 uploadMultiple: true, // uplaod files in a single request
-                parallelUploads: 100, // use it with uploadMultiple
+                parallelUploads: 2, // use it with uploadMultiple
                 maxFilesize: 10, // MB
-                maxFiles: 1,
+                maxFiles: 2,
                 addRemoveLinks: true,
                 headers: { 'X-CSRF-TOKEN': "{{ csrf_token() }}" },
-                acceptedFiles: ".pyxapp",
+                acceptedFiles: ".py, .pyxres",
                 // Language Strings
-                dictFileTooBig: "File is to big. Max allowed file size is 10 mb",
+                dictFileTooBig: "Ce fichier est trop lourd. 10 Mo max.",
                 dictInvalidFileType: "format non valide",
                 dictCancelUpload: "annuler",
                 dictRemoveFile: "supprimer",
@@ -117,11 +118,21 @@
                     // Make sure that the form isn't actually being sent.
                     e.preventDefault();
                     e.stopPropagation();
-                    if (dz.files.length == 1) {
-                        $("#alert_one_file").text("");
-                        dz.processQueue();
+                    if (dz.files.length == 1 || dz.files.length == 2) {
+                        ext_bool = false;
+                        get = "f=";
+                        $.each(dz.files, function(key, value){
+                            var fileExt = value.name.split('.').pop();
+                            get += value.name + "@";
+                            if (fileExt == "py") ext_bool = true;
+                        });
+                        if (ext_bool) {
+                            dz.processQueue();
+                        } else {
+                            $("#alert_two_files").text("vous devez déposer au moins un fichier '.py'.");
+                        }
                     } else {
-                        $("#alert_one_file").text("vous devez ajouter UN fichier .pyzapp");
+                        $("#alert_two_files").text("vous devez déposer le fichier '.py' et, s'il existe, le fichier '.pyxres'.");
                     }
                 });
 
@@ -135,12 +146,12 @@
                 this.on("successmultiple", function(files, response) {
                     console.log('success sending')
                     console.log('response:'+response);
-                    window.location = "/jeu-depot-confirmation";
+                    window.location = "/jeu-depot-confirmation?"+get.slice(0, -1);
                 });
                 this.on("errormultiple", function(files, response) {
                     console.log('error sending')
                     console.log(response)
-                    $("#alert_one_file").text(response);
+                    $("#alert_two_files").text(response);
                 });
 
             }
