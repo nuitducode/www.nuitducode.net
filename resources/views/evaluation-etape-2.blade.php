@@ -190,8 +190,8 @@ code = <span style="color:rgb(163, 190, 140); font-weight:400;">'{{$jeu->etablis
 site = <span style="color:rgb(163, 190, 140); font-weight:400;">'https://www.nuitducode.net'</span>
 chemin = <span style="color:rgb(163, 190, 140); font-weight:400;">'/storage/fichiers_pyxel/'</span>
 @foreach($files as $file)
-<span style="color:rgb(129, 161, 193); font-weight:400;">{{pathinfo($file, PATHINFO_EXTENSION)}}</span> = requests.<span style="color:rgb(129, 161, 193); font-weight:400;">get</span>(site + chemin + '{{basename($file)}}')
-with <span style="color:rgb(129, 161, 193); font-weight:400;">open</span>('{{basename($file)}}', <span style="color:rgb(163, 190, 140); font-weight:400;">'wb'</span>) <span style="color:rgb(129, 161, 193); font-weight:400;">as</span> file:
+<span style="color:rgb(129, 161, 193); font-weight:400;">{{pathinfo($file, PATHINFO_EXTENSION)}}</span> = requests.<span style="color:rgb(129, 161, 193); font-weight:400;">get</span>(site + chemin + <span style="color:rgb(163, 190, 140); font-weight:400;">'{{basename($file)}}'</span>)
+with <span style="color:rgb(129, 161, 193); font-weight:400;">open</span>(<span style="color:rgb(163, 190, 140); font-weight:400;">'{{basename($file)}}'</span>, <span style="color:rgb(163, 190, 140); font-weight:400;">'wb'</span>) <span style="color:rgb(129, 161, 193); font-weight:400;">as</span> file:
     file.write(<span style="color:rgb(129, 161, 193); font-weight:400;">{{pathinfo($file, PATHINFO_EXTENSION)}}</span>.content)
 @endforeach
 @foreach($files as $file)
