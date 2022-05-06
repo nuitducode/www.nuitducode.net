@@ -179,17 +179,12 @@
                                     </div>
                                     @endif
 
-
 <?php
 $files = File::files(storage_path("app/public/fichiers_pyxel/".$jeu->etablissement_jeton.'-'.$jeu->python_id));
-
 foreach($files as $file){
     print_r(basename($file));
 }
 ?>
-
-
-
                                     <div class="row">
                                         <div class="col-md-6">
 <pre class="m-0"><code id="htmlViewer" style="color:rgb(216, 222, 233); font-weight:400;background-color:rgb(46, 52, 64);background:rgb(46, 52, 64);display:block;padding: 1.5em;border-radius:5px;"><span style="color:rgb(129, 161, 193); font-weight:400;">import</span> requests
