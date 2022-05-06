@@ -57,13 +57,11 @@
                 <ul class="text-justify">
                     <li>
                         <u>Pour Scratch</u><br />
-                        Après avoir décidé du compte qui hébergera le jeu  (compte d'un des membres de l'équipe ou compte fourni par les organisateurs) et après avoir "remixé" l'univers avec lequel l'équipe va travailler, l'équipe enregistre son jeu en utilisant le lien ci-dessous qui sera fourni aux élèves.<br />
+                        Après avoir décidé du compte qui hébergera le jeu  (compte d'un des membres de l'équipe ou compte fourni par les organisateurs) et après avoir "remixé" l'univers avec lequel l'équipe va travailler, l'équipe enregistre son jeu en utilisant le lien ci-dessous à fournir aux élèves.<br />
+
                         <u>Pour Python / Pyxel</u><br />
-                        Avant d'être déposé sur le site, le jeu doit être mis au format <code>.pyxapp</code> avec la commande suivante :
-                        <div class="text-center code"><code>pyxel package APP_ROOT_DIR STARTUP_SCRIPT_FILE</code></div>
-                        Si l'application doit inclure des ressources ou des modules additionnels, ils doivent être mis dans le dossier de l'application. Ensuite, l’application créée peut être exécutée avec la commande suivante :
-                        <div class="text-center code"><code>pyxel play PYXEL_APP_FILE</code></div>
-                        L'équipe dépose son jeu au format <code>.pyxapp</code> en utilisant le lien ci-dessous qui sera fourni aux élèves.
+                        L'équipe dépose son fichier <code>.py</code> et, s'il existe, son fichier <code>.pyxres</code> en utilisant le lien ci-dessous à fournir aux élèves.
+                        
                         <div class="mt-1 p-3 text-center" style="background-color:white;border:1px silver solid; border-radius:4px;">
                             Lien à fournir aux élèves pour qu'ils enregistrent leurs jeux : <kbd><a href="/{{request()->segment(2)}}/{{strtoupper(Auth::user()->jeton)}}" class="text-monospace text-success" target="_blank">https://www.nuitducode.net/{{request()->segment(2)}}/{{strtoupper(Auth::user()->jeton)}}</a></kbd>
                         </div>
