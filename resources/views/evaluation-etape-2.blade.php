@@ -170,7 +170,9 @@
 
                             <?php
                             foreach ($jeux AS $jeu) {
-                                ?>
+                                if(File::exists(storage_path("app/public/fichiers_pyxel/".$jeu->etablissement_jeton.'-'.$jeu->python_id))) {
+                                    $files = File::files(storage_path("app/public/fichiers_pyxel/".$jeu->etablissement_jeton.'-'.$jeu->python_id));
+                                    ?>
                                     @if($jury_type != 'eleve')
                                     <div class="row">
                                         <div class="col-md-12">
@@ -179,12 +181,6 @@
                                     </div>
                                     @endif
 
-<?php
-$files = File::files(storage_path("app/public/fichiers_pyxel/".$jeu->etablissement_jeton.'-'.$jeu->python_id));
-foreach($files as $file){
-    print_r(basename($file));
-}
-?>
                                     <div class="row">
                                         <div class="col-md-6">
 <pre class="m-0"><code id="htmlViewer" style="color:rgb(216, 222, 233); font-weight:400;background-color:rgb(46, 52, 64);background:rgb(46, 52, 64);display:block;padding: 1.5em;border-radius:5px;"><span style="color:rgb(129, 161, 193); font-weight:400;">import</span> requests
@@ -268,6 +264,7 @@ os.system(<span style="color:rgb(163, 190, 140); font-weight:400;">'pyxel run {{
 
 
                                 <?php
+                                }
                             }
                             ?>
                             <input id="etablissement_jeton" name="etablissement_jeton" type="hidden" value="{{$etablissement_jeton}}" />
