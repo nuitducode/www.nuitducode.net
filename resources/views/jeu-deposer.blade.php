@@ -16,7 +16,7 @@
 
 			<div class="col-md-6 offset-md-3">
 
-                <div class="text-center mb-4"><img src="{{ url('/')}}/img/nuitducode-scratch-ptyhon.svg" width="320" /></div>
+                <div class="text-center mb-4"><img src="{{ url('/')}}/img/nuitducode-scratch-python.svg" width="320" /></div>
 
                 <div class="mt-5 text-center">
                     <a class="btn btn-primary mr-2" href="/{{request()->segment(1)}}/scratch/{{$etablissement_jeton}}" role="button">Déposer un jeu<br />SCRATCH</a>

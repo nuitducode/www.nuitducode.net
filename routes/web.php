@@ -108,6 +108,8 @@ Route::view('/console/admin', 'admin')->middleware('auth');
 // == CONSOLE
 // ============================================================================
 
+Route::get('/console', [App\Http\Controllers\ConsoleController::class, 'console_get'])->name('console_get');
+
 // JEUX & EVALUATIONS
 Route::view('/console/ndc', 'jeux-console')->middleware('auth');
 Route::view('/console/sltn', 'jeux-console')->middleware('auth');
@@ -140,7 +142,7 @@ Route::post('/console/jeu-ajouter', [App\Http\Controllers\ConsoleController::cla
 // jeton generator - inutile l'an prochain
 Route::get('/console/jetons-generator', [App\Http\Controllers\ConsoleController::class, 'jetons_generator']);
 
-Route::get('/console', [App\Http\Controllers\ConsoleController::class, 'console_get'])->name('console_get');
+
 
 Route::any('/console/fiche-inscription', [App\Http\Controllers\ConsoleController::class, 'fiche_inscription'])->name('fiche-inscription');
 Route::get('/console/fiche-inscription-modifier', [App\Http\Controllers\ConsoleController::class, 'fiche_inscription_modifier_get'])->name('fiche-inscription-modifier_get');

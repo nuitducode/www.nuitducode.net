@@ -39,26 +39,56 @@
 
                 <h2 class="m-0">NUIT DU C0DE 2022</h2>
                 <div class="small text-monospace" style="color:silver">2 mai - 11 juin</div>
-                <div style="border:1px solid #dfdfdf;border-radius:4px;padding:10px;">
+                <div class="text-center mt-3 mb-4">
+                    <a class=" btn btn-success" href="/console/ndc" role="button">Enregistrement et Évaluation des Jeux</a>
+                </div>
+
+                <div style="border:1px solid #dfdfdf;border-radius:4px;padding:20px;">
                     <div class="row">
-                        <div class="col-4">
-                            <a class=" btn btn-success btn-block" href="/console/ndc" role="button">Enregistrement<br />et Évaluation<br />des Jeux</a>
+                        <div class="col-12">
+                            <h3 class="m-0">Univers de jeu</h3>
+                            <div class="text-monospace text-danger small mt-3 mb-3" style="text-align:justify">
+                                <b>IMPORTANT</b><br />
+                                <ul>
+                                <li>Les univers de jeu ainsi que les liens sont <u>confidentiels</u>. Ils ne doivent être partagés qu'avec les élèves qui participent à la Nuit du code. Il est important de bien indiquer aux élèves qu'ils ne doivent s'en servir que pour créer leur jeu pendant la durée de la Nuit du code et qu'ils ne doivent les partager avec personne d'autre.</li>
+                                <li>Autre information importante pour les élèves : le titre du jeu créé par une équipe doit être le nom de l'équipe. Les mots suivants ne doivent pas apparaître dans le titre ou la description du jeu (ou des différentes versions du jeu): "nuit", "code", "c0de", "2022", "NdC", "ndc".</li>
+                                <li>Dernier point concernant Scratch : les élèves ne doivent créer leur jeu qu'à partir des éléments fournis. Une fois qu'ils ont choisi leur univers de jeu, ils cliquent sur "Remix". Il n'est pas autorisé d'importer des ressources d'autres univers (images, lutins, scènes ou sons). Tout comme il n'est pas autorisé de regarder ou copier/coller des scripts d'autres projets présents sur l'ordinateur ou sur internet. Enfin, il n'est pas autorisé d'aller chercher des tutoriels (vidéos ou autres) durant l'événement. Par contre, les élèves peuvent solliciter les encadrants et s'entraider. C'est même recommandé.</li>
+                            </ul>
+                            </div>
+                            <div class="mt-2" style="text-align:justify">
+                                <u>Scratch</u><br />
+                                Ci-dessous, le lien à fournir aux élèves pour qu'ils puissent découvrir et "remixer" les univers de jeu Scratch.<br />
+                                <!--
+                                Vous pouvez fournir aux élèves soit le lien (pour qu'ils puissent "mixer" les univers de jeu) soit les fichiers (pour qu'ils puissent les importer).
+                                -->
+                                Lien : <span class="text-monospace small text-success">{{$scratch_lien}}</span></li>
+                            </div>
+                            <div class="mt-3" style="text-align:justify">
+                                <u>Python / Pyxel</u><br />
+                                Plusieurs univers de jeu (fichiers .pyxres) sont proposés à l'adresse ci-dessous. Cependant, les élèves ne sont pas obligés de les utiliser. Ils peuvent créer leurs propres images avec l'éditeur Pyxel. Ils peuvent aussi créer un jeu sans images, en utilisant seulement les formes géométriques.<br />
+                                Fichiers .pyxres : <span class="text-monospace small text-success">{{$python_fichiers}}</span>
+                            </div>
+
+                            <h3 class="m-0 mt-5 mb-2">Documents pour les élèves</h3>
+
                         </div>
-                        <div class="col-2">
-                            <a class=" btn btn-light btn-sm" href="https://github.com/nuitducode/DOCUMENTATION/raw/main/regles-et-conseils-scratch.pdf" role="button">Règles et Conseils<br /><span style="font-size:80%;color:gray">Scratch</span></a>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <a class=" btn btn-light btn-block btn-sm" href="https://github.com/nuitducode/DOCUMENTATION/raw/main/regles-et-conseils-scratch.pdf" role="button">Règles et Conseils<br /><span style="font-size:80%;color:gray">Scratch</span></a>
                             <div class="text-center text-monospace mt-1" style="color:silver;font-size:55%">à distribuer (format papier ou numérique)</div>
                         </div>
-                        <div class="col-2">
+                        <div class="col-3">
                             <a class=" btn btn-light btn-block btn-sm" href="https://github.com/nuitducode/DOCUMENTATION/raw/main/regles-et-conseils-python.pdf" role="button">Règles et Conseils<br /><span style="font-size:80%;color:gray">Python</span></a>
                             <div class="text-center text-monospace mt-1" style="color:silver;font-size:55%">à distribuer (format papier ou numérique)</div>
                         </div>
-                        <div class="col-2">
-                            <a class=" btn btn-light btn-block btn-sm" href="https://github.com/nuitducode/DOCUMENTATION/raw/main/carnet-de-bord-scratch.pdf" role="button">Carnet de<br />bord<br /><span style="font-size:80%;color:gray">Scratch</span></a>
-                            <div class="text-center text-monospace mt-1" style="color:silver;font-size:55%">optionnel : à imprimer et distribuer</div>
+                        <div class="col-3">
+                            <a class=" btn btn-light btn-block btn-sm" href="https://github.com/nuitducode/DOCUMENTATION/raw/main/carnet-de-bord-scratch.pdf" role="button">Carnet de bord<br /><span style="font-size:80%;color:gray">Scratch</span></a>
+                            <div class="text-center text-monospace mt-1" style="color:silver;font-size:55%">optionnel: à imprimer et distribuer</div>
                         </div>
-                        <div class="col-2">
-                            <a class=" btn btn-light btn-block btn-sm" href="https://github.com/nuitducode/DOCUMENTATION/raw/main/carnet-de-bord-python.pdf" role="button">Carnet de<br />bord<br /><span style="font-size:80%;color:gray">Python</span></a>
-                            <div class="text-center text-monospace mt-1" style="color:silver;font-size:55%">optionnel : à imprimer et distribuer</div>
+                        <div class="col-3">
+                            <a class=" btn btn-light btn-block btn-sm" href="https://github.com/nuitducode/DOCUMENTATION/raw/main/carnet-de-bord-python.pdf" role="button">Carnet de bord<br /><span style="font-size:80%;color:gray">Python</span></a>
+                            <div class="text-center text-monospace mt-1" style="color:silver;font-size:55%">optionnel: à imprimer et distribuer</div>
                         </div>
                     </div>
                 </div>

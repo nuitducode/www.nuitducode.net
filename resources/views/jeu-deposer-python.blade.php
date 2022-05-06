@@ -1,6 +1,6 @@
 @include('inc-top')
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="fr">
 <head>
     @include('inc-meta')
     <link href="{{ asset('css/dropzone-basic.css') }}" rel="stylesheet">
@@ -27,7 +27,7 @@
                     @endphp
                 @endif
 
-                <div class="text-center mb-4"><img src="{{ url('/')}}/img/nuitducode-scratch-ptyhon.svg" width="320" /></div>
+                <div class="text-center mb-4"><img src="{{ url('/')}}/img/nuitducode-scratch-python.svg" width="320" /></div>
 
                 <form id="python_submit" method="POST" action="{{ route(request()->segment(1).'-jeu-deposer_post') }}" enctype="multipart/form-data">
 
@@ -82,8 +82,6 @@
     })
     </script>
 
-
-
     <script>
         // disable auto discover
         Dropzone.autoDiscover = false;
@@ -103,7 +101,7 @@
                 // Language Strings
                 dictFileTooBig: "File is to big. Max allowed file size is 10 mb",
                 dictInvalidFileType: "format non valide",
-                dictCancelUpload: "snnuler",
+                dictCancelUpload: "annuler",
                 dictRemoveFile: "supprimer",
                 dictMaxFilesExceeded: "un seul document autorisé",
                 dictDefaultMessage: "glisser-déposer ici ou <span class='btn btn-outline-dark btn-sm'>parcourir</span>",
