@@ -49,6 +49,13 @@
 
                             <?php
                             foreach ($jeux AS $jeu) {
+                                ?>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h2 class="mb-1" style="color:#4cbf56">{{$jeu->nom_equipe}}</h2>
+                                    </div>
+                                </div>
+                                <?php
                                 $json = @file_get_contents("https://api.scratch.mit.edu/projects/".$jeu->scratch_id);
                                 if ($json !== FALSE) {
                                     $jeu_scratch = json_decode($json);
@@ -56,7 +63,7 @@
                                     @if($jury_type != 'eleve')
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <h2 class="mb-1" style="color:#4cbf56">{{$jeu->nom_equipe}}</h2>
+
                                             <h3 class="mb-1 mt-1">[NdC 2022 - C3] {{$jeu_scratch->title}}</h3>
                                             <div class="text-monospace small">Création : {{$jeu_scratch->history->created}}</div>
                                             <div class="text-monospace small">Derniere modification : {{$jeu_scratch->history->modified}}</div>
