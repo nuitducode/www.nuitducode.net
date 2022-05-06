@@ -103,6 +103,7 @@ Route::post('/bas/evaluation-creer', [App\Http\Controllers\SiteController::class
 // == ADMIN
 // ============================================================================
 Route::view('/console/admin', 'admin')->middleware('auth');
+Route::view('/console/admin_jeux', 'admin_jeux')->middleware('auth');
 
 // ============================================================================
 // == CONSOLE

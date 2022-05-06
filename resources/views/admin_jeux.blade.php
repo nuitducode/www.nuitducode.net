@@ -23,26 +23,27 @@ if (Auth::user()->is_admin != 1) {
             </div>
 
 			<div class="col-md-10">
+
                 <h1 class="mb-0">ADMIN</h1>
+
+                <?php
+                $etablissements = App\Models\User::where('is_admin', '!=', -1)->orderBy('ndc_date')->get();
+				$nb_valide = App\Models\User::where([['ndc_date', '!=', 'NULL'], ['is_admin', '!=', -1]])->count();
+                ?>
+
+                <div class="row mt-1 p-3">
+					<div class="text-monospace font-weight-bold text-success mb-3">{{$nb_valide }}</div>
+                    <div class="col-md-12 p-3 text-monospace small text-muted" style="background-color:white;border:1px silver solid;border-radius:4px;">
+                        @foreach($etablissements AS $etablissement)
+							@if (!in_array($etablissement->email, ['labbal@lfitokyo.org', 'laurentabbal@gmail.com', 'liban2@nuitducode.net', 'liban3@nuitducode.net', 'liban4@nuitducode.net', 'liban5@nuitducode.net']))
+								{{$etablissement->email}};
+							@endif
+						@endforeach
+                    </div>
+                </div>
             </div>
 
         </div><!-- /row -->
-
-        <?php
-        $etablissements = App\Models\User::where('is_admin', '!=', -1)->orderBy('ndc_date')->get();
-        $nb_valide = App\Models\User::where([['ndc_date', '!=', 'NULL'], ['is_admin', '!=', -1]])->count();
-        ?>
-
-        <div class="row mt-1 p-3">
-            <div class="text-monospace font-weight-bold text-success mb-3">{{$nb_valide }}</div>
-            <div class="col-md-12 p-3 text-monospace small text-muted" style="background-color:white;border:1px silver solid;border-radius:4px;">
-                @foreach($etablissements AS $etablissement)
-                    @if (!in_array($etablissement->email, ['labbal@lfitokyo.org', 'laurentabbal@gmail.com', 'liban2@nuitducode.net', 'liban3@nuitducode.net', 'liban4@nuitducode.net', 'liban5@nuitducode.net']))
-                        {{$etablissement->email}};
-                    @endif
-                @endforeach
-            </div>
-        </div>
 
         <div class="row p-3">
             <div class="col-md-12 p-3 text-monospace small text-muted" style="background-color:white;border:1px silver solid;border-radius:4px;">
@@ -68,7 +69,6 @@ if (Auth::user()->is_admin != 1) {
                                 <th scope="col"></th>
                                 <th scope="col">Id</th>
                                 <th scope="col">Jeton</th>
-                                <th scope="col">Jeux</th>
                                 <th scope="col">Prénom</th>
                                 <th scope="col">Nom</th>
                                 <th scope="col">Pays</th>
@@ -88,7 +88,6 @@ if (Auth::user()->is_admin != 1) {
                                 <td class="text-success">{{$loop->index + 1}}</td>
                                 <td>{{$etablissement->id}}</td>
                                 <td>{{$etablissement->jeton}}</td>
-                                <td><a href="https://www.nuitducode.net/ndc/{{$etablissement->jeton[3].'j'.$etablissement->jeton[2].'w'.$etablissement->jeton[1].'a'.$etablissement->jeton[0]}}">{{$etablissement->jeton[3].'j'.$etablissement->jeton[2].'w'.$etablissement->jeton[1].'a'.$etablissement->jeton[0]}}</a></td>
                                 <td>{{$etablissement->prenom}}</td>
                                 <td>{{$etablissement->nom}}</td>
                                 <td>{{$etablissement->pays}}</td>
