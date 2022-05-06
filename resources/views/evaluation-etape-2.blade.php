@@ -60,16 +60,16 @@
                                 if ($json !== FALSE) {
                                     $jeu_scratch = json_decode($json);
                                     ?>
-                                    @if($jury_type != 'eleve')
                                     <div class="row">
                                         <div class="col-md-6">
+                                            @if($jury_type != 'eleve')
                                             <h3 class="mb-1 mt-1">[NdC 2022 - C3] {{$jeu_scratch->title}}</h3>
                                             <div class="text-monospace small text-muted">Création : {{$jeu_scratch->history->created}}</div>
                                             <div class="text-monospace small text-muted">Derniere modification : {{$jeu_scratch->history->modified}}</div>
+                                            @endif
                                             <div class="text-monospace small">Si le jeu ne s'affiche pas correctement, vous pouvez l'ouvrir dans un autre onglet en cliquant <a href="https://scratch.mit.edu/projects/{{$jeu_scratch->id}}" target="_blank">ici</a>.</div>
                                         </div>
                                     </div>
-                                    @endif
                                     <div class="row">
                                         <div class="col-md-6">
                                             <iframe src="https://scratch.mit.edu/projects/{{$jeu->scratch_id}}/embed" allowtransparency="true" width="100%" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
