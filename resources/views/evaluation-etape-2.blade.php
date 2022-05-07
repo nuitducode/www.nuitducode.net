@@ -38,7 +38,7 @@
                     $critere2_scratch_description = "";
                     $critere3_scratch_titre = "Originalité / Créativité";
                     $critere3_scratch_description = "";
-                    $critere4_scratch_titre = "Respect des consignes";
+                    $critere4_scratch_titre = "Respect des consignes / Documentation";
                     $critere4_scratch_description = "";
 
                     if (in_array($categorie, ['C3', 'C4', 'LY'])) {

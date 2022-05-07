@@ -66,10 +66,10 @@ if (Auth::user()->is_admin != 1) {
                                 <th scope="col"></th>
                                 <th scope="col">Id</th>
                                 <th scope="col">Jeton</th>
-                                <th scope="col">Éval</th>
-                                <th scope="col">Jeux</th>
-                                <th scope="col">Évals</th>
-                                <th scope="col">Notes</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
                                 <th scope="col">Prénom</th>
                                 <th scope="col">Nom</th>
                                 <th scope="col">Pays</th>
@@ -89,10 +89,10 @@ if (Auth::user()->is_admin != 1) {
                                 <td class="text-success">{{$loop->index + 1}}</td>
                                 <td>{{$etablissement->id}}</td>
                                 <td>{{$etablissement->jeton}}</td>
-                                <td><a href="/ndc/{{$etablissement->jeton[3].'j'.$etablissement->jeton[2].'w'.$etablissement->jeton[1].'a'.$etablissement->jeton[0]}}">{{$etablissement->jeton[3].'j'.$etablissement->jeton[2].'w'.$etablissement->jeton[1].'a'.$etablissement->jeton[0]}}</a></td>
+                                <td class="text-center"><a href="/console/admin_notes?id={{$etablissement->id}}"><i class="fas fa-trophy"></i></a></td>
                                 <td class="text-center"><a href="/console/admin_jeux?id={{$etablissement->id}}"><i class="fas fa-gamepad"></i></a></td>
                                 <td class="text-center"><a href="/console/admin_evaluations?id={{$etablissement->id}}"><i class="fas fa-check"></i></a></td>
-                                <td class="text-center"><a href="/console/admin_notes?id={{$etablissement->id}}"><i class="fas fa-marker"></i></a></td>
+                                <td><a href="/ndc/{{$etablissement->jeton[3].'j'.$etablissement->jeton[2].'w'.$etablissement->jeton[1].'a'.$etablissement->jeton[0]}}"><i class="fas fa-question-circle"></i></a></td>
                                 <td>{{$etablissement->prenom}}</td>
                                 <td>{{$etablissement->nom}}</td>
                                 <td>{{$etablissement->pays}}</td>
