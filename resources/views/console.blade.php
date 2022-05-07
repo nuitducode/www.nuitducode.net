@@ -39,38 +39,37 @@
 
                 <h2 class="m-0">NUIT DU C0DE 2022</h2>
                 <div class="small text-monospace" style="color:silver">2 mai - 11 juin</div>
-                <div class="text-center mt-3 mb-4">
-                    <a class=" btn btn-success" href="/console/ndc" role="button">Enregistrement et Évaluation des Jeux</a>
-                </div>
+
 
                 <div style="border:1px solid #dfdfdf;border-radius:4px;padding:20px;">
                     <div class="row">
                         <div class="col-12">
-                            <h3 class="m-0">Univers de jeu</h3>
-                            <div class="text-monospace text-danger small mt-3 mb-3" style="text-align:justify">
+                            <div class="mb-3">
+                                <a class=" btn btn-success" href="/console/ndc" role="button">Enregistrement et Évaluation des Jeux</a>
+                            </div>
+                            <div class="text-monospace text-danger small" style="text-align:justify">
                                 <b>IMPORTANT</b><br />
                                 <ul>
-                                <li>Les univers de jeu ainsi que les liens sont <u>confidentiels</u>. Ils ne doivent être partagés qu'avec les élèves qui participent à la Nuit du code. Il est important de bien indiquer aux élèves qu'ils ne doivent s'en servir que pour créer leur jeu pendant la durée de la Nuit du code et qu'ils ne doivent les partager avec personne d'autre.</li>
-                                <li>Autre information importante pour les élèves qui utiliseront Scratch : le titre du jeu créé par une équipe doit être le nom de l'équipe. Les mots suivants ne doivent pas apparaître dans le titre ni dans les champs "Instructions" et "Notes et Crédits" du jeu (ou des différentes versions du jeu): "nuit", "code", "c0de", "2022", "NdC", "ndc".</li>
-                                <li>Toujours concernant Scratch : les élèves ne doivent créer leur jeu qu'à partir des éléments fournis. Une fois qu'ils ont choisi leur univers de jeu, ils cliquent sur "Remix". Il n'est pas autorisé d'importer des ressources d'autres univers (images, lutins, scènes ou sons). Tout comme il n'est pas autorisé de regarder ou copier/coller des scripts d'autres projets présents sur l'ordinateur ou sur internet. Enfin, il n'est pas autorisé d'aller chercher des tutoriels (vidéos ou autres) durant l'événement. Par contre, les élèves peuvent solliciter les encadrants et s'entraider. C'est même recommandé.</li>
-                                <li>Pour Scratch et Python, les élèves doivent écrire une courte documentation (ou mode d'emploi) du jeu. Pour Scratch, cette documentation doit être placée dans le champ "Instructions". Et pour Python, elle doit être écrite dans des "docstrings" en début de code dans le fichier .py.
-                            </ul>
+                                    <li class="mb-1">Les univers de jeu ainsi que les liens sont <u>confidentiels</u>. Ils ne doivent être partagés qu'avec les élèves qui participent à la Nuit du code. Il est important de bien indiquer aux élèves qu'ils ne doivent s'en servir que pour créer leur jeu pendant la durée de la Nuit du code et qu'ils ne doivent les partager avec personne d'autre.</li>
+                                    <li class="mb-1">Autre information importante pour les élèves qui utiliseront Scratch : le titre du jeu créé par une équipe doit être le nom de l'équipe. Les mots suivants ne doivent pas apparaître dans le titre ni dans les champs "Instructions" et "Notes et Crédits" du jeu (ou des différentes versions du jeu): "nuit", "code", "c0de", "2022", "NdC", "ndc".</li>
+                                    <li class="mb-1">Toujours concernant Scratch : les élèves ne doivent créer leur jeu qu'à partir des éléments fournis. Une fois qu'ils ont choisi leur univers de jeu, ils cliquent sur "Remix". Il n'est pas autorisé d'importer des ressources d'autres univers (images, lutins, scènes ou sons). Tout comme il n'est pas autorisé de regarder ou copier/coller des scripts d'autres projets présents sur l'ordinateur ou sur internet. Enfin, il n'est pas autorisé d'aller chercher des tutoriels (vidéos ou autres) durant l'événement. Par contre, les élèves peuvent solliciter les encadrants et s'entraider. C'est même recommandé.</li>
+                                    <li>Pour Scratch et Python, les élèves doivent écrire une courte documentation (ou mode d'emploi) du jeu. Pour Scratch, cette documentation doit être placée dans le champ "Instructions". Et pour Python, elle doit être écrite dans des "docstrings" en début de code dans le fichier .py.
+                                </ul>
                             </div>
-                            <div class="mt-2" style="text-align:justify">
-                                <u>Scratch</u><br />
-                                Ci-dessous, le lien à fournir aux élèves pour qu'ils puissent découvrir et "remixer" les univers de jeu Scratch.<br />
+                            <h3 class="mt-4">Univers de jeu</h3>
+                            <div class="mt-1">
+                                <div><u>Scratch</u> <sup><i class="fas fa-question-circle text-muted" data-boundary="window" data-toggle="tooltip" data-placement="auto" title="Lien vers les univers de jeu Scratch. Plusieurs univers de jeu sont proposés. Les équipes en prennent connaissance, les étudient et elles en choisissent un qu'elles 'remixent'."></i></sup></div>
                                 <!--
                                 Vous pouvez fournir aux élèves soit le lien (pour qu'ils puissent "mixer" les univers de jeu) soit les fichiers (pour qu'ils puissent les importer).
                                 -->
-                                Lien : <span class="text-monospace text-success">{{$scratch_lien}}</span></li>
+                                Lien à fournir aux équipes : <span class="text-monospace text-success">{{$scratch_lien}}</span></li>
                             </div>
-                            <div class="mt-3" style="text-align:justify">
-                                <u>Python / Pyxel</u><br />
-                                Plusieurs univers de jeu (fichiers .pyxres) sont proposés à l'adresse ci-dessous. Cependant, les élèves ne sont pas obligés de les utiliser. Ils peuvent créer leurs propres images avec l'éditeur Pyxel. Ils peuvent aussi créer un jeu sans images, en utilisant seulement les formes géométriques.<br />
-                                Fichiers .pyxres : <span class="text-monospace text-success">{{$python_fichiers}}</span>
+                            <div class="mt-3">
+                                <div><u>Python / Pyxel</u> <sup><i class="fas fa-question-circle text-muted" data-boundary="window" data-toggle="tooltip" data-placement="auto" title="Lien vers les univers de jeu Pyxel (fichiers .pyxres). Cependant, les équipes ne sont pas obligées d'en choisir un. Elles peuvent créer leurs propres images avec l'éditeur Pyxel. Elles peuvent aussi créer un jeu sans images, en utilisant seulement les formes géométriques."></i></sup></div>
+                                Lien à fournir aux équipes : <span class="text-monospace text-success">{{$python_fichiers}}</span>
                             </div>
 
-                            <h3 class="m-0 mt-5 mb-2">Documents pour les élèves</h3>
+                            <h3 class="m-0 mt-4 mb-2">Documents pour les élèves</h3>
 
                         </div>
                     </div>
@@ -95,29 +94,39 @@
                 </div>
 
 
-                <h2>PRÉPARATION</h2>
-                <ul class="list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2">
-                        <span><i class="fas fa-angle-right text-danger"></i> Inscription de l'établissement</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2">
-                        <span><i class="fas fa-angle-right text-danger"></i> Choix de la date de l'événement (saisir cette date dans la section "JOUR J")</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2">
-                        <span><i class="fas fa-angle-right text-danger"></i> Préparation de l'événement dans l'établissement (date, lieux, autoriations, affiches, ordinateurs, nourriture, boissons, décoration...)</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2">
-                        <span><i class="fas fa-angle-right text-danger"></i> Entraînement des élèves</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2"><span><i class="fas fa-angle-right text-danger"></i> Sélection des élèves (si le nombre d'élèves intéressés est trop grand)</span></li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2"><span><i class="fas fa-angle-right text-danger"></i> Création des équipes qui participeront à l'événement (indiquer, ci-dessous, le nombre d'équipes et d'élèves pour chaque catégories, mettre 0 pour les catégories sans participants)</span></li>
-                </ul>
+                <h2 class="m-0">
+                    <a data-toggle="collapse" href="#collapse_preparation" role="button" aria-expanded="false" aria-controls="collapse_preparation"><i class="fas fa-plus-square"></i></a>
+                    PRÉPARATION
+                </h2>
+                <div class="collapse" id="collapse_preparation">
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2">
+                            <span><i class="fas fa-angle-right text-danger"></i> Inscription de l'établissement</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2">
+                            <span><i class="fas fa-angle-right text-danger"></i> Choix de la date de l'événement (saisir cette date dans la section "JOUR J")</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2">
+                            <span><i class="fas fa-angle-right text-danger"></i> Préparation de l'événement dans l'établissement (date, lieux, autoriations, affiches, ordinateurs, nourriture, boissons, décoration...)</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2">
+                            <span><i class="fas fa-angle-right text-danger"></i> Entraînement des élèves</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2"><span><i class="fas fa-angle-right text-danger"></i> Sélection des élèves (si le nombre d'élèves intéressés est trop grand)</span></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2"><span><i class="fas fa-angle-right text-danger"></i> Création des équipes qui participeront à l'événement (indiquer, ci-dessous, le nombre d'équipes et d'élèves pour chaque catégories, mettre 0 pour les catégories sans participants)</span></li>
+                    </ul>
+                </div>
 
-                <h2 class="m-0">SÉLECTIONS</h2>
-                <div class="row">
-                    <div class="col-md-4 offset-md-4 mt-2 mb-3">
-                        <a class=" btn btn-light btn-sm btn-block" href="/console/sltn" role="button">Enregistrement et évaluation des jeux</a>
-                        <a class=" btn btn-light btn-sm btn-block mt-2" style="opacity:0.8" href="/console/bas" role="button">Bac à sable</a>
+                <h2 class="m-0">
+                    <a data-toggle="collapse" href="#collapse_selections" role="button" aria-expanded="false" aria-controls="collapse_selections"><i class="fas fa-plus-square"></i></a>
+                    SÉLECTIONS & BAC à SABLE
+                </h2>
+                <div class="collapse" id="collapse_selections">
+                    <div class="row">
+                        <div class="col-md-4 mt-2 mb-3">
+                            <a class=" btn btn-light btn-sm btn-block" href="/console/sltn" role="button">Enregistrement et évaluation des jeux</a>
+                            <a class=" btn btn-light btn-sm btn-block mt-2" style="opacity:0.8" href="/console/bas" role="button">Bac à sable</a>
+                        </div>
                     </div>
                 </div>
 
