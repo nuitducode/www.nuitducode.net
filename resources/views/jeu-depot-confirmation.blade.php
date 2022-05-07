@@ -35,10 +35,17 @@
                         <br />
                     </div>
                     <?php
+                } else {
+                    ?>
+                    <div class="text-monospace text-danger mb-4">
+                        Vous n'avez plus le droit de modifier votre jeu.<br />
+                        Les jeux modifiés après le dépôt ne seront pas évalués.
+                    </div>
+                    <?php
                 }
                 ?>
                 <div>
-                    Si vous pensez avoir commis une erreur, vous pouvez prévenir votre enseignant. Il supprimera ce dépôt et vous pourrez recommencer.
+                    Si vous pensez avoir commis une erreur, prévenez votre enseignant. Il supprimera ce dépôt et vous pourrez redéposer votre jeu.
                 </div>
 
                 <div class="mt-5 text-center text-monospace small" style="color:silver">
