@@ -204,6 +204,7 @@ with <span style="color:rgb(129, 161, 193); font-weight:400;">open</span>(<span 
 @endforeach
 @foreach($files as $file)
 @if(pathinfo($file, PATHINFO_EXTENSION) == 'py')
+print(<span style="color:rgb(129, 161, 193); font-weight:400;">py</span>.content.<span style="color:rgb(129, 161, 193); font-weight:400;">decode()</span>)
 os.system(<span style="color:rgb(163, 190, 140); font-weight:400;">'pyxel run {{basename($file)}}'</span>)</code></pre>
 @endif
 @endforeach
