@@ -62,12 +62,12 @@
                                 <!--
                                 Vous pouvez fournir aux élèves soit le lien (pour qu'ils puissent "mixer" les univers de jeu) soit les fichiers (pour qu'ils puissent les importer).
                                 -->
-                                Lien : <span class="text-monospace small text-success">{{$scratch_lien}}</span></li>
+                                Lien : <span class="text-monospace text-success">{{$scratch_lien}}</span></li>
                             </div>
                             <div class="mt-3" style="text-align:justify">
                                 <u>Python / Pyxel</u><br />
                                 Plusieurs univers de jeu (fichiers .pyxres) sont proposés à l'adresse ci-dessous. Cependant, les élèves ne sont pas obligés de les utiliser. Ils peuvent créer leurs propres images avec l'éditeur Pyxel. Ils peuvent aussi créer un jeu sans images, en utilisant seulement les formes géométriques.<br />
-                                Fichiers .pyxres : <span class="text-monospace small text-success">{{$python_fichiers}}</span>
+                                Fichiers .pyxres : <span class="text-monospace text-success">{{$python_fichiers}}</span>
                             </div>
 
                             <h3 class="m-0 mt-5 mb-2">Documents pour les élèves</h3>
