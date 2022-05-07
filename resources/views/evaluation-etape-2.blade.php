@@ -72,7 +72,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6 text-center">
-                                            <div></div>
+                                            <div><img src="https://uploads.scratch.mit.edu/get_image/project/{{$jeu->scratch_id}}_282x218.png" class="img-fluid" style="border-radius:4px;" width="100%" /></div>
                                             <button type="button" class="btn btn-success btn-sm mt-2 mb-3" onClick="this.previousElementSibling.innerHTML='<iframe src=\'https://scratch.mit.edu/projects/{{$jeu->scratch_id}}/embed\' width=\'100%\' height=\'402\' frameborder=\'0\' scrolling=\'no\'></iframe>'">afficher / recharger le jeu</button>
                                             <div class="small text-monospace" style="border:1px solid silver; padding:10px;border-radius:4px; background-color:white;">{{$jeu_scratch->instructions}}</div>
                                             @if($jury_type != 'eleve')
