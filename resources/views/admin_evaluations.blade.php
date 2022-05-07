@@ -20,7 +20,7 @@ if (Auth::user()->is_admin != 1) {
                 <a class="btn btn-light btn-sm mb-4" href="{{ url()->previous() }}" role="button"><i class="fas fa-arrow-left"></i></a>
             </div>
 
-			<div class="col-md-10 offset-md-1">
+			<div class="col-md-10">
 
     			@if (session('status'))
     				<div class="text-success text-monospace text-center pb-4" role="alert">

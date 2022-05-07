@@ -20,7 +20,7 @@ if (Auth::user()->is_admin != 1) {
                 <a class="btn btn-light btn-sm mb-4" href="{{ url()->previous() }}" role="button"><i class="fas fa-arrow-left"></i></a>
             </div>
 
-			<div class="col-md-10 offset-md-1">
+			<div class="col-md-10">
 
                 <h1 class="mb-0">JEUX</h1>
                 <div class="text-monospace text-muted small">Nuit du c0de 2022</div>
