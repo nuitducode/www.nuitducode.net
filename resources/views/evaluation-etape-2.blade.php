@@ -203,9 +203,10 @@ with <span style="color:rgb(129, 161, 193); font-weight:400;">open</span>(<span 
 @foreach($files as $file)
 @if(pathinfo($file, PATHINFO_EXTENSION) == 'py')
 print(<span style="color:rgb(129, 161, 193); font-weight:400;">py</span>.content.<span style="color:rgb(129, 161, 193); font-weight:400;">decode</span>())
-os.system(<span style="color:rgb(163, 190, 140); font-weight:400;">'pyxel run {{basename($file)}}'</span>)</code></pre>
+os.system(<span style="color:rgb(163, 190, 140); font-weight:400;">'pyxel run {{basename($file)}}'</span>)
 @endif
 @endforeach
+</code></pre>
 <div class="text-monospace text-muted p-2" style="text-align:justify;font-size:70%;">
     Copier-coller ce code dans un environnement Python possédant la bibliothèque <a href="https://github.com/kitao/pyxel/" target="_blank">Pyxel</a> pour lancer le jeu.<br />
     Pour installer un environnement Python + Pyxel, voir la <a href="https://nuitducode.github.io/DOCUMENTATION/PYTHON/02-installation/" target="_blank">documentation</a>.
