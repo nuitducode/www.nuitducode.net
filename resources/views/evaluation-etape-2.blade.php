@@ -78,7 +78,7 @@
                                                 @if ($jeu_scratch->instructions != NULL)
                                                     {{$jeu_scratch->instructions}}
                                                 @else
-                                                    <span class="text-danger small text-monospace">pas d'instructions</span>
+                                                    <span class="text-danger">pas d'instructions</span>
                                                 @endif
                                             </div>
                                             @if($jury_type != 'eleve')
