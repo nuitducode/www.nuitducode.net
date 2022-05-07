@@ -27,7 +27,7 @@
                     @endphp
                 @endif
 
-                <div class="text-center mb-4"><img src="{{ url('/')}}/img/nuitducode-scratch-ptyhon.svg" width="320" /></div>
+                <div class="text-center mb-4"><img src="{{ url('/')}}/img/nuitducode-scratch-python.svg" width="320" /></div>
 
                 <form id="scratch_submit" method="POST" action="{{ route(request()->segment(1).'-jeu-deposer_post') }}">
 

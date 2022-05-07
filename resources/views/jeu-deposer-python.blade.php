@@ -120,7 +120,7 @@
                     e.stopPropagation();
                     if (dz.files.length == 1 || dz.files.length == 2) {
                         ext_bool = false;
-                        get = "f=";
+                        get = "p=";
                         $.each(dz.files, function(key, value){
                             var fileExt = value.name.split('.').pop();
                             get += value.name + "@";

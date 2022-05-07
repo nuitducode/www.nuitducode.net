@@ -22,17 +22,25 @@
                     <span style="font-size:50px">👍</span><br />
                     <h1 class="text-center text-success text-monospace mt-2">JEU DÉPOSÉ<h1>
                 </div>
+
                 <?php
-                $fichiers = $_GET['f'];
-                $fichiers = str_replace("@", "</kbd> et <kbd>", $fichiers);
+                if (isset($_GET['p'])) {
+                    $fichiers = $_GET['p'];
+                    $fichiers = str_replace("@", "</kbd> et <kbd>", $fichiers);
+                    ?>
+
+                    <div>
+                        Vous avez déposé : <kbd><?php echo $fichiers ?></kbd>
+                        <br />
+                        <br />
+                    </div>
+                    <?php
+                }
                 ?>
                 <div>
-                    Vous avez déposé : <kbd><?php echo $fichiers ?></kbd>
-                    <br />
-                    <br />
-                    S'il s'agit d'une erreur, vous pouvez prévenir votre enseignant. Il supprimera ce dépôt et vous pourrez recommencer.
+                    Si vous pensez avoir commis une erreur, vous pouvez prévenir votre enseignant. Il supprimera ce dépôt et vous pourrez recommencer.
                 </div>
-                
+
                 <div class="mt-5 text-center text-monospace small" style="color:silver">
                     vous pouvez quitter cette page
                 </div>
