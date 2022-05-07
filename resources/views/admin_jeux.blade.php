@@ -7,7 +7,7 @@ if (Auth::user()->is_admin != 1) {
 <html lang="fr">
 <head>
     @include('inc-meta')
-    <title>NdC Console | Jeux</title>
+    <title>ADMIN | JEUX</title>
 </head>
 <body>
 

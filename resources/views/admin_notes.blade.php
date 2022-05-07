@@ -4,10 +4,10 @@ if (Auth::user()->is_admin != 1) {
 }
 ?>
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="fr">
 <head>
     @include('inc-meta')
-    <title>{{ config('app.name', 'Laravel') }} | console</title>
+    <title>ADMIN | NOTES</title>
 </head>
 <body>
 
@@ -51,7 +51,7 @@ if (Auth::user()->is_admin != 1) {
                                     @php
                                     $json = @file_get_contents("https://api.scratch.mit.edu/projects/".$jeu->scratch_id);
                                     @endphp
-                                    @if ($json !== FALSE) {
+                                    @if ($json !== FALSE)
 
                                         <div style="position:relative">
                                             <div style="position:absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);">

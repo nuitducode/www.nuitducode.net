@@ -1,6 +1,6 @@
 @include('inc-top')
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="fr">
 <head>
     @include('inc-meta')
     <title>{{ config('app.name', 'Laravel') }} | console</title>
@@ -54,43 +54,50 @@
                                 <div class="card p-3">
 
                                     <h3 class="mt-0" style="color:#4cbf56">{{$jeu->nom_equipe}}</h3>
+                                    @php
+                                    $json = @file_get_contents("https://api.scratch.mit.edu/projects/".$jeu->scratch_id);
+                                    @endphp
+                                    @if ($json !== FALSE)
 
-                                    <div style="position:relative">
-                                        <div style="position:absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                            <a href="https://scratch.mit.edu/projects/{{$jeu->scratch_id}}" class="btn btn-success btn-sm" target="_blank" role="button"><i class="fas fa-gamepad fa-2x"></i></a>
+                                        <div style="position:relative">
+                                            <div style="position:absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                                <a href="https://scratch.mit.edu/projects/{{$jeu->scratch_id}}" class="btn btn-success btn-sm" target="_blank" role="button"><i class="fas fa-gamepad fa-2x"></i></a>
+                                            </div>
+                                            <img src="https://uploads.scratch.mit.edu/get_image/project/{{$jeu->scratch_id}}_282x218.png" class="img-fluid" style="border-radius:4px;" width="100%" />
                                         </div>
-                                        <img src="https://uploads.scratch.mit.edu/get_image/project/{{$jeu->scratch_id}}_282x218.png" class="img-fluid" style="border-radius:4px;" width="100%" />
-                                    </div>
 
-                                    <?php
-                                    $evaluations = App\Models\Evaluation::where([['etablissement_id', Auth::user()->id], ['game_id', $jeu->id]])->get();
-                                    $evaluations_eleves = App\Models\Evaluation::where([['etablissement_id', Auth::user()->id], ['game_id', $jeu->id], ['jury_type', 'eleve']])->get();
-                                    $evaluations_enseignants = App\Models\Evaluation::where([['etablissement_id', Auth::user()->id], ['game_id', $jeu->id], ['jury_type', 'enseignant']])->get();
+                                        <?php
+                                        $evaluations = App\Models\Evaluation::where([['etablissement_id', Auth::user()->id], ['game_id', $jeu->id]])->get();
+                                        $evaluations_eleves = App\Models\Evaluation::where([['etablissement_id', Auth::user()->id], ['game_id', $jeu->id], ['jury_type', 'eleve']])->get();
+                                        $evaluations_enseignants = App\Models\Evaluation::where([['etablissement_id', Auth::user()->id], ['game_id', $jeu->id], ['jury_type', 'enseignant']])->get();
 
-                                    $nb_evaluations_eleves = count($evaluations_eleves);
-                                    $nb_evaluations_enseignants = count($evaluations_enseignants);
+                                        $nb_evaluations_eleves = count($evaluations_eleves);
+                                        $nb_evaluations_enseignants = count($evaluations_enseignants);
 
-                                    $note_globale = [];
-                                    $note_eleves = [];
-                                    $note_enseignants = [];
-                                    foreach ($evaluations_eleves AS $evaluation) {
-                                        $note_globale[] = $evaluation->note;
-                                        $note_eleves[] = $evaluation->note;
-                                    }
-                                    foreach ($evaluations_enseignants AS $evaluation) {
-                                        $note_globale[] = $evaluation->note;
-                                        $note_enseignants[] = $evaluation->note;
-                                    }
-                                    ?>
+                                        $note_globale = [];
+                                        $note_eleves = [];
+                                        $note_enseignants = [];
+                                        foreach ($evaluations_eleves AS $evaluation) {
+                                            $note_globale[] = $evaluation->note;
+                                            $note_eleves[] = $evaluation->note;
+                                        }
+                                        foreach ($evaluations_enseignants AS $evaluation) {
+                                            $note_globale[] = $evaluation->note;
+                                            $note_enseignants[] = $evaluation->note;
+                                        }
+                                        ?>
 
-                                    <div class="mt-2 text-monospace small">
-                                        <div>Nb d'évaluations élèves: <span class="text-primary font-weight-bold">{{ $nb_evaluations_eleves}}</span></div>
-                                        <div>Nb d'évaluations enseignants: <span class="text-primary font-weight-bold">{{ $nb_evaluations_enseignants}}</span></div>
-                                        <div>Note élèves: <span class="text-primary font-weight-bold">@if(count($note_eleves) != 0){{ round(array_sum($note_eleves)/count($note_eleves), 1) }} @else - @endif</span></div>
-                                        <div>Note enseignants: <span class="text-primary font-weight-bold">@if(count($note_enseignants) != 0) {{ round(array_sum($note_enseignants)/count($note_enseignants),1) }} @else - @endif</span></div>
-                                    </div>
-                                    <kbd class="mt-2 text-center">Note globale:<span class="text-primary font-weight-bold">@if(count($note_globale) != 0) {{ round(array_sum($note_globale)/count($note_globale),1) }} @else - @endif</span></kbd>
+                                        <div class="mt-2 text-monospace small">
+                                            <div>Nb d'évaluations élèves: <span class="text-primary font-weight-bold">{{ $nb_evaluations_eleves}}</span></div>
+                                            <div>Nb d'évaluations enseignants: <span class="text-primary font-weight-bold">{{ $nb_evaluations_enseignants}}</span></div>
+                                            <div>Note élèves: <span class="text-primary font-weight-bold">@if(count($note_eleves) != 0){{ round(array_sum($note_eleves)/count($note_eleves), 1) }} @else - @endif</span></div>
+                                            <div>Note enseignants: <span class="text-primary font-weight-bold">@if(count($note_enseignants) != 0) {{ round(array_sum($note_enseignants)/count($note_enseignants),1) }} @else - @endif</span></div>
+                                        </div>
+                                        <kbd class="mt-2 text-center">Note globale:<span class="text-primary font-weight-bold">@if(count($note_globale) != 0) {{ round(array_sum($note_globale)/count($note_globale),1) }} @else - @endif</span></kbd>
 
+                                    @else
+                                        <div class="text-monospace small text-danger">Cet identifiant Scratch n'existe pas! [{{$jeu->scratch_id}}]</div>
+                                    @endif
                                 </div>
                             </div>
                             @endforeach
