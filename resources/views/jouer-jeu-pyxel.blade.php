@@ -9,11 +9,11 @@
 
         @include('inc-nav-console')
 
-        <div class="container mt-4 mb-5">
+        <div class="container mt-5 mb-5">
     		<div class="row">
 
-                <div class="col-md-2 mt-4">
-                    <a class="btn btn-light btn-sm mb-4" href="{{ url()->previous() }}" role="button"><i class="fas fa-arrow-left"></i></a>
+                <div class="col-md-2">
+                    <a class="btn btn-light mb-4" href="javascript:window.open('','_self').close();" role="button" data-boundary="window" data-toggle="tooltip" data-placement="right" title="fermer cette page"><i class="fas fa-times"></i></a>
                 </div>
 
     			<div class="col-md-10">
