@@ -15,7 +15,7 @@
             <div class="col-md-2 mt-5 mb-5">
                 <a class=" btn btn-info btn-sm btn-block text-left" href="https://nuitducode.github.io/DOCUMENTATION/organisation/" role="button" target="_blank">organisation</a>
                 <a class=" btn btn-info btn-sm btn-block text-left" href="https://nuitducode.github.io/DOCUMENTATION/regles-conseils/" role="button" target="_blank">règles et conseils</a>
-                <a class=" btn btn-info btn-sm btn-block text-left" href="https://www.nuitducode.net/affiches" role="button" target="_blank">affiches</a>
+                <a class=" btn btn-info btn-sm btn-block text-left" href="https://www.nuitducode.net/images" role="button" target="_blank">logos & affiches</a>
 
                 <a class=" btn btn-secondary btn-sm btn-block text-left mt-4" href="https://nuitducode.github.io/DOCUMENTATION/SCRATCH/01-introduction/" role="button" target="_blank">entrainement scratch</a>
                 <a class=" btn btn-secondary btn-sm btn-block text-left" href="https://nuitducode.github.io/DOCUMENTATION/PYTHON/01-presentation/" role="button" target="_blank">entrainement python</a>

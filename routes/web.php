@@ -43,8 +43,8 @@ Route::view('/organisation', 'organisation');
 // ENTRAINEMENTS
 Route::view('/entrainements', 'entrainements');
 
-// AFFICHES
-Route::view('/affiches', 'affiches');
+// IMAGES
+Route::view('/images', 'images');
 
 // DEPOT CONFIRMATION
 Route::view('/jeu-depot-confirmation', 'jeu-depot-confirmation');
