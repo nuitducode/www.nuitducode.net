@@ -13,7 +13,7 @@ $github_document = github_import('nuitducode/DOCUMENTATION/contents/images.md');
 	<div class="container mb-5">
 
 		<div class="row">
-			<div class="col-md-3">
+			<div class="col-md-2">
 				<div class="sticky-top mb-5 pt-2">
 					@include('inc-nav')
 					<?php echo $github_document['menu'] ?>
