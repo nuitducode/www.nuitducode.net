@@ -6,7 +6,7 @@ $github_document = github_import('nuitducode/DOCUMENTATION/contents/affiches.md'
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
 	@include('inc-meta')
-    <title>Entraînement</title>
+    <title>Images</title>
 </head>
 <body data-spy="scroll" data-target="#navbar-scrollspy" data-offset="20">
 
