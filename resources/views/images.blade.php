@@ -19,7 +19,7 @@ $github_document = github_import('nuitducode/DOCUMENTATION/contents/images.md');
 					<?php echo $github_document['menu'] ?>
 				</div>
 			</div>
-			<div class="col-md-9 text-justify">
+			<div class="col-md-10 text-justify">
 				<?php echo $github_document['content'] ?>
 			</div>
 		</div>
