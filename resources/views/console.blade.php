@@ -9,10 +9,10 @@
 
     @include('inc-nav-console')
 
-	<div class="container mb-5">
+	<div class="container mt-4 mb-5">
 		<div class="row">
 
-            <div class="col-md-2 mt-5">
+            <div class="col-md-2 mt-5 mb-5">
                 <a class=" btn btn-info btn-sm btn-block text-left" href="https://nuitducode.github.io/DOCUMENTATION/organisation/" role="button" target="_blank">organisation</a>
                 <a class=" btn btn-info btn-sm btn-block text-left" href="https://nuitducode.github.io/DOCUMENTATION/regles-conseils/" role="button" target="_blank">règles et conseils</a>
                 <a class=" btn btn-info btn-sm btn-block text-left" href="https://www.nuitducode.net/affiches" role="button" target="_blank">affiches</a>
@@ -29,7 +29,7 @@
 
             </div>
 
-			<div class="col-md-9 offset-md-1">
+			<div class="col-md-10">
 
 				@if (session('status'))
 					<div class="text-success text-monospace text-center pb-4" role="alert">
@@ -37,16 +37,14 @@
 					</div>
 				@endif
 
-                <h2 class="m-0">NUIT DU C0DE 2022</h2>
+                <h1 class="m-0 p-0">NUIT DU C0DE 2022</h1>
                 <div class="small text-monospace" style="color:silver">2 mai - 11 juin</div>
 
 
                 <div style="border:1px solid #dfdfdf;border-radius:4px;padding:20px;">
                     <div class="row">
                         <div class="col-12">
-                            <div class="mb-3">
-                                <a class=" btn btn-success" href="/console/ndc" role="button">Enregistrement et Évaluation des Jeux</a>
-                            </div>
+
                             <div class="text-monospace text-danger small" style="text-align:justify">
                                 <b>IMPORTANT</b><br />
                                 <ul>
@@ -56,76 +54,51 @@
                                     <li>Pour Scratch et Python, les élèves doivent écrire une courte documentation (ou mode d'emploi) du jeu. Pour Scratch, cette documentation doit être placée dans le champ "Instructions". Et pour Python, elle doit être écrite dans des "docstrings" en début de code dans le fichier .py.
                                 </ul>
                             </div>
-                            <h3 class="mt-4">Univers de jeu</h3>
-                            <div class="mt-1">
+
+                            <h3 class="m-0 mt-5 mb-2"><span class="badge badge-pill badge-primary">1</span> Documents pour les équipes <sup><i class="fas fa-question-circle text-muted" data-boundary="window" data-toggle="tooltip" data-placement="auto" title="Documents à distribuer aux équipes le jour de la Nuit du c0de ou quelques jours avant."></i></sup></h3>
+                            <div class="row">
+                                <div class="col-3">
+                                    <a class=" btn btn-light btn-block btn-sm" href="https://github.com/nuitducode/DOCUMENTATION/raw/main/regles-et-conseils-scratch.pdf" role="button">Règles et Conseils<br /><span style="font-size:80%;color:gray">Scratch</span></a>
+                                    <div class="text-center text-monospace mt-1" style="color:silver;font-size:55%">à distribuer (format papier ou numérique)</div>
+                                </div>
+                                <div class="col-3">
+                                    <a class=" btn btn-light btn-block btn-sm" href="https://github.com/nuitducode/DOCUMENTATION/raw/main/regles-et-conseils-python.pdf" role="button">Règles et Conseils<br /><span style="font-size:80%;color:gray">Python</span></a>
+                                    <div class="text-center text-monospace mt-1" style="color:silver;font-size:55%">à distribuer (format papier ou numérique)</div>
+                                </div>
+                                <div class="col-3">
+                                    <a class=" btn btn-light btn-block btn-sm" href="https://github.com/nuitducode/DOCUMENTATION/raw/main/carnet-de-bord-scratch.pdf" role="button">Carnet de bord<br /><span style="font-size:80%;color:gray">Scratch</span></a>
+                                    <div class="text-center text-monospace mt-1" style="color:silver;font-size:55%">optionnel: à imprimer et distribuer</div>
+                                </div>
+                                <div class="col-3">
+                                    <a class=" btn btn-light btn-block btn-sm" href="https://github.com/nuitducode/DOCUMENTATION/raw/main/carnet-de-bord-python.pdf" role="button">Carnet de bord<br /><span style="font-size:80%;color:gray">Python</span></a>
+                                    <div class="text-center text-monospace mt-1" style="color:silver;font-size:55%">optionnel: à imprimer et distribuer</div>
+                                </div>
+                            </div>
+
+                            <h3 class="mt-5"><span class="badge badge-pill badge-primary">2</span> Univers de jeu</h3>
+                            <div class="mt-1 ml-4">
                                 <div><u>Scratch</u> <sup><i class="fas fa-question-circle text-muted" data-boundary="window" data-toggle="tooltip" data-placement="auto" title="Lien vers les univers de jeu Scratch. Plusieurs univers de jeu sont proposés. Les équipes en prennent connaissance, les étudient et elles en choisissent un qu'elles 'remixent'."></i></sup></div>
                                 <!--
                                 Vous pouvez fournir aux élèves soit le lien (pour qu'ils puissent "mixer" les univers de jeu) soit les fichiers (pour qu'ils puissent les importer).
                                 -->
-                                Lien à fournir aux équipes : <span class="text-monospace text-success">{{$scratch_lien}}</span></li>
+                                Lien à fournir aux équipes : <span class="text-monospace text-success">{!!$scratch_lien!!}</span></li>
                             </div>
-                            <div class="mt-3">
-                                <div><u>Python / Pyxel</u> <sup><i class="fas fa-question-circle text-muted" data-boundary="window" data-toggle="tooltip" data-placement="auto" title="Lien vers les univers de jeu Pyxel (fichiers .pyxres). Cependant, les équipes ne sont pas obligées d'en choisir un. Elles peuvent créer leurs propres images avec l'éditeur Pyxel. Elles peuvent aussi créer un jeu sans images, en utilisant seulement les formes géométriques."></i></sup></div>
-                                Lien à fournir aux équipes : <span class="text-monospace text-success">{{$python_fichiers}}</span>
+                            <div class="mt-3 ml-4">
+                                <div><u>Python / Pyxel</u> <sup><i class="fas fa-question-circle text-muted" data-boundary="window" data-toggle="tooltip" data-placement="auto" title="Lien vers les univers de jeu Pyxel (fichiers .pyxres). Les équipes ne sont pas obligées d'en choisir un. Elles peuvent créer leurs propres images avec l'éditeur Pyxel. Elles peuvent aussi créer un jeu sans images, en utilisant seulement les formes géométriques."></i></sup></div>
+                                Lien à fournir aux équipes : <span class="text-monospace text-success">{!!$python_fichiers!!}</span>
                             </div>
 
-                            <h3 class="m-0 mt-4 mb-2">Documents pour les élèves</h3>
+                            <h3 class="mt-5"><span class="badge badge-pill badge-primary">3</span> Enregistrement et Évaluation des Jeux</h3>
+                            <div class="mb-1 ml-4">
+                                <a class=" btn btn-success" href="/console/ndc?p=enregistrement" role="button">enregistrement</a>
+                                <a class=" btn btn-success" href="/console/ndc?p=evaluation" role="button">évaluation</a>
+                            </div>
 
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-3">
-                            <a class=" btn btn-light btn-block btn-sm" href="https://github.com/nuitducode/DOCUMENTATION/raw/main/regles-et-conseils-scratch.pdf" role="button">Règles et Conseils<br /><span style="font-size:80%;color:gray">Scratch</span></a>
-                            <div class="text-center text-monospace mt-1" style="color:silver;font-size:55%">à distribuer (format papier ou numérique)</div>
-                        </div>
-                        <div class="col-3">
-                            <a class=" btn btn-light btn-block btn-sm" href="https://github.com/nuitducode/DOCUMENTATION/raw/main/regles-et-conseils-python.pdf" role="button">Règles et Conseils<br /><span style="font-size:80%;color:gray">Python</span></a>
-                            <div class="text-center text-monospace mt-1" style="color:silver;font-size:55%">à distribuer (format papier ou numérique)</div>
-                        </div>
-                        <div class="col-3">
-                            <a class=" btn btn-light btn-block btn-sm" href="https://github.com/nuitducode/DOCUMENTATION/raw/main/carnet-de-bord-scratch.pdf" role="button">Carnet de bord<br /><span style="font-size:80%;color:gray">Scratch</span></a>
-                            <div class="text-center text-monospace mt-1" style="color:silver;font-size:55%">optionnel: à imprimer et distribuer</div>
-                        </div>
-                        <div class="col-3">
-                            <a class=" btn btn-light btn-block btn-sm" href="https://github.com/nuitducode/DOCUMENTATION/raw/main/carnet-de-bord-python.pdf" role="button">Carnet de bord<br /><span style="font-size:80%;color:gray">Python</span></a>
-                            <div class="text-center text-monospace mt-1" style="color:silver;font-size:55%">optionnel: à imprimer et distribuer</div>
-                        </div>
-                    </div>
-                </div>
+                            <h3 class="mt-5"><span class="badge badge-pill badge-primary">4</span> Bilan des évaluations</h3>
+                            <div class="mb-1 ml-4">
+                                <a class=" btn btn-info" href="/console/ndc/jeux-evaluations" role="button"><i class="fas fa-trophy"></i></a>
+                            </div>
 
-
-                <h2 class="m-0">
-                    <a data-toggle="collapse" href="#collapse_preparation" role="button" aria-expanded="false" aria-controls="collapse_preparation"><i class="fas fa-plus-square"></i></a>
-                    PRÉPARATION
-                </h2>
-                <div class="collapse" id="collapse_preparation">
-                    <ul class="list-group">
-                        <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2">
-                            <span><i class="fas fa-angle-right text-danger"></i> Inscription de l'établissement</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2">
-                            <span><i class="fas fa-angle-right text-danger"></i> Choix de la date de l'événement (saisir cette date dans la section "JOUR J")</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2">
-                            <span><i class="fas fa-angle-right text-danger"></i> Préparation de l'événement dans l'établissement (date, lieux, autoriations, affiches, ordinateurs, nourriture, boissons, décoration...)</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2">
-                            <span><i class="fas fa-angle-right text-danger"></i> Entraînement des élèves</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2"><span><i class="fas fa-angle-right text-danger"></i> Sélection des élèves (si le nombre d'élèves intéressés est trop grand)</span></li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2"><span><i class="fas fa-angle-right text-danger"></i> Création des équipes qui participeront à l'événement (indiquer, ci-dessous, le nombre d'équipes et d'élèves pour chaque catégories, mettre 0 pour les catégories sans participants)</span></li>
-                    </ul>
-                </div>
-
-                <h2 class="m-0">
-                    <a data-toggle="collapse" href="#collapse_selections" role="button" aria-expanded="false" aria-controls="collapse_selections"><i class="fas fa-plus-square"></i></a>
-                    SÉLECTIONS & BAC à SABLE
-                </h2>
-                <div class="collapse" id="collapse_selections">
-                    <div class="row">
-                        <div class="col-md-4 mt-2 mb-3">
-                            <a class=" btn btn-light btn-sm btn-block" href="/console/sltn" role="button">Enregistrement et évaluation des jeux</a>
-                            <a class=" btn btn-light btn-sm btn-block mt-2" style="opacity:0.8" href="/console/bas" role="button">Bac à sable</a>
                         </div>
                     </div>
                 </div>
@@ -241,6 +214,43 @@
 
                     <div class="text-center"><button type="submit" class="btn btn-primary btn-sm mt-2 pl-4 pr-4"><i class="fas fa-check"></i></button></div>
                 </form>
+
+
+                <h2 class="m-0">
+                    <a data-toggle="collapse" href="#collapse_preparation" role="button" aria-expanded="false" aria-controls="collapse_preparation"><i class="fas fa-plus-square"></i></a>
+                    PRÉPARATION
+                </h2>
+                <div class="collapse" id="collapse_preparation">
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2">
+                            <span><i class="fas fa-angle-right text-danger"></i> Inscription de l'établissement</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2">
+                            <span><i class="fas fa-angle-right text-danger"></i> Choix de la date de l'événement (saisir cette date dans la section "JOUR J")</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2">
+                            <span><i class="fas fa-angle-right text-danger"></i> Préparation de l'événement dans l'établissement (date, lieux, autoriations, affiches, ordinateurs, nourriture, boissons, décoration...)</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2">
+                            <span><i class="fas fa-angle-right text-danger"></i> Entraînement des élèves</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2"><span><i class="fas fa-angle-right text-danger"></i> Sélection des élèves (si le nombre d'élèves intéressés est trop grand)</span></li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center text-monospace small p-2"><span><i class="fas fa-angle-right text-danger"></i> Création des équipes qui participeront à l'événement (indiquer, ci-dessous, le nombre d'équipes et d'élèves pour chaque catégories, mettre 0 pour les catégories sans participants)</span></li>
+                    </ul>
+                </div>
+
+                <h2 class="m-0">
+                    <a data-toggle="collapse" href="#collapse_selections" role="button" aria-expanded="false" aria-controls="collapse_selections"><i class="fas fa-plus-square"></i></a>
+                    SÉLECTIONS & BAC à SABLE
+                </h2>
+                <div class="collapse" id="collapse_selections">
+                    <div class="row">
+                        <div class="col-md-4 mt-2 mb-3">
+                            <a class=" btn btn-light btn-sm btn-block" href="/console/sltn" role="button">Enregistrement et évaluation des jeux</a>
+                            <a class=" btn btn-light btn-sm btn-block mt-2" style="opacity:0.8" href="/console/bas" role="button">Bac à sable</a>
+                        </div>
+                    </div>
+                </div>
 
             </div>
 
