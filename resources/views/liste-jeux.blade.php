@@ -13,7 +13,7 @@
 		<div class="row">
 
             <div class="col-md-2 mt-4">
-                <a class="btn btn-light btn-sm mb-4" href="/console/{{request()->segment(2)}}" role="button"><i class="fas fa-arrow-left"></i></a>
+                <a class="btn btn-light btn-sm mb-4" href="{{ url()->previous() }}" role="button"><i class="fas fa-arrow-left"></i></a>
             </div>
 
 			<div class="col-md-10">
