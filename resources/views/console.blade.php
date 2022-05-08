@@ -246,7 +246,7 @@
                 <div class="collapse" id="collapse_selections">
                     <div class="row">
                         <div class="col-md-4 mt-2 mb-3">
-                            <a class=" btn btn-light btn-sm btn-block" href="/console/sltn" role="button">Enregistrement et évaluation des jeux</a>
+                            <a class=" btn btn-light btn-sm btn-block" href="/console/sltn" role="button">Organiser des sélections</a>
                             <a class=" btn btn-light btn-sm btn-block mt-2" style="opacity:0.8" href="/console/bas" role="button">Bac à sable</a>
                         </div>
                     </div>
