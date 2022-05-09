@@ -70,7 +70,7 @@
 					<a class="btn btn-warning" href="register" role="button"><img src="{{ asset('img/icon-green-flag.svg') }}" width="12" class="mr-2" />inscrire un établissement</a>
 				</p>
 
-				<iframe style="border-radius:5px" width="100%" height="300px" frameborder="0" allowfullscreen src="//umap.openstreetmap.fr/en/map/ndc_759021?scaleControl=false&miniMap=false&scrollWheelZoom=true&zoomControl=true&allowEdit=false&moreControl=false&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=null&onLoadPanel=undefined&captionBar=false&datalayers=2236140"></iframe>
+				<iframe style="border-radius:5px" width="100%" height="300px" frameborder="0" allowfullscreen src="//umap.openstreetmap.fr/en/map/nuit-du-code_759208?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=false&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=null&onLoadPanel=undefined&captionBar=false"></iframe>
 
 				<p class="text-monospace text-muted small text-justify mt-4">
 					Par équipes de deux ou trois réparties en plusieurs catégories, les élèves auront six heures pour programmer entièrement un jeu avec le logiciel Scratch (ou en Python) à partir d'un univers de jeu fourni.
