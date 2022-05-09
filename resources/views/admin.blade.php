@@ -97,7 +97,7 @@ if (Auth::user()->is_admin != 1) {
                                 <td>{{$etablissement->nom}}</td>
                                 <td>{{$etablissement->pays}}</td>
                                 <td>{{$etablissement->ville}}</td>
-                                <td>{{substr($etablissement->email, 0, 20)}}@if(strlen($etablissement->email)>20)...@endif</td>
+                                <td>{{$etablissement->email}}</td>
                                 <td>{{$etablissement->ndc_date}}</td>
                                 <td class="text-center">{{$etablissement->scratch_nb_equipes_c3}}</td>
                                 <td class="text-center">{{$etablissement->scratch_nb_equipes_c4}}</td>
