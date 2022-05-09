@@ -35,7 +35,7 @@
                     $critere1_scratch_titre = "Jouabilité";
                     $critere1_scratch_description = "Facilité et rapidité de la prise en main, absence de bogues, environnement intuitif, nombre de niveaux / scènes, difficulté progressive...";
                     $critere2_scratch_titre = "Richesse / Complexité";
-                    $critere2_scratch_description = "Nombre de lutins et décors, niveaux / scènes multiples, variété des actions, défilements, collisions...";
+                    $critere2_scratch_description = "Nombre de lutins et décors, niveaux / scènes multiples, variété des actions, défilements, effets...";
                     $critere3_scratch_titre = "Originalité / Créativité";
                     $critere3_scratch_description = "Utilisation originale des lutins et des décors, orginalité du scénario, lutins à contre emploi, présentation décalée...";
                     $critere4_scratch_titre = "Respect des consignes / Documentation";
