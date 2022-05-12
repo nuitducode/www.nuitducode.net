@@ -148,6 +148,7 @@
                                 } else {
                                     ?>
                                     <div class="text-monospace small text-danger">Cet identifiant Scratch n'existe pas! [{{$jeu->scratch_id}}]</div>
+                                    <div class="text-monospace small text-danger">Vérifier que le jeu a bien été partagé (bouton orange "Partager", ou "Share" en anglais).</div>
                                     <br />
                                     <br />
                                     <?php
