@@ -30,6 +30,12 @@ if (Auth::user()->is_admin != 1) {
 
                 <h1 class="mb-0">ÉVALUATIONS</h1>
                 <div class="text-monospace text-muted small">Nuit du c0de 2022</div>
+                <?php
+                $user = App\Models\User::::find(request()->get('id'));
+                ?>
+                <div class="text-monospace text-muted small">{{$user->name}}</div>
+
+
                 <h2>SCRATCH</h2>
                 <div style="border:1px silver solid;border-radius:5px;padding:20px;background-color:white;">
                 <?php
