@@ -33,7 +33,7 @@ if (Auth::user()->is_admin != 1) {
                 <?php
                 $user = App\Models\User::find(request()->get('id'));
                 ?>
-                <div class="text-monospace text-muted small">{{$user->name}}</div>
+                <div class="text-monospace text-muted small">{{$user->etablissement}}-{{$user->ville}}-{{$user->pays}}</div>
 
 
                 <h2>SCRATCH</h2>
