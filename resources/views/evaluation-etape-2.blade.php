@@ -142,8 +142,6 @@
                                     </div>
                                     <br />
                                     <br />
-
-
                                 <?php
                                 } else {
                                     ?>
@@ -160,22 +158,20 @@
                             <input id="jury_nom" name="jury_nom" type="hidden" value="{{$jury_nom}}" />
                             <input id="jury_type" name="jury_type" type="hidden" value="{{$jury_type}}" />
                             <input id="langage" name="langage" type="hidden" value="scratch" />
-                            <input id="jeu_id" name="jeu_id" type="hidden" value="{{Crypt::encryptString($jeu->id)}}" />
                             <button type="submit" id="submit_jeu" class="btn btn-primary" disabled><i class="fas fa-check"></i></button>
                         </form>
-
                         <?php
                     }
 
                     // PYTHON
                     $critere1_python_titre = "Jouabilité";
-                    $critere1_python_description = "";
+                    $critere1_python_description = "Facilité et rapidité de la prise en main, absence de bogues, environnement intuitif, nombre de niveaux / scènes, difficulté progressive...";
                     $critere2_python_titre = "Richesse / complexité";
-                    $critere2_python_description = "";
+                    $critere2_python_description = "Nombre de personnages / objets / décors, niveaux / scènes multiples, variété des actions, défilements, effets...";
                     $critere3_python_titre = "Originalité / créativité";
-                    $critere3_python_description = "";
+                    $critere3_python_description = "Utilisation originale des personnages / objets / décors, orginalité du scénario, présentation décalée...";
                     $critere4_python_titre = "Respect des consignes";
-                    $critere4_python_description = "";
+                    $critere4_python_description = "Absence d'éléments extérieurs, intégrité des lutins, documentation claire et complète...";
 
                     if (in_array($categorie, ['PI', 'POO'])) {
                         ?>
@@ -273,8 +269,6 @@ os.system(<span style="color:rgb(163, 190, 140); font-weight:400;">'pyxel run "{
                                     </div>
                                     <br />
                                     <br />
-
-
                                 <?php
                                 }
                             }
@@ -284,22 +278,17 @@ os.system(<span style="color:rgb(163, 190, 140); font-weight:400;">'pyxel run "{
                             <input id="jury_nom" name="jury_nom" type="hidden" value="{{$jury_nom}}" />
                             <input id="jury_type" name="jury_type" type="hidden" value="{{$jury_type}}" />
                             <input id="langage" name="langage" type="hidden" value="python" />
-                            <input id="jeu_id" name="jeu_id" type="hidden" value="{{Crypt::encryptString($jeu->id)}}" />
                             <button type="submit" id="submit_jeu" class="btn btn-primary" disabled><i class="fas fa-check"></i></button>
                         </form>
-
                         <?php
                     }
-
                 } else {
                     ?>
-
                     <div class="text-success text-monospace text-center mt-5 pb-4" role="alert">
                         Pas de jeu à évaluer.
                         <br />
                         <a class="btn btn-light btn-sm mt-3" href="{{ URL::previous() }}" role="button"><i class="fas fa-arrow-left"></i></a>
                     </div>
-
                     <?php
                 }
                 ?>
