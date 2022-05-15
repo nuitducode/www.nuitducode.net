@@ -41,7 +41,6 @@
                     $categories = ['C3' => 'Cycle 3', 'C4' => 'Cycle 4', 'LY' => 'Lycée'];
                     foreach ($categories AS $categorie_code => $categorie){
                         $jeux = App\Models\Game::where([['etablissement_id', $etablissement_id], ['type', request()->segment(2)], ['categorie', $categorie_code]])->get();
-                        dd($jeux);
                         ?>
                         <h3 class="m-0 mb-1">{{$categorie}}</h3>
                         @if(count($jeux) == 0)
