@@ -134,7 +134,7 @@
                                     <div class="col mb-4">
                                         <div class="card p-3" @if(($loop->iteration == 1 OR $loop->iteration == 2) AND $evaluation['note'] != 0) style="background-color:#ffc905;border-radius:5px;" @endif>
 
-                                            <h3 class="mt-0" style="color:#4cbf56">{{ $evaluation['nom_equipe'] }}</h3>
+                                            <h3 class="mt-0" style="color:#4cbf56">@if(($loop->iteration == 1 OR $loop->iteration == 2) AND $evaluation['note'] != 0)<i class="fas fa-crown mr-1" style="color:#f39c12"></i>@endif {{ $evaluation['nom_equipe'] }}</h3>
 
                                             <div class="text-center">
                                                 <a href="/console/jouer-jeu-pyxel/{{$etablissement_jeton.'-'.$jeu->python_id}}" class="btn btn-success btn-sm" target="_blank" role="button"><i class="fas fa-gamepad fa-2x"></i></a>
