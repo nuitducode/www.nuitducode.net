@@ -29,8 +29,8 @@ if (Auth::user()->is_admin != 1) {
                 $etablissement_id = $user->id;
                 $etablissement_jeton = $user->jeton;
                 ?>
-                <div class="text-monospace text-muted small">{{$user->etablissement}} &#x26AC; {{$user->ville}} &#x26AC; {{$user->pays}}</div>
-                <div class="text-monospace text-muted small">{{$user->nom}} &#x26AC; {{$user->prenom}} &#x26AC; {{$user->email}}</div>
+                <div class="text-monospace text-muted small">{{$user->etablissement}} &#8226; {{$user->ville}} &#8226; {{$user->pays}}</div>
+                <div class="text-monospace text-muted small">{{$user->nom}} {{$user->prenom}} &#8226; {{$user->email}}</div>
 
                 <h2>SCRATCH</h2>
                 <div style="border:1px silver solid;border-radius:5px;padding:20px;background-color:white;">
