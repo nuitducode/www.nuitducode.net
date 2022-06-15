@@ -113,6 +113,10 @@ Route::view('/console/admin_notes', 'admin_notes')->middleware('auth');
 
 Route::get('/console', [App\Http\Controllers\ConsoleController::class, 'console_get'])->name('console_get');
 
+// VALIDATION FINALISTES
+Route::post('/console/validation-finalistes', [App\Http\Controllers\ConsoleController::class, 'valider_finalistes'])->name('valider-finalistes');
+Route::post('/console/invalidation-finalistes', [App\Http\Controllers\ConsoleController::class, 'invalider_finalistes'])->name('invalider-finalistes');
+
 // JEUX & EVALUATIONS
 Route::view('/console/ndc', 'jeux-console')->middleware('auth');
 Route::view('/console/sltn', 'jeux-console')->middleware('auth');

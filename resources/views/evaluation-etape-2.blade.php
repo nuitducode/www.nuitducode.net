@@ -9,6 +9,17 @@
 
     @include('inc-nav')
 
+    <?php
+    if (Auth::user()->fin_evaluations == 1){
+        echo '<div class="text-success text-monospace text-center mt-5 pb-4" role="alert">';
+        echo 'LES ÉVALUATIONS SONT MAINTEANT TERMINÉES';
+        echo '</div>';
+        echo '</body>';
+        echo '</html>';
+        exit;
+    }
+    ?>
+
 	<div class="container mt-4 mb-5">
 		<div class="row pt-3">
 			<div class="col-md-2"></div>
@@ -170,8 +181,8 @@
                     $critere2_python_description = "Nombre de personnages / objets / décors, niveaux / scènes multiples, variété des actions, défilements, effets...";
                     $critere3_python_titre = "Originalité / créativité";
                     $critere3_python_description = "Utilisation originale des personnages / objets / décors, orginalité du scénario, présentation décalée...";
-                    $critere4_python_titre = "Respect des consignes";
-                    $critere4_python_description = "Absence d'éléments extérieurs, intégrité des lutins, documentation claire et complète...";
+                    $critere4_python_titre = "Documentation";
+                    $critere4_python_description = "Documentation claire et complète.";
 
                     if (in_array($categorie, ['PI', 'POO'])) {
                         ?>

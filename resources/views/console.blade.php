@@ -99,6 +99,58 @@
                                 <a class=" btn btn-info" href="/console/ndc/jeux-evaluations" role="button"><i class="fas fa-trophy"></i></a>
                             </div>
 
+                            <h3 class="mt-5"><span class="badge badge-pill badge-primary">5</span> Finalistes</h3>
+                            <div class="ml-2 mb-1 ml-4 pl-4 pr-4 pb-4 pt-3" style="border-radius:4px;border:1px solid #dfdfdf;@if(Auth::user()->fin_evaluations == 0) background-color:#f3f5f7 @else  background-color:#ffc905 @endif">
+                                <?php
+                                $categories = ['C3' => 'Scratch - Cycle 3', 'C4' => 'Scratch - Cycle 4', 'LY' => 'Scratch - Lycée', 'PI' => 'Python - Première', 'POO' => 'Python - Terminale'];
+                                $finalistes = [];
+                                foreach ($categories AS $categorie_code => $categorie){
+                                    $jeux = App\Models\Game::where([['etablissement_id', Auth::user()->id], ['type', 'ndc'], ['categorie', $categorie_code]])->get();
+                                    $evaluations = [];
+                                    foreach($jeux AS $jeu){
+                                        $note = App\Models\Evaluation::where([['etablissement_id', Auth::user()->id], ['game_id', $jeu->id]])->avg('note');
+                                        $evaluations[$jeu->id] = ["nom_equipe"=>$jeu->nom_equipe, "jeu_id"=>$jeu->id, "note"=>$note];
+                                    }
+                                    uasort($evaluations, fn($a, $b) => $a['note'] <=> $b['note']);
+                                    $evaluations = array_reverse($evaluations);
+                                    if(isset($evaluations[0])){
+                                        if(isset($evaluations[0]) and $evaluations[0]["note"] > 0){
+                                            if(Auth::user()->fin_evaluations == 0 ){
+                                                echo "<h4>" . $categorie . "</h4>";
+                                            }else{
+                                                echo "<h4><i class='fas fa-crown mr-2' style='color:#f39c12'></i>" . $categorie . "</h4>";
+                                            }
+                                        }
+
+                                        echo "<ul>";
+                                        if(isset($evaluations[0]) and $evaluations[0]["note"] > 0){
+                                            $finalistes[] = $evaluations[0]["jeu_id"];
+                                            echo "<li>" . $evaluations[0]["nom_equipe"] . "</li>";
+                                        }
+                                        if(isset($evaluations[1]) and $evaluations[1]["note"] > 0){
+                                            $finalistes[] = $evaluations[1]["jeu_id"];
+                                            echo "<li>" . $evaluations[1]["nom_equipe"] . "</li>";
+                                        }
+                                        echo "</ul>";
+                                    }
+                                }
+                                ?>
+                                @if(Auth::user()->fin_evaluations == 0)
+                                <form method="POST" action="{{ route('valider-finalistes') }}">
+                                @else
+                                <form method="POST" action="{{ route('invalider-finalistes') }}">
+                                @endif
+                                    @csrf
+                                    <input type="hidden" name="finalistes" value="{{serialize($finalistes)}}" />
+                                    @if(Auth::user()->fin_evaluations == 0)
+                                    <div class="text-center"><button type="submit" class="btn btn-primary btn-sm mt-2 pl-4 pr-4" data-boundary="window" data-html="truer" data-toggle="tooltip" data-placement="top" title="fin des évaluations<br />valider la liste"><i class="fas fa-unlock"></i></button></div>
+                                    @else
+                                    <div class="text-center"><button type="submit" class="btn btn-primary btn-sm mt-2 pl-4 pr-4" data-boundary="window" data-toggle="tooltip" data-placement="top" title="dévérouiller la liste"><i class="fas fa-lock"></i></button></div>
+                                    @endif
+                                </form>
+                            </div>
+
+
                         </div>
                     </div>
                 </div>
