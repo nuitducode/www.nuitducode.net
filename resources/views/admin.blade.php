@@ -29,6 +29,7 @@ if (Auth::user()->is_admin != 1) {
         <?php
         $etablissements = App\Models\User::where('is_admin', '!=', -1)->orderBy('ndc_date')->get();
         $nb_valide = App\Models\User::where([['ndc_date', '!=', 'NULL'], ['is_admin', '!=', -1]])->count();
+        $nb_fin_evaluations = App\Models\User::where([['fin_evaluations', 1], ['is_admin', '!=', -1]])->count();
         ?>
 
         <div class="row mt-1 p-3">
@@ -72,6 +73,8 @@ if (Auth::user()->is_admin != 1) {
             <small class="text-muted">{{$m}}</small>
         </div>
 
+        <p class="text-monospace small text-muted">Fin évaluations : {{$nb_fin_evaluations}}</p>
+
         <div class="row mt-4">
             <div class="col-md-12">
                 <div class="table-responsive">
@@ -81,6 +84,7 @@ if (Auth::user()->is_admin != 1) {
                                 <th scope="col"></th>
                                 <th scope="col">Id</th>
                                 <th scope="col">Jeton</th>
+                                <th scope="col"></th>
                                 <th scope="col"></th>
                                 <th scope="col"></th>
                                 <th scope="col"></th>
@@ -104,6 +108,7 @@ if (Auth::user()->is_admin != 1) {
                                 <td class="text-success">{{$loop->index + 1}}</td>
                                 <td>{{$etablissement->id}}</td>
                                 <td>{{$etablissement->jeton}}</td>
+                                <td>@if($etablissement->fin_evaluations == 1) <i class="fas fa-lock"></i> @endif</td>
                                 <td class="text-center"><a href="/console/admin_notes?id={{$etablissement->id}}"><i class="fas fa-trophy"></i></a></td>
                                 <td class="text-center"><a href="/console/admin_jeux?id={{$etablissement->id}}"><i class="fas fa-gamepad"></i></a></td>
                                 <td class="text-center"><a href="/console/admin_evaluations?id={{$etablissement->id}}"><i class="fas fa-check"></i></a></td>
