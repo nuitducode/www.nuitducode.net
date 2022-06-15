@@ -57,6 +57,21 @@ if (Auth::user()->is_admin != 1) {
             <small class="text-muted">{{$n}}</small>
         </div>
 
+        <div class="row p-3">
+            <div class="col-md-12 p-3 text-monospace small text-muted" style="background-color:white;border:1px silver solid;border-radius:4px;">
+                @php
+                $m = 0;
+                foreach($etablissements AS $etablissement){
+                    if ($etablissement->ndc_date !== NULL AND !in_array($etablissement->email, ['labbal@lfitokyo.org', 'laurentabbal@gmail.com', 'liban1@nuitducode.net', 'liban2@nuitducode.net', 'liban3@nuitducode.net', 'liban4@nuitducode.net', 'liban5@nuitducode.net', 'liban6@nuitducode.net', 'liban7@nuitducode.net', 'liban8@nuitducode.net', 'liban9@nuitducode.net', 'liban10@nuitducode.net','schaffhauserzell@orange.fr'])){
+                        echo $etablissement->email . '; ';
+                        $m++;
+                    }
+                }
+                @endphp
+            </div>
+            <small class="text-muted">{{$m}}</small>
+        </div>
+
         <div class="row mt-4">
             <div class="col-md-12">
                 <div class="table-responsive">
