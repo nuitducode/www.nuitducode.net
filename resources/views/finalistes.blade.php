@@ -31,8 +31,9 @@ if (Auth::user()->is_admin != 1) {
                     $categories = ['C3' => 'Cycle 3', 'C4' => 'Cycle 4', 'LY' => 'Lycée'];
                     foreach ($categories AS $categorie_code => $categorie){
                         $jeux = App\Models\Game::where([['type', 'ndc'], ['categorie', $categorie_code], ['finaliste', 1]])->get();
+                        $nb_jeux = App\Models\Game::where([['type', 'ndc'], ['categorie', $categorie_code], ['finaliste', 1]])->count();
                         ?>
-                        <h3 class="m-0 mb-1">{{$categorie}}</h3>
+                        <h3 class="m-0 mb-1">{{$categorie}} [{{$nb_jeux}}]</h3>
                         @if(count($jeux) == 0)
                             <div class="text-monospace text-danger small mb-4">~ pas de jeux dans cette catégorie ~</div>
                         @else
@@ -98,8 +99,9 @@ if (Auth::user()->is_admin != 1) {
                     $categories = ['PI' => 'Première', 'POO' => 'Terminale'];
                     foreach ($categories AS $categorie_code => $categorie){
                         $jeux = App\Models\Game::where([['type', 'ndc'], ['categorie', $categorie_code], ['finaliste', 1]])->get();
+                        $nb_jeux = App\Models\Game::where([['type', 'ndc'], ['categorie', $categorie_code], ['finaliste', 1]])->count();
                         ?>
-                        <h3 class="m-0 mb-1">{{$categorie}}</h3>
+                        <h3 class="m-0 mb-1">{{$categorie}} [{{$nb_jeux}}]</h3>
                         @if(count($jeux) == 0)
                             <div class="text-monospace text-danger small mb-4">~ pas de jeux dans cette catégorie ~</div>
                         @else
