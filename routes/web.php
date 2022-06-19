@@ -106,6 +106,7 @@ Route::view('/console/admin', 'admin')->middleware('auth');
 Route::view('/console/admin_jeux', 'admin_jeux')->middleware('auth');
 Route::view('/console/admin_evaluations', 'admin_evaluations')->middleware('auth');
 Route::view('/console/admin_notes', 'admin_notes')->middleware('auth');
+Route::view('/console/finalistes', 'finalistes')->middleware('auth');
 
 // ============================================================================
 // == CONSOLE
