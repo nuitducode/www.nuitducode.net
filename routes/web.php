@@ -106,7 +106,8 @@ Route::view('/console/admin', 'admin')->middleware('auth');
 Route::view('/console/admin_jeux', 'admin_jeux')->middleware('auth');
 Route::view('/console/admin_evaluations', 'admin_evaluations')->middleware('auth');
 Route::view('/console/admin_notes', 'admin_notes')->middleware('auth');
-Route::view('/console/finalistes', 'finalistes')->middleware('auth');
+Route::view('/console/admin_finalistes', 'admin_finalistes')->middleware('auth');
+
 
 // ============================================================================
 // == CONSOLE
@@ -131,6 +132,9 @@ Route::view('/console/bas/liste-jeux', 'liste-jeux')->middleware('auth');
 Route::view('/console/ndc/liste-evaluations', 'liste-evaluations')->middleware('auth');
 Route::view('/console/sltn/liste-evaluations', 'liste-evaluations')->middleware('auth');
 Route::view('/console/bas/liste-evaluations', 'liste-evaluations')->middleware('auth');
+
+// EVALUATION FINALISTES
+Route::view('/console/evaluation_finalistes', 'evaluation_finalistes')->middleware('auth');
 
 // JOUER JEU PYXEL
 Route::get('/console/jouer-jeu-pyxel/{jeu_id}', function ($jeu_id) {
