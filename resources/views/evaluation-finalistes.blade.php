@@ -43,7 +43,7 @@
                 $excluded_games = App\Models\Evaluation_finaliste::where([['jury_id', Auth::user()->id], ['categorie', $categorie], ])->pluck('game_id')->toArray();
 
                 // jeux a evaluer
-                $jeux = App\Models\Game::where([['etablissement_id', '!=', Auth::user()->id], ['type', 'ndc'], ['categorie', $categorie], ['finaliste', 1]])->whereNotIn('id', $excluded_games)->take(6)->get();
+                $jeux = App\Models\Game::where([['etablissement_id', '!=', Auth::user()->id], ['type', 'ndc'], ['categorie', $categorie], ['finaliste', 1]])->whereNotIn('id', $excluded_games)->inRandomOrder()->take(6)->get();
 
                 if (count($jeux) !== 0) {
 
