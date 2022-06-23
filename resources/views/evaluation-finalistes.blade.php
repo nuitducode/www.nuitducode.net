@@ -1,4 +1,3 @@
-@include('inc-top')
 <!doctype html>
 <html lang="fr">
 <head>
@@ -38,11 +37,14 @@
                 @endif
 
                 <?php
-                // jeux deja evalues
-                
+                $categorie = Crypt::decryptString($categorie);
+
+                // jeux a exclure
+                $excluded_games = App\Models\Evaluation_finaliste::where([['jury_id', Auth::user()->id], ['categorie', $categorie], ])->pluck('game_id')->toArray();
 
                 // jeux a evaluer
-                $jeux = App\Models\Game::where([['etablissement_jeton', $etablissement_jeton], ['type', request()->segment(1)], ['categorie', $categorie]])->get();
+                $jeux = App\Models\Game::where([['etablissement_id', '!=', Auth::user()->id], ['type', 'ndc'], ['categorie', $categorie], ['finaliste', 1]])->whereNotIn('id', $excluded_games)->take(6)->get();
+
                 if (count($jeux) !== 0) {
 
                     // SCRATCH
@@ -58,29 +60,17 @@
                     if (in_array($categorie, ['C3', 'C4', 'LY'])) {
                         ?>
 
-                        <form method="POST" action="{{ route(request()->segment(1).'-evaluation-etape-2_post') }}">
+                        <form method="POST" action="{{ route('evaluation-finalistes_post') }}">
                             @csrf
 
                             <?php
                             foreach ($jeux AS $jeu) {
-                                ?>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h2 class="mb-1" style="color:#4cbf56">{{$jeu->nom_equipe}}</h2>
-                                    </div>
-                                </div>
-                                <?php
                                 $json = @file_get_contents("https://api.scratch.mit.edu/projects/".$jeu->scratch_id);
                                 if ($json !== FALSE) {
                                     $jeu_scratch = json_decode($json);
                                     ?>
                                     <div class="row">
                                         <div class="col-md-6">
-                                            @if($jury_type != 'eleve')
-                                            <h3 class="mb-1 mt-1">[NdC 2022 - C3] {{$jeu_scratch->title}}</h3>
-                                            <div class="text-monospace small text-muted">Création : {{$jeu_scratch->history->created}}</div>
-                                            <div class="text-monospace small text-muted">Derniere modification : {{$jeu_scratch->history->modified}}</div>
-                                            @endif
                                             <div class="text-monospace small">Si le jeu ne s'affiche pas correctement, vous pouvez l'ouvrir dans un autre onglet en cliquant <a href="https://scratch.mit.edu/projects/{{$jeu_scratch->id}}" target="_blank">ici</a>.</div>
                                         </div>
                                     </div>
@@ -95,12 +85,6 @@
                                                     <span class="text-danger">pas d'instructions</span>
                                                 @endif
                                             </div>
-                                            @if($jury_type != 'eleve')
-                                            <div class="text-monospace small text-muted pt-1 pl-1">
-                                                <i class="fas fa-gamepad" style="font-size:140%;vertical-align:-1px;"></i> <a href="https://scratch.mit.edu/projects/{{$jeu_scratch->id}}" target="_blank">{{$jeu_scratch->id}}</a> ~
-                                                <i class="fas fa-user-circle"></i> <a href="https://scratch.mit.edu/users/{{$jeu_scratch->author->username}}" target="_blank">{{$jeu_scratch->author->username}}</a>
-                                            </div>
-                                            @endif
                                         </div>
                                         <div class="col-md-6">
 
@@ -109,9 +93,9 @@
                                             </div>
                                             <div class="row mt-2 mb-3">
                                                 <div class="col">
-                                                    <input type="range" id="{{$jeu->scratch_id}}_critere1" name="evaluation[{{$jeu->scratch_id}}]['critere1']" class="custom-range" value="-1" min="-1" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                                    <input type="range" id="{{$jeu->id}}_critere1" name="evaluation[{{$jeu->id}}]['critere1']" class="custom-range" value="-1" min="-1" max="5" step="1" oninput="curseur(this.id, this.value);">
                                                 </div>
-                                                <div class="col-auto text-secondary text-center font-weight-bold" id="{{$jeu->scratch_id}}_critere1_note" style="width:40px;">
+                                                <div class="col-auto text-secondary text-center font-weight-bold" id="{{$jeu->id}}_critere1_note" style="width:40px;">
                                                     <i class="fas fa-times text-danger"></i>
                                                 </div>
                                             </div>
@@ -121,9 +105,9 @@
                                             </div>
                                             <div class="row mt-2 mb-3">
                                                 <div class="col">
-                                                    <input type="range" id="{{$jeu->scratch_id}}_critere2" name="evaluation[{{$jeu->scratch_id}}]['critere2']" class="custom-range" value="-1" min="-1" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                                    <input type="range" id="{{$jeu->id}}_critere2" name="evaluation[{{$jeu->id}}]['critere2']" class="custom-range" value="-1" min="-1" max="5" step="1" oninput="curseur(this.id, this.value);">
                                                 </div>
-                                                <div class="col-auto text-secondary text-center font-weight-bold" id="{{$jeu->scratch_id}}_critere2_note" style="width:40px;">
+                                                <div class="col-auto text-secondary text-center font-weight-bold" id="{{$jeu->id}}_critere2_note" style="width:40px;">
                                                     <i class="fas fa-times text-danger"></i>
                                                 </div>
                                             </div>
@@ -133,9 +117,9 @@
                                             </div>
                                             <div class="row mt-2 mb-3">
                                                 <div class="col">
-                                                    <input type="range" id="{{$jeu->scratch_id}}_critere3" name="evaluation[{{$jeu->scratch_id}}]['critere3']" class="custom-range" value="-1" min="-1" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                                    <input type="range" id="{{$jeu->id}}_critere3" name="evaluation[{{$jeu->id}}]['critere3']" class="custom-range" value="-1" min="-1" max="5" step="1" oninput="curseur(this.id, this.value);">
                                                 </div>
-                                                <div class="col-auto text-secondary text-center font-weight-bold" id="{{$jeu->scratch_id}}_critere3_note" style="width:40px;">
+                                                <div class="col-auto text-secondary text-center font-weight-bold" id="{{$jeu->id}}_critere3_note" style="width:40px;">
                                                     <i class="fas fa-times text-danger"></i>
                                                 </div>
                                             </div>
@@ -145,9 +129,9 @@
                                             </div>
                                             <div class="row mt-2 mb-3">
                                                 <div class="col">
-                                                    <input type="range" id="{{$jeu->scratch_id}}_critere4" name="evaluation[{{$jeu->scratch_id}}]['critere4']" class="custom-range" value="-1" min="-1" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                                    <input type="range" id="{{$jeu->id}}_critere4" name="evaluation[{{$jeu->id}}]['critere4']" class="custom-range" value="-1" min="-1" max="5" step="1" oninput="curseur(this.id, this.value);">
                                                 </div>
-                                                <div class="col-auto text-secondary text-center font-weight-bold" id="{{$jeu->scratch_id}}_critere4_note" style="width:40px;">
+                                                <div class="col-auto text-secondary text-center font-weight-bold" id="{{$jeu->id}}_critere4_note" style="width:40px;">
                                                     <i class="fas fa-times text-danger"></i>
                                                 </div>
                                             </div>
@@ -167,12 +151,9 @@
                                 }
                             }
                             ?>
-                            <input id="etablissement_jeton" name="etablissement_jeton" type="hidden" value="{{$etablissement_jeton}}" />
                             <input id="categorie" name="categorie" type="hidden" value="{{$categorie}}" />
-                            <input id="jury_nom" name="jury_nom" type="hidden" value="{{$jury_nom}}" />
-                            <input id="jury_type" name="jury_type" type="hidden" value="{{$jury_type}}" />
-                            <input id="langage" name="langage" type="hidden" value="scratch" />
-                            <button type="submit" id="submit_jeu" class="btn btn-primary" disabled><i class="fas fa-check"></i></button>
+                            <button type="submit" id="submit_jeu" class="btn btn-primary inline" disabled><i class="fas fa-check"></i></button>
+                            <span id="submit_warning" class="pl-2 small text-danger text-monospace">il manque au moins un critère</span>
                         </form>
                         <?php
                     }
@@ -198,13 +179,13 @@
                                 if(File::exists(storage_path("app/public/fichiers_pyxel/".$jeu->etablissement_jeton.'-'.$jeu->python_id))) {
                                     $files = File::files(storage_path("app/public/fichiers_pyxel/".$jeu->etablissement_jeton.'-'.$jeu->python_id));
                                     ?>
-                                    @if($jury_type != 'eleve')
+
                                     <div class="row">
                                         <div class="col-md-12">
                                             <h2 class="mb-1" style="color:#4cbf56">{{$jeu->nom_equipe}}</h2>
                                         </div>
                                     </div>
-                                    @endif
+
 
                                     <div class="row">
                                         <div class="col-md-6">
@@ -287,12 +268,12 @@ os.system(<span style="color:rgb(163, 190, 140); font-weight:400;">'pyxel run "{
                                 }
                             }
                             ?>
-                            <input id="etablissement_jeton" name="etablissement_jeton" type="hidden" value="{{$etablissement_jeton}}" />
+
                             <input id="categorie" name="categorie" type="hidden" value="{{$categorie}}" />
-                            <input id="jury_nom" name="jury_nom" type="hidden" value="{{$jury_nom}}" />
-                            <input id="jury_type" name="jury_type" type="hidden" value="{{$jury_type}}" />
+
                             <input id="langage" name="langage" type="hidden" value="python" />
-                            <button type="submit" id="submit_jeu" class="btn btn-primary" disabled><i class="fas fa-check"></i></button>
+                            <button type="submit" id="submit_jeu" class="btn btn-primary inline" disabled><i class="fas fa-check"></i></button>
+                            <span id="submit_warning" class="pl-2 small text-danger text-monospace">il manque au moins un critère</span>
                         </form>
                         <?php
                     }
@@ -301,7 +282,7 @@ os.system(<span style="color:rgb(163, 190, 140); font-weight:400;">'pyxel run "{
                     <div class="text-success text-monospace text-center mt-5 pb-4" role="alert">
                         Pas de jeu à évaluer.
                         <br />
-                        <a class="btn btn-light btn-sm mt-3" href="{{ URL::previous() }}" role="button"><i class="fas fa-arrow-left"></i></a>
+                        <a class="btn btn-light btn-sm mt-3" href="/console/" role="button"><i class="fas fa-arrow-left"></i></a>
                     </div>
                     <?php
                 }
@@ -315,7 +296,7 @@ os.system(<span style="color:rgb(163, 190, 140); font-weight:400;">'pyxel run "{
     function curseur(id, note) {
         if (note == "-1") {
             document.getElementById(id+"_note").innerHTML = '<i class="fas fa-times text-danger">';
-        }else {
+        } else {
             document.getElementById(id+"_note").innerHTML = note;
         }
         var inputs, index, values;
@@ -325,12 +306,17 @@ os.system(<span style="color:rgb(163, 190, 140); font-weight:400;">'pyxel run "{
             values.push(inputs[index].value);
         }
         document.getElementById('submit_jeu').disabled = values.includes("-1");
+        if (values.includes("-1")){
+            document.getElementById('submit_warning').style.display = "inline";
+        } else {
+            document.getElementById('submit_warning').style.display = "none";
+        }
     }
     </script>
 
     <script>
     if ( window.history.replaceState ) {
-      window.history.replaceState( null, null, window.location.href );
+        window.history.replaceState( null, null, window.location.href );
     }
     </script>
 

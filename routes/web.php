@@ -134,7 +134,11 @@ Route::view('/console/sltn/liste-evaluations', 'liste-evaluations')->middleware(
 Route::view('/console/bas/liste-evaluations', 'liste-evaluations')->middleware('auth');
 
 // EVALUATION FINALISTES
-Route::view('/console/evaluation_finalistes', 'evaluation_finalistes')->middleware('auth');
+Route::get('/console/evaluation-finalistes/{categorie}', function ($categorie) {
+    return view('evaluation-finalistes', ['categorie' => $categorie]);
+})->middleware('auth');
+Route::post('/console/evaluation-finalistes', [App\Http\Controllers\ConsoleController::class, 'evaluation_finalistes_post'])->name('evaluation-finalistes_post');
+Route::view('/console/evaluation-finalistes-categories', 'evaluation-finalistes-categories')->middleware('auth');
 
 // JOUER JEU PYXEL
 Route::get('/console/jouer-jeu-pyxel/{jeu_id}', function ($jeu_id) {
