@@ -150,6 +150,10 @@
                                 </form>
                             </div>
 
+                            <h3 class="mt-5"><span class="badge badge-pill badge-primary">6</span> Évaluation des finalistes</h3>
+                            <div class="mb-1 ml-4">
+                                <a class="btn btn-success" href="/console/evaluation-finalistes-categories" role="button">évaluer</a>
+                            </div>
 
                         </div>
                     </div>
