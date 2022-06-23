@@ -42,13 +42,10 @@ if (Auth::user()->is_admin != 1) {
                                 <?php
                                 $evaluations = [];
                                 foreach($jeux AS $jeu){
-                                    $nb_eval_eleves = App\Models\Evaluation::where([['game_id', $jeu->id], ['jury_type', 'eleve']])->count();
-                                    $nb_eval_enseignants = App\Models\Evaluation::where([['game_id', $jeu->id], ['jury_type', 'enseignant']])->count();
-                                    $note_eleves = App\Models\Evaluation::where([['game_id', $jeu->id], ['jury_type', 'eleve']])->avg('note');
-                                    $note_enseignants = App\Models\Evaluation::where([['game_id', $jeu->id], ['jury_type', 'enseignant']])->avg('note');
-                                    $note = App\Models\Evaluation::where([['game_id', $jeu->id]])->avg('note');
+                                    $nb_evals = App\Models\Evaluation_finaliste::where([['game_id', $jeu->id]])->count();
+                                    $note = App\Models\Evaluation_finaliste::where([['game_id', $jeu->id]])->avg('note');
                                     $json = @file_get_contents("https://api.scratch.mit.edu/projects/".$jeu->scratch_id);
-                                    $evaluations[$jeu->id] = ["nom_equipe"=>$jeu->nom_equipe, "scratch_id"=>$jeu->scratch_id, "json"=>$json, "nb_eval_eleves"=>$nb_eval_eleves, "nb_eval_enseignants"=>$nb_eval_enseignants, "note_eleves"=>$note_eleves, "note_enseignants"=>$note_enseignants, "note"=>$note];
+                                    $evaluations[$jeu->id] = ["nom_equipe"=>$jeu->nom_equipe, "scratch_id"=>$jeu->scratch_id, "json"=>$json, "nb_evals"=>$nb_evals, "note"=>$note];
                                 }
                                 uasort($evaluations, fn($a, $b) => $a['note'] <=> $b['note']);
                                 $evaluations = array_reverse($evaluations, TRUE);
@@ -69,10 +66,7 @@ if (Auth::user()->is_admin != 1) {
                                                 </div>
 
                                                 <div class="mt-2 text-monospace small">
-                                                    <div>Nb d'évaluations élèves: <span class="text-primary font-weight-bold">{{ $evaluation['nb_eval_eleves'] }}</span></div>
-                                                    <div>Nb d'évaluations enseignants: <span class="text-primary font-weight-bold">{{ $evaluation['nb_eval_enseignants'] }}</span></div>
-                                                    <div>Note élèves: <span class="text-primary font-weight-bold">@if($evaluation['note_eleves'] != 0){{ round($evaluation['note_eleves'], 1) }} @else - @endif</span></div>
-                                                    <div>Note enseignants: <span class="text-primary font-weight-bold">@if($evaluation['note_enseignants'] != 0) {{ round($evaluation['note_enseignants'],1) }} @else - @endif</span></div>
+                                                    <div>Nb d'évaluations: <span class="text-primary font-weight-bold">{{ $evaluation['nb_evals'] }}</span></div>
                                                 </div>
 
                                                 <kbd class="mt-2 text-center">Note globale:<span class="text-primary font-weight-bold">@if($evaluation['note'] != 0) {{ round($evaluation['note'],1) }} @else - @endif</span></kbd>
