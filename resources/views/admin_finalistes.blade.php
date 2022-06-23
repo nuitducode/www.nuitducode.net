@@ -104,12 +104,9 @@ if (Auth::user()->is_admin != 1) {
                                 <?php
                                 $evaluations = [];
                                 foreach($jeux AS $jeu){
-                                    $nb_eval_eleves = App\Models\Evaluation::where([['game_id', $jeu->id], ['jury_type', 'eleve']])->count();
-                                    $nb_eval_enseignants = App\Models\Evaluation::where([['game_id', $jeu->id], ['jury_type', 'enseignant']])->count();
-                                    $note_eleves = App\Models\Evaluation::where([['game_id', $jeu->id], ['jury_type', 'eleve']])->avg('note');
-                                    $note_enseignants = App\Models\Evaluation::where([['game_id', $jeu->id], ['jury_type', 'enseignant']])->avg('note');
-                                    $note = App\Models\Evaluation::where([['game_id', $jeu->id]])->avg('note');
-                                    $evaluations[$jeu->id] = ["nom_equipe"=>$jeu->nom_equipe, "scratch_id"=>$jeu->scratch_id, "nb_eval_eleves"=>$nb_eval_eleves, "nb_eval_enseignants"=>$nb_eval_enseignants, "note_eleves"=>$note_eleves, "note_enseignants"=>$note_enseignants, "note"=>$note];
+                                    $nb_evals = App\Models\Evaluation_finaliste::where([['game_id', $jeu->id]])->count();
+                                    $note = App\Models\Evaluation_finaliste::where([['game_id', $jeu->id]])->avg('note');
+                                    $evaluations[$jeu->id] = ["nom_equipe"=>$jeu->nom_equipe, "etablissement_jeton"=>$jeu->etablissement_jeton, "python_id"=>$jeu->python_id, "nb_evals"=>$nb_evals, "note"=>$note];
                                 }
                                 uasort($evaluations, fn($a, $b) => $a['note'] <=> $b['note']);
                                 $evaluations = array_reverse($evaluations, TRUE);
@@ -123,14 +120,11 @@ if (Auth::user()->is_admin != 1) {
                                             <h3 class="mt-0" style="color:#4cbf56">@if(($loop->iteration == 1 OR $loop->iteration == 2) AND $evaluation['note'] != 0)<i class="fas fa-crown mr-1" style="color:#f39c12"></i>@endif {{ $evaluation['nom_equipe'] }}</h3>
 
                                             <div class="text-center">
-                                                <a href="/console/jouer-jeu-pyxel/{{'-'.$jeu->python_id}}" class="btn btn-success btn-sm" target="_blank" role="button"><i class="fas fa-gamepad fa-2x"></i></a>
+                                                <a href="/console/jouer-jeu-pyxel/{{$evaluation['etablissement_jeton'].'-'.$evaluation['python_id']}}" class="btn btn-success btn-sm" target="_blank" role="button"><i class="fas fa-gamepad fa-2x"></i></a>
                                             </div>
 
                                             <div class="mt-2 text-monospace small">
-                                                <div>Nb d'évaluations élèves: <span class="text-primary font-weight-bold">{{ $evaluation['nb_eval_eleves'] }}</span></div>
-                                                <div>Nb d'évaluations enseignants: <span class="text-primary font-weight-bold">{{ $evaluation['nb_eval_enseignants'] }}</span></div>
-                                                <div>Note élèves: <span class="text-primary font-weight-bold">@if($evaluation['note_eleves'] != 0){{ round($evaluation['note_eleves'], 1) }} @else - @endif</span></div>
-                                                <div>Note enseignants: <span class="text-primary font-weight-bold">@if($evaluation['note_enseignants'] != 0) {{ round($evaluation['note_enseignants'],1) }} @else - @endif</span></div>
+                                                <div>Nb d'évaluations: <span class="text-primary font-weight-bold">{{ $evaluation['nb_evals'] }}</span></div>
                                             </div>
 
                                             <kbd class="mt-2 text-center">Note globale:<span class="text-primary font-weight-bold">@if($evaluation['note'] != 0) {{ round($evaluation['note'],1) }} @else - @endif</span></kbd>
