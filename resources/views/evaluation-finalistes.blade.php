@@ -47,7 +47,7 @@
                 $liste_jeux = App\Models\Game::where([['etablissement_id', '!=', Auth::user()->id], ['type', 'ndc'], ['categorie', $categorie], ['finaliste', 1]])->get();
                 foreach ($liste_jeux AS $liste_jeu) {
                     $nb_evals = App\Models\Evaluation_finaliste::where([['jury_id', '!=', Auth::user()->id], ['categorie', $categorie], ['game_id', $liste_jeu->id]])->count();
-                    if($nb_evals >= 3){
+                    if($nb_evals >= 2){
                         $excluded_games[] = $liste_jeu->id;
                     }
                 }
