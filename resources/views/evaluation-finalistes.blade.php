@@ -42,7 +42,7 @@
                 // JEUX A EXCLURE
                 // Exclure les jeux deja evalues par l'utilisateur
                 $excluded_games = App\Models\Evaluation_finaliste::where([['jury_id', Auth::user()->id], ['categorie', $categorie]])->pluck('game_id')->toArray();
-                //dump($excluded_games);
+                dump($excluded_games);
                 // Exclure les jeux evalues 5 fois
                 $liste_jeux = App\Models\Game::where([['etablissement_id', '!=', Auth::user()->id], ['type', 'ndc'], ['categorie', $categorie], ['finaliste', 1]])->get();
                 foreach ($liste_jeux AS $liste_jeu) {
@@ -51,7 +51,7 @@
                         $excluded_games[] = $liste_jeu->id;
                     }
                 }
-                //dump($excluded_games);
+                dump($excluded_games);
 
                 // JEUX A EVALUER
                 $jeux = App\Models\Game::where([['etablissement_id', '!=', Auth::user()->id], ['type', 'ndc'], ['categorie', $categorie], ['finaliste', 1]])->whereNotIn('id', $excluded_games)->inRandomOrder()->take(6)->get();
