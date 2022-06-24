@@ -51,11 +51,13 @@ if (Auth::user()->is_admin != 1) {
                                 $evaluations = array_reverse($evaluations, TRUE);
                                 ?>
 
-                                @foreach($evaluations AS $evaluation)
+                                @foreach($evaluations AS $id => $evaluation)
                                     <div class="col mb-4">
                                         <div class="card p-3" @if(($loop->iteration == 1 OR $loop->iteration == 2) AND $evaluation['note'] != 0) style="background-color:#ffc905;border-radius:5px;" @endif>
 
                                             <h3 class="mt-0" style="color:#4cbf56">@if(($loop->iteration == 1 OR $loop->iteration == 2) AND $evaluation['note'] != 0)<i class="fas fa-crown mr-1" style="color:#f39c12"></i>@endif {{$evaluation['nom_equipe']}}</h3>
+                                            <p class="text-monospace text-muted small">[{{$id}}]</p>
+
                                             @if ($evaluation['json'] !== FALSE)
 
                                                 <div style="position:relative">
@@ -112,12 +114,13 @@ if (Auth::user()->is_admin != 1) {
                                 $evaluations = array_reverse($evaluations, TRUE);
                                 ?>
 
-                                @foreach($evaluations AS $evaluation)
+                                @foreach($evaluations AS $id => $evaluation)
 
                                     <div class="col mb-4">
                                         <div class="card p-3" @if(($loop->iteration == 1 OR $loop->iteration == 2) AND $evaluation['note'] != 0) style="background-color:#ffc905;border-radius:5px;" @endif>
 
                                             <h3 class="mt-0" style="color:#4cbf56">@if(($loop->iteration == 1 OR $loop->iteration == 2) AND $evaluation['note'] != 0)<i class="fas fa-crown mr-1" style="color:#f39c12"></i>@endif {{ $evaluation['nom_equipe'] }}</h3>
+                                            <p class="text-monospace text-muted small">[{{$id}}]</p>
 
                                             <div class="text-center">
                                                 <a href="/console/jouer-jeu-pyxel/{{$evaluation['etablissement_jeton'].'-'.$evaluation['python_id']}}" class="btn btn-success btn-sm" target="_blank" role="button"><i class="fas fa-gamepad fa-2x"></i></a>
