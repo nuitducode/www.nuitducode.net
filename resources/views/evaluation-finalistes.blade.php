@@ -175,12 +175,11 @@
                     $critere3_python_titre = "Originalité / créativité";
                     $critere3_python_description = "Utilisation originale des personnages / objets / décors, orginalité du scénario, présentation décalée...";
                     $critere4_python_titre = "Documentation";
-                    $critere4_python_description = "Documentation claire et complète.";
+                    $critere4_python_description = "Documentation claire et complète dans le jeu et/ou les 'docstrings'.";
 
                     if (in_array($categorie, ['PI', 'POO'])) {
                         ?>
-
-                        <form method="POST" action="{{ route(request()->segment(1).'-evaluation-etape-2_post') }}">
+                        <form method="POST" action="{{ route('evaluation-finalistes_post') }}">
                             @csrf
 
                             <?php
@@ -215,7 +214,7 @@ os.system(<span style="color:rgb(163, 190, 140); font-weight:400;">'pyxel run "{
 @endforeach
 </code></pre>
 <div class="text-monospace text-muted p-2" style="text-align:justify;font-size:70%;">
-    Copier-coller ce code dans un environnement Python possédant la bibliothèque <a href="https://github.com/kitao/pyxel/" target="_blank">Pyxel</a> pour lancer le jeu.<br />
+    Pour lancer le jeu, copier-coller ce code dans un environnement Python possédant les bibliothèques <i><a href="https://github.com/kitao/pyxel/" target="_blank">pyxel</a></i> et <i><a href="https://pypi.org/project/requests/" target="_blank">requests</a></i>.<br />
     Pour installer un environnement Python + Pyxel, voir la <a href="https://nuitducode.github.io/DOCUMENTATION/PYTHON/02-installation/" target="_blank">documentation</a>.
 </div>
                                         </div>
@@ -226,9 +225,9 @@ os.system(<span style="color:rgb(163, 190, 140); font-weight:400;">'pyxel run "{
                                             </div>
                                             <div class="row mt-2 mb-3">
                                                 <div class="col">
-                                                    <input type="range" id="{{$jeu->python_id}}_critere1" name="evaluation[{{$jeu->python_id}}]['critere1']" class="custom-range" value="-1" min="-1" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                                    <input type="range" id="{{$jeu->id}}_critere1" name="evaluation[{{$jeu->id}}]['critere1']" class="custom-range" value="-1" min="-1" max="5" step="1" oninput="curseur(this.id, this.value);">
                                                 </div>
-                                                <div class="col-auto text-secondary text-center font-weight-bold" id="{{$jeu->python_id}}_critere1_note" style="width:40px;">
+                                                <div class="col-auto text-secondary text-center font-weight-bold" id="{{$jeu->id}}_critere1_note" style="width:40px;">
                                                     <i class="fas fa-times text-danger"></i>
                                                 </div>
                                             </div>
@@ -238,9 +237,9 @@ os.system(<span style="color:rgb(163, 190, 140); font-weight:400;">'pyxel run "{
                                             </div>
                                             <div class="row mt-2 mb-3">
                                                 <div class="col">
-                                                    <input type="range" id="{{$jeu->python_id}}_critere2" name="evaluation[{{$jeu->python_id}}]['critere2']" class="custom-range" value="-1" min="-1" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                                    <input type="range" id="{{$jeu->id}}_critere2" name="evaluation[{{$jeu->id}}]['critere2']" class="custom-range" value="-1" min="-1" max="5" step="1" oninput="curseur(this.id, this.value);">
                                                 </div>
-                                                <div class="col-auto text-secondary text-center font-weight-bold" id="{{$jeu->python_id}}_critere2_note" style="width:40px;">
+                                                <div class="col-auto text-secondary text-center font-weight-bold" id="{{$jeu->id}}_critere2_note" style="width:40px;">
                                                     <i class="fas fa-times text-danger"></i>
                                                 </div>
                                             </div>
@@ -250,9 +249,9 @@ os.system(<span style="color:rgb(163, 190, 140); font-weight:400;">'pyxel run "{
                                             </div>
                                             <div class="row mt-2 mb-3">
                                                 <div class="col">
-                                                    <input type="range" id="{{$jeu->python_id}}_critere3" name="evaluation[{{$jeu->python_id}}]['critere3']" class="custom-range" value="-1" min="-1" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                                    <input type="range" id="{{$jeu->id}}_critere3" name="evaluation[{{$jeu->id}}]['critere3']" class="custom-range" value="-1" min="-1" max="5" step="1" oninput="curseur(this.id, this.value);">
                                                 </div>
-                                                <div class="col-auto text-secondary text-center font-weight-bold" id="{{$jeu->python_id}}_critere3_note" style="width:40px;">
+                                                <div class="col-auto text-secondary text-center font-weight-bold" id="{{$jeu->id}}_critere3_note" style="width:40px;">
                                                     <i class="fas fa-times text-danger"></i>
                                                 </div>
                                             </div>
@@ -262,9 +261,9 @@ os.system(<span style="color:rgb(163, 190, 140); font-weight:400;">'pyxel run "{
                                             </div>
                                             <div class="row mt-2 mb-3">
                                                 <div class="col">
-                                                    <input type="range" id="{{$jeu->python_id}}_critere4" name="evaluation[{{$jeu->python_id}}]['critere4']" class="custom-range" value="-1" min="-1" max="5" step="1" oninput="curseur(this.id, this.value);">
+                                                    <input type="range" id="{{$jeu->id}}_critere4" name="evaluation[{{$jeu->id}}]['critere4']" class="custom-range" value="-1" min="-1" max="5" step="1" oninput="curseur(this.id, this.value);">
                                                 </div>
-                                                <div class="col-auto text-secondary text-center font-weight-bold" id="{{$jeu->python_id}}_critere4_note" style="width:40px;">
+                                                <div class="col-auto text-secondary text-center font-weight-bold" id="{{$jeu->id}}_critere4_note" style="width:40px;">
                                                     <i class="fas fa-times text-danger"></i>
                                                 </div>
                                             </div>
@@ -277,10 +276,7 @@ os.system(<span style="color:rgb(163, 190, 140); font-weight:400;">'pyxel run "{
                                 }
                             }
                             ?>
-
                             <input id="categorie" name="categorie" type="hidden" value="{{$categorie}}" />
-
-                            <input id="langage" name="langage" type="hidden" value="python" />
                             <button type="submit" id="submit_jeu" class="btn btn-primary inline" disabled><i class="fas fa-check"></i></button>
                             <span id="submit_warning" class="pl-2 small text-danger text-monospace">il manque au moins un critère</span>
                         </form>
