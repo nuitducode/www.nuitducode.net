@@ -40,8 +40,9 @@
                 $categorie = Crypt::decryptString($categorie);
 
                 // JEUX A EXCLURE
+                $excluded_games = [];
                 // Exclure les jeux deja evalues par l'utilisateur
-                $excluded_games = App\Models\Evaluation_finaliste::where([['jury_id', Auth::user()->id], ['categorie', $categorie]])->pluck('game_id')->toArray();
+                $excluded_games = array_merge($excluded_games, App\Models\Evaluation_finaliste::where([['jury_id', Auth::user()->id], ['categorie', $categorie]])->pluck('game_id')->toArray());
                 // Exclure les jeux evalues 5 fois
                 $liste_jeux = App\Models\Game::where([['etablissement_id', '!=', Auth::user()->id], ['type', 'ndc'], ['categorie', $categorie], ['finaliste', 1]])->get();
                 foreach ($liste_jeux AS $liste_jeu) {
