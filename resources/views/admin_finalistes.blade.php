@@ -56,7 +56,7 @@ if (Auth::user()->is_admin != 1) {
                                     <div class="col mb-4">
                                         <div class="card p-3" @if(($loop->iteration == 1 OR $loop->iteration == 2) AND $evaluation['note'] != 0) style="background-color:#ffc905;border-radius:5px;" @endif>
 
-                                            <h3 class="mt-0" style=" @if(in_array($id, $excluded_games)) text-decoration: line-through; @endif color:#4cbf56">@if(($loop->iteration == 1 OR $loop->iteration == 2) AND $evaluation['note'] != 0)<i class="fas fa-crown mr-1" style="color:#f39c12"></i>@endif {{$evaluation['nom_equipe']}}</h3>
+                                            <h3 class="mt-0" style="@if(in_array($id, $excluded_games)) text-decoration: line-through; @endif color:#4cbf56">@if(($loop->iteration == 1 OR $loop->iteration == 2) AND $evaluation['note'] != 0)<i class="fas fa-crown mr-1" style="color:#f39c12"></i>@endif {{$evaluation['nom_equipe']}}</h3>
                                             <p class="text-monospace text-muted small">[{{$id}}]</p>
 
                                             @if ($evaluation['json'] !== FALSE)
@@ -120,7 +120,7 @@ if (Auth::user()->is_admin != 1) {
                                     <div class="col mb-4">
                                         <div class="card p-3" @if(($loop->iteration == 1 OR $loop->iteration == 2) AND $evaluation['note'] != 0) style="background-color:#ffc905;border-radius:5px;" @endif>
 
-                                            <h3 class="mt-0" style="color:#4cbf56">@if(($loop->iteration == 1 OR $loop->iteration == 2) AND $evaluation['note'] != 0)<i class="fas fa-crown mr-1" style="color:#f39c12"></i>@endif {{ $evaluation['nom_equipe'] }}</h3>
+                                            <h3 class="mt-0" style="@if(in_array($id, $excluded_games)) text-decoration: line-through; @endif color:#4cbf56">@if(($loop->iteration == 1 OR $loop->iteration == 2) AND $evaluation['note'] != 0)<i class="fas fa-crown mr-1" style="color:#f39c12"></i>@endif {{ $evaluation['nom_equipe'] }}</h3>
                                             <p class="text-monospace text-muted small">[{{$id}}]</p>
 
                                             <div class="text-center">
