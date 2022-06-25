@@ -28,7 +28,7 @@ if (Auth::user()->is_admin != 1) {
                 <h2>SCRATCH</h2>
                 <div style="border:1px silver solid;border-radius:5px;padding:20px;background-color:white;">
                     <?php
-                    $excluded_games = [50, 660, 762, 569, 676, 470, 520, 540, 724, 411, 779, 313, 207];
+                    $excluded_games = [660, 762, 569, 676, 470, 520, 540, 724, 411, 779, 313, 207];
                     $categories = ['C3' => 'Cycle 3', 'C4' => 'Cycle 4', 'LY' => 'Lycée'];
                     foreach ($categories AS $categorie_code => $categorie){
                         $jeux = App\Models\Game::where([['type', 'ndc'], ['categorie', $categorie_code], ['finaliste', 1]])->get();
