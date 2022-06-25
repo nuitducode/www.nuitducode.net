@@ -28,11 +28,11 @@ if (Auth::user()->is_admin != 1) {
                 <h2>SCRATCH</h2>
                 <div style="border:1px silver solid;border-radius:5px;padding:20px;background-color:white;">
                     <?php
-                    $excluded_games = [46];
+                    $excluded_games = [50, 660, 762, 569, 676, 470, 520, 540, 724, 411, 779, 313, 207];
                     $categories = ['C3' => 'Cycle 3', 'C4' => 'Cycle 4', 'LY' => 'Lycée'];
                     foreach ($categories AS $categorie_code => $categorie){
-                        $jeux = App\Models\Game::where([['type', 'ndc'], ['categorie', $categorie_code], ['finaliste', 1]])->whereNotIn('id', $excluded_games)->get();
-                        $nb_jeux = App\Models\Game::where([['type', 'ndc'], ['categorie', $categorie_code], ['finaliste', 1]])->whereNotIn('id', $excluded_games)->count();
+                        $jeux = App\Models\Game::where([['type', 'ndc'], ['categorie', $categorie_code], ['finaliste', 1]])->get();
+                        $nb_jeux = App\Models\Game::where([['type', 'ndc'], ['categorie', $categorie_code], ['finaliste', 1]])->count();
                         ?>
                         <h3 class="m-0 mb-1">{{$categorie}} [{{$nb_jeux}}]</h3>
                         @if(count($jeux) == 0)
@@ -56,7 +56,7 @@ if (Auth::user()->is_admin != 1) {
                                     <div class="col mb-4">
                                         <div class="card p-3" @if(($loop->iteration == 1 OR $loop->iteration == 2) AND $evaluation['note'] != 0) style="background-color:#ffc905;border-radius:5px;" @endif>
 
-                                            <h3 class="mt-0" style="color:#4cbf56">@if(($loop->iteration == 1 OR $loop->iteration == 2) AND $evaluation['note'] != 0)<i class="fas fa-crown mr-1" style="color:#f39c12"></i>@endif {{$evaluation['nom_equipe']}}</h3>
+                                            <h3 class="mt-0" style=" @if(in_array($id, $excluded_games)) text-decoration: line-through; @endif color:#4cbf56">@if(($loop->iteration == 1 OR $loop->iteration == 2) AND $evaluation['note'] != 0)<i class="fas fa-crown mr-1" style="color:#f39c12"></i>@endif {{$evaluation['nom_equipe']}}</h3>
                                             <p class="text-monospace text-muted small">[{{$id}}]</p>
 
                                             @if ($evaluation['json'] !== FALSE)
@@ -95,8 +95,8 @@ if (Auth::user()->is_admin != 1) {
                     <?php
                     $categories = ['PI' => 'Première', 'POO' => 'Terminale'];
                     foreach ($categories AS $categorie_code => $categorie){
-                        $jeux = App\Models\Game::where([['type', 'ndc'], ['categorie', $categorie_code], ['finaliste', 1]])->whereNotIn('id', $excluded_games)->get();
-                        $nb_jeux = App\Models\Game::where([['type', 'ndc'], ['categorie', $categorie_code], ['finaliste', 1]])->whereNotIn('id', $excluded_games)->count();
+                        $jeux = App\Models\Game::where([['type', 'ndc'], ['categorie', $categorie_code], ['finaliste', 1]])->get();
+                        $nb_jeux = App\Models\Game::where([['type', 'ndc'], ['categorie', $categorie_code], ['finaliste', 1]])->count();
                         ?>
                         <h3 class="m-0 mb-1">{{$categorie}} [{{$nb_jeux}}]</h3>
                         @if(count($jeux) == 0)
