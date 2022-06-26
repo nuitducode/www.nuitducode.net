@@ -59,7 +59,7 @@ if (Auth::user()->is_admin != 1) {
                                             @if ($evaluation['json'] !== FALSE)
 
                                                 <div class="card-body p-0">
-                                                    <h3 class="mt-0" style="@if(in_array($id, $excluded_games)) text-decoration: line-through; @endif color:#4cbf56">@if(($loop->iteration == 1 OR $loop->iteration == 2) AND $evaluation['note'] != 0)<i class="fas fa-crown mr-1" style="color:#f39c12"></i>@endif {{$evaluation['nom_equipe']}}</h3>
+                                                    <h3 class="mt-0" style="@if(in_array($id, $excluded_games)) text-decoration: line-through; @endif color:#4cbf56">@if(($loop->iteration <= 8) AND $evaluation['note'] != 0)<i class="fas fa-crown mr-1" style="color:#f39c12"></i>@endif {{$evaluation['nom_equipe']}}</h3>
 
                                                     <?php
                                                     $etablissement = App\Models\User::where('id', $evaluation['etablissement_id'])->first();
@@ -81,7 +81,7 @@ if (Auth::user()->is_admin != 1) {
                                                         <div>Nb d'évaluations: <span class="text-primary font-weight-bold">{{ $evaluation['nb_evals'] }}</span></div>
                                                     </div>
                                                     <div class="text-center">
-                                                        <kbd class="text-center">Note globale:<span class="text-primary font-weight-bold">@if($evaluation['note'] != 0) {{ round($evaluation['note'],2) }} @else - @endif</span></kbd>
+                                                        <kbd class="text-center" style="display:block;">Note globale:<span class="text-primary font-weight-bold">@if($evaluation['note'] != 0) {{ round($evaluation['note'],2) }} @else - @endif</span></kbd>
                                                     </div>
                                                 </div>
 
@@ -133,7 +133,7 @@ if (Auth::user()->is_admin != 1) {
                                         <div class="card h-100 p-3" @if(($loop->iteration <= 8) AND $evaluation['note'] != 0) style="background-color:#ffc905;border-radius:5px;" @endif>
 
                                             <div class="card-body p-0">
-                                                <h3 class="mt-0" style="@if(in_array($id, $excluded_games)) text-decoration: line-through; @endif color:#4cbf56">@if(($loop->iteration == 1 OR $loop->iteration == 2) AND $evaluation['note'] != 0)<i class="fas fa-crown mr-1" style="color:#f39c12"></i>@endif {{ $evaluation['nom_equipe'] }}</h3>
+                                                <h3 class="mt-0" style="@if(in_array($id, $excluded_games)) text-decoration: line-through; @endif color:#4cbf56">@if(($loop->iteration <= 8) AND $evaluation['note'] != 0)<i class="fas fa-crown mr-1" style="color:#f39c12"></i>@endif {{ $evaluation['nom_equipe'] }}</h3>
 
                                                 <?php
                                                 $etablissement = App\Models\User::where('id', $evaluation['etablissement_id'])->first();
@@ -149,7 +149,7 @@ if (Auth::user()->is_admin != 1) {
                                                     <div>Nb d'évaluations: <span class="text-primary font-weight-bold">{{ $evaluation['nb_evals'] }}</span></div>
                                                 </div>
                                                 <div class="text-center">
-                                                    <kbd class="text-center">Note globale:<span class="text-primary font-weight-bold">@if($evaluation['note'] != 0) {{ round($evaluation['note'],2) }} @else - @endif</span></kbd>
+                                                    <kbd class="text-center" style="display:block;">Note globale:<span class="text-primary font-weight-bold">@if($evaluation['note'] != 0) {{ round($evaluation['note'],2) }} @else - @endif</span></kbd>
                                                 </div>
                                             </div>
 
