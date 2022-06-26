@@ -38,7 +38,7 @@ if (Auth::user()->is_admin != 1) {
                         @if(count($jeux) == 0)
                             <div class="text-monospace text-danger small mb-4">~ pas de jeux dans cette catégorie ~</div>
                         @else
-                            <div class="row row-cols-1 row-cols-md-3">
+                            <div class="row row-cols-1 row-cols-md-4">
 
                                 <?php
                                 $evaluations = [];
@@ -102,7 +102,7 @@ if (Auth::user()->is_admin != 1) {
                         @if(count($jeux) == 0)
                             <div class="text-monospace text-danger small mb-4">~ pas de jeux dans cette catégorie ~</div>
                         @else
-                            <div class="row row-cols-1 row-cols-md-3">
+                            <div class="row row-cols-1 row-cols-md-4">
 
                                 <?php
                                 $evaluations = [];
