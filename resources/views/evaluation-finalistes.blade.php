@@ -40,7 +40,7 @@
                 $categorie = Crypt::decryptString($categorie);
 
                 // JEUX A EXCLURE
-                $excluded_games = [762, 569, 676, 470, 520, 540, 724, 411, 779, 313, 207, 225, 156, 730, 364, 562, 578, 603, 324, 715, 667, 778, 258, 572, 333, 229, 373, 344, 33, 773, 660, 231, 277, 202, 678, 366, 454, 423, 241, 501];
+                $excluded_games = [762, 569, 676, 470, 520, 540, 724, 411, 779, 313, 207, 225, 156, 730, 364, 562, 578, 603, 324, 715, 667, 778, 258, 572, 333, 229, 373, 344, 33, 773, 660, 231, 277, 202, 678, 366, 454, 423, 241, 501, 175, 771, 468];
                 // Exclure les jeux deja evalues par l'utilisateur
                 $excluded_games = array_merge($excluded_games, App\Models\Evaluation_finaliste::where([['jury_id', Auth::user()->id], ['categorie', $categorie]])->pluck('game_id')->toArray());
                 // Exclure les jeux evalues 5 fois
