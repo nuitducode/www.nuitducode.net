@@ -39,13 +39,14 @@
                 @endif
 
                 <h1 class="">ÉVALUATION DES FINALISTES</h1>
-                <p>Choisir une catégorie pour évaluer un lot de 6 jeux.</p>
-                <h2 class="">SCRATCH</h2>
+                <!--<p>Choisir une catégorie pour évaluer un lot de 6 jeux.</p>-->
+                <p class="text-success text-monospace small">Tous les jeux ont été évalués! Merci!</p>
+                <!--<h2 class="">SCRATCH</h2>-->
                 <!--<a class="btn btn-success" href="/console/evaluation-finalistes/{{ Crypt::encryptString('C3') }}" role="button">Cycle 3</a>-->
                 <!--<a class="btn btn-success" href="/console/evaluation-finalistes/{{ Crypt::encryptString('C4') }}" role="button">Cycle 4</a>-->
                 <!--<a class="btn btn-success" href="/console/evaluation-finalistes/{{ Crypt::encryptString('LY') }}" role="button">Lycée</a>-->
 
-                <h2 class="">PYTHON</h2>
+                <!--<h2 class="">PYTHON</h2>-->
                 <!--<a class="btn btn-success" href="/console/evaluation-finalistes/{{ Crypt::encryptString('PI') }}" role="button">Première</a>-->
                 <!--<a class="btn btn-success" href="/console/evaluation-finalistes/{{ Crypt::encryptString('POO') }}" role="button">Terminale</a>-->
 
