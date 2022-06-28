@@ -115,6 +115,8 @@ Route::view('/console/admin_finalistes', 'admin_finalistes')->middleware('auth')
 
 Route::get('/console', [App\Http\Controllers\ConsoleController::class, 'console_get'])->name('console_get');
 
+Route::view('/console/ndc2022', 'ndc2022')->middleware('auth');
+
 // VALIDATION FINALISTES
 Route::post('/console/validation-finalistes', [App\Http\Controllers\ConsoleController::class, 'valider_finalistes'])->name('valider-finalistes');
 Route::post('/console/invalidation-finalistes', [App\Http\Controllers\ConsoleController::class, 'invalider_finalistes'])->name('invalider-finalistes');
