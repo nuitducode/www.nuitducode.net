@@ -64,8 +64,7 @@ if (Auth::user()->is_admin != 1) {
                                                     <?php
                                                     $etablissement = App\Models\User::where('id', $evaluation['etablissement_id'])->first();
                                                     ?>
-                                                    <div class="text-monospace text-muted small mb-1" style="font-size:70%;color:silver;">[{{$id}}] {{$etablissement->etablissement}} - {{$etablissement->ville}} - {{$etablissement->pays}}</div>
-
+                                                    <div class="text-monospace text-muted small mb-1" style="font-size:70%;color:silver;">[{{$id}}] {{$etablissement->etablissement}} - {{$etablissement->ville}} - {{$etablissement->pays}} - {{$etablissement->email}}</div>
                                                 </div>
 
                                                 <div class="card-footer mt-2">
