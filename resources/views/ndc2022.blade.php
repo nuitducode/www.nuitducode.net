@@ -75,7 +75,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <h2 class="pt-1" style="text-transform: capitalize;">Sélection Cycle 3 (CM1 > 6<sup>e</sup>)</h2>
-                                <p class="text-monospace small" style="text-align:justify">Toutes catégories confondues, plus de 1000 jeux ont été créés lors cette 6<sup>e</sup> édition de la Nuit du c0de. Ci-dessous, les 2<sup>3</sup> (ou 1000<sub>2</sub>) jeux sélectionnés pour la catégorie "Cycle 3" (élèves du CM1 à la 6<sup>e</sup>). Amusez-vous bien!</p>
+                                <p class="text-monospace small" style="text-align:justify">Toutes catégories confondues, plus de 1000 jeux ont été créés lors cette 6<sup>e</sup> édition de la Nuit du c0de. Ci-dessous, les 2<sup>3</sup> (ou 1000<sub>2</sub>) jeux sélectionnés pour la catégorie "Cycle 3" (élèves du CM1 à la 6<sup>e</sup>). Bravo aux élèves et à leurs enseignants. Amusez-vous bien!</p>
                                 <p class="text-monospace text-muted" style="font-size:70%;color:silver"><i>L'ordre des jeux est aléatoire</i></p>
                             </div>
                         </div>
