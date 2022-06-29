@@ -9,102 +9,104 @@
 
     @include('inc-nav')
 
-	<div class="container mt-4 mb-5">
+    <div class="container mt-4 mb-5">
 		<div class="row pt-3">
-			<div class="col-md-2"></div>
+
+            <div class="col-md-2 mt-4">
+                <a class="btn btn-light btn-sm mb-4" href="/" role="button"><i class="fas fa-arrow-left" aria-hidden="true"></i></a>
+            </div>
 
 			<div class="col-md-10">
 
-                @if (session('message'))
-                    <div class="text-success text-monospace text-center mt-5 pb-4" role="alert">
-                        {{ session('message') }}
-                        <br />
-                        <a class="btn btn-light btn-sm mt-3" href="/" role="button"><i class="fas fa-arrow-left"></i></a>
-                    </div>
-                    @php
-                    exit;
-                    @endphp
-                @endif
+                <h1 class="mb-0">Nuit du c0de 2022</h1>
 
                 <?php
+                if(isset($categorie)) {
 
+                    $C3_1 = ["695103644", "GET OUT OF THE GARDEN", "French American Academy<br />Jersey City - État-Unis", "The point of the game is to plant and harvest each vegetable shown here, then you would find a key opening the gate. You cannot leave the garden without harvesting every veggie. Read all instructions carefully.<br />
+    - Move the fox with the up, down, right, left arrows or with w, a, s, d<br />
+    - Watch out of bombs the chick might throw!<br />
+    - Watch out of holes rabbits have dug in the ground.<br />
+    You have 4 lives in this game. Be careful and have FUN!!"];
+                    $C3_2 = ["703681012", "CHASSE AUX LÉGUMES", "École Internationale Provence - Alpes - Côte d'Azur<br />Manosque - France", "Dans ce jeu vous devez bouger le renard avec les flèches sans toucher ni les haies, ni le drapeau, ni la bombe et ni le bidon toxique.
+    Le but du jeu est de ramasser touts les légumes puis de rentrer par la porte pour gagner."];
+                    $C3_3 = ["701768380", "LES COUREURS CARRÉS", "Lycée Français de Los Angeles<br />Los Angeles - État-Unis", "Pour jouer il faut récupérer la clé et la mettre dans la serrure pour passer au niveau suivant et ou récolter les étoiles. Il y a 5 niveaux différents, utilisez les touches fléchées pour vous déplacer ! Faites également attention aux lasers et aux blocs de danger. Maintenant, choisissez votre caractère!"];
+                    $C3_4 = ["701786916", "LES MARMOTTES", "Collège Stanislas de Québec<br />Québec - Canada", "Le but du jeu est de cliquer avec le pointeur de souris sur les animaux, mais il faut éviter de cliquer sur le ballon et la bombe, car ils vont exploser et vous faire mourir. Si vous vos point arrive à 160 vous gagner!"];
+                    $C3_5 = ["688054055", "THE UNTITLED CODERS", "École Française Internationale de Philadelphie<br />Philadelphie - Etat-Unis", "Utilise les fleches pour te deplacer
+    espace pour tirer
+    tu dois survivre les trois niveaux
+    amuse toi!"];
+                    $C3_6 = ["702627896", "PAOLAELISE", "Collège Beaumarchais<br />Paris - France", "Vous êtes Charlie, un poussin jardinier. Vous devez terminer votre potager en évitant Foxy le renard et les obstacles.<br />
+    -Appuyez sur les flèches pour vous déplacer<br />
+    -Attrapez les légumes pour les planter<br />
+    -Quand la clé apparait, attrapez-la pour changer de niveau<br />
+    -Attrapez les pièces et les rubis pour gagner des points"];
+                    $C3_7 = ["694171156", "RENARDS VÉGÉTARIENS", "Lycée Français de New York<br />New York - État-Unis", "Attendez que vos plantes poussent, quand elles poussent ramassez-les et vendez-les à la vente. Une fois que vous vendez, vous gagnerez un cochon. Les gemmes sont la monnaie. Pour obtenir des gemmes, vous devez avoir un cochon. Les cochons vous donnent des gemmes rouges. Avec lui les gemmes rouges, passez par le rocher et par un lapin. Le lapin fera une gemme bleue. Avec la gemme bleue, par un poussin. Mettre tous vos animals sur la porte au meme temps pur finir. BONNE CHANCE!"];
+                    $C3_8 = ["701803809", "LILLY ET ARIANE", "Collège Stanislas de Québec<br />Québec - Canada", "Utilise les flèches de ton clavier pour te rendre à la porte puis ensuite au trophée pour gagner en évitant les obstacles :)"];
 
+                    $C4_1 = ["703681012", "", "", ""];
+                    $C4_2 = ["703681012", "", "", ""];
+                    $C4_3 = ["703681012", "", "", ""];
+                    $C4_4 = ["703681012", "", "", ""];
+                    $C4_5 = ["703681012", "", "", ""];
+                    $C4_6 = ["703681012", "", "", ""];
+                    $C4_7 = ["703681012", "", "", ""];
+                    $C4_8 = ["703681012", "", "", ""];
 
-                    // SCRATCH
-                    $critere1_scratch_titre = "Jouabilité";
-                    $critere1_scratch_description = "Facilité et rapidité de la prise en main, absence de bogues, environnement intuitif, nombre de niveaux / scènes, difficulté progressive...";
-                    $critere2_scratch_titre = "Richesse / Complexité";
-                    $critere2_scratch_description = "Nombre de lutins et décors, niveaux / scènes multiples, variété des actions, défilements, effets...";
-                    $critere3_scratch_titre = "Originalité / Créativité";
-                    $critere3_scratch_description = "Utilisation originale des lutins et des décors, orginalité du scénario, lutins à contre emploi, présentation décalée...";
-                    $critere4_scratch_titre = "Respect des consignes / Documentation";
-                    $critere4_scratch_description = "Absence d'éléments extérieurs, intégrité des lutins, documentation claire et complète...";
+                    $LY_1 = ["703681012", "", "", ""];
+                    $LY_2 = ["703681012", "", "", ""];
+                    $LY_3 = ["703681012", "", "", ""];
+                    $LY_4 = ["703681012", "", "", ""];
+                    $LY_5 = ["703681012", "", "", ""];
+                    $LY_6 = ["703681012", "", "", ""];
+                    $LY_7 = ["703681012", "", "", ""];
+                    $LY_8 = ["703681012", "", "", ""];
 
+                    $C3_jeux = [$C3_1, $C3_2, $C3_3,$C3_4,$C3_5,$C3_6,$C3_7,$C3_8];
+                    $C4_jeux = [$C4_1, $C4_2, $C4_3,$C4_4,$C4_5,$C4_6,$C4_7,$C4_8];
+                    $LY_jeux = [$LY_1, $LY_2, $LY_3,$LY_4,$LY_5,$LY_6,$LY_7,$LY_8];
 
+                    shuffle($C3_jeux);
+                    shuffle($C4_jeux);
+                    shuffle($LY_jeux);
+
+                    if($categorie == "C3") {
                         ?>
-
-
-
-
-                            <?php
-
-                                ?>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h2 class="mb-1" style="color:#4cbf56">{{$jeu->nom_equipe}}</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h2 class="pt-1" style="text-transform: capitalize;">Sélection Cycle 3 (CM1 > 6<sup>e</sup>)</h2>
+                                <p class="text-monospace small" style="text-align:justify">Toutes catégories confondues, plus de 1000 jeux ont été créés lors cette 6<sup>e</sup> édition de la Nuit du c0de. Ci-dessous, les 2<sup>3</sup> (ou 1000<sub>2</sub>) jeux sélectionnés pour la catégorie "Cycle 3" (élèves du CM1 à la 6<sup>e</sup>). Amusez-vous bien!</p>
+                                <p class="text-monospace text-muted" style="font-size:70%;color:silver"><i>L'ordre des jeux est aléatoire</i></p>
+                            </div>
+                        </div>
+                        <?php
+                        foreach($C3_jeux AS $C3_jeu){
+                            ?>
+                            <div class="row mt-4">
+                                <div class="text-center" style="width:505px;">
+                                    <div id="{{ $C3_jeu[0] }}" style="padding:0px 10px 0px 10px;"><img src="https://cdn2.scratch.mit.edu/get_image/project/{{ $C3_jeu[0] }}_480x360.png" class="img-fluid" style="border-radius:4px;" width="100%" /></div>
+                                    <div class="small text-monospace text-left" style="margin:10px;border:1px solid silver; padding:10px;border-radius:4px; background-color:white;">
+                                        {!! $C3_jeu[3] !!}
                                     </div>
                                 </div>
-                                <?php
-                                $json = @file_get_contents("https://api.scratch.mit.edu/projects/".$jeu->scratch_id);
-                                if ($json !== FALSE) {
-                                    $jeu_scratch = json_decode($json);
-                                    ?>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            @if($jury_type != 'eleve')
-                                            <h3 class="mb-1 mt-1">[NdC 2022 - C3] {{$jeu_scratch->title}}</h3>
-                                            <div class="text-monospace small text-muted">Création : {{$jeu_scratch->history->created}}</div>
-                                            <div class="text-monospace small text-muted">Derniere modification : {{$jeu_scratch->history->modified}}</div>
-                                            @endif
-                                            <div class="text-monospace small">Si le jeu ne s'affiche pas correctement, vous pouvez l'ouvrir dans un autre onglet en cliquant <a href="https://scratch.mit.edu/projects/{{$jeu_scratch->id}}" target="_blank">ici</a>.</div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 text-center">
-                                            <div><img src="https://uploads.scratch.mit.edu/get_image/project/{{$jeu->scratch_id}}_282x218.png" class="img-fluid" style="border-radius:4px;" width="100%" /></div>
-                                            <button type="button" class="btn btn-success btn-sm mt-2 mb-3" onClick="this.previousElementSibling.innerHTML='<iframe src=\'https://scratch.mit.edu/projects/{{$jeu->scratch_id}}/embed\' width=\'100%\' height=\'402\' frameborder=\'0\' scrolling=\'no\'></iframe>'">lancer / recharger le jeu</button>
-                                            <div class="small text-monospace text-left" style="border:1px solid silver; padding:10px;border-radius:4px; background-color:white;">
-                                                @if ($jeu_scratch->instructions != NULL)
-                                                    {{$jeu_scratch->instructions}}
-                                                @else
-                                                    <span class="text-danger">pas d'instructions</span>
-                                                @endif
-                                            </div>
-                                            @if($jury_type != 'eleve')
-                                            <div class="text-monospace small text-muted pt-1 pl-1">
-                                                <i class="fas fa-gamepad" style="font-size:140%;vertical-align:-1px;"></i> <a href="https://scratch.mit.edu/projects/{{$jeu_scratch->id}}" target="_blank">{{$jeu_scratch->id}}</a> ~
-                                                <i class="fas fa-user-circle"></i> <a href="https://scratch.mit.edu/users/{{$jeu_scratch->author->username}}" target="_blank">{{$jeu_scratch->author->username}}</a>
-                                            </div>
-                                            @endif
-                                        </div>
-                                        <div class="col-md-6">
+                                <div class="col">
+                                    <h3 class="pt-0 mt-0 mb-1">{{ $C3_jeu[1] }}</h3>
+                                    <p class="text-monospace text-muted small">{!! $C3_jeu[2] !!}</p>
+                                    <button type="button" class="btn btn-success mt-2 mb-5" onClick="document.getElementById({{ $C3_jeu[0] }}).innerHTML='<iframe src=\'https://scratch.mit.edu/projects/{{ $C3_jeu[0] }}/embed\' width=\'485\' height=\'402\' frameborder=\'0\' scrolling=\'no\' style=\'border-radius:5px\'></iframe>'">Jouez !</button>
+                                    <div class="mt-5 text-monospace text-muted" style="font-size:70%">Si le jeu ne s'affiche pas correctement,<br />vous pouvez l'ouvrir dans un autre<br />onglet en cliquant <a href="https://scratch.mit.edu/projects/{{ $C3_jeu[0] }}" target="_blank">ici</a>.</div>
+                                </div>
+                            </div>
+                            <br />
+                            <br />
+                            <?php
+                        }
+                    }
+                }
+                ?>
 
-                                            
-
-                                        </div>
-                                    </div>
-                                    <br />
-                                    <br />
-
-
-
-
-
-            </div>
+            </div><!-- /col -->
         </div><!-- /row -->
 	</div><!-- /container -->
-
-
 
     <script>
     if ( window.history.replaceState ) {

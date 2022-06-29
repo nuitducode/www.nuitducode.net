@@ -66,9 +66,17 @@
 					<span class="ml-3 small" style="font-weight:bold;color:#d35400">{{ DB::table('users')->distinct()->count('pays'); }}</span>
 					<span class="text-monospace small" style="color:silver"> pays</span>
 				</p>
+
+				<!--
 				<p class="text-center mt-3">
 					<a class="btn btn-warning" href="register" role="button"><img src="{{ asset('img/icon-green-flag.svg') }}" width="12" class="mr-2" />inscrire un établissement</a>
 				</p>
+				-->
+
+				<p class="m-0 mt-4 mb-2 text-center text-monospace font-weight-bold" style="color:#cf63cf">Jeux 2022</p>
+				<div class="text-center mb-5">
+					<a class="btn btn-primary btn-sm" href="/ndc2022/C3" role="button">Cycle 3 (CM1 > 6<sup>e</sup>)</a>
+				</div>
 
 				<iframe style="border-radius:5px" width="100%" height="300px" frameborder="0" allowfullscreen src="//umap.openstreetmap.fr/en/map/nuit-du-code_759208?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=false&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=null&onLoadPanel=undefined&captionBar=false"></iframe>
 

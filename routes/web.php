@@ -49,6 +49,12 @@ Route::view('/images', 'images');
 // DEPOT CONFIRMATION
 Route::view('/jeu-depot-confirmation', 'jeu-depot-confirmation');
 
+// NDC2022
+Route::view('/ndc2022', 'ndc2022');
+Route::get('/ndc2022/{categorie}', function ($categorie) {
+    return view('ndc2022', ['categorie' => $categorie]);
+});
+
 
 
 // TEST
@@ -114,8 +120,6 @@ Route::view('/console/admin_finalistes', 'admin_finalistes')->middleware('auth')
 // ============================================================================
 
 Route::get('/console', [App\Http\Controllers\ConsoleController::class, 'console_get'])->name('console_get');
-
-Route::view('/console/ndc2022', 'ndc2022')->middleware('auth');
 
 // VALIDATION FINALISTES
 Route::post('/console/validation-finalistes', [App\Http\Controllers\ConsoleController::class, 'valider_finalistes'])->name('valider-finalistes');
