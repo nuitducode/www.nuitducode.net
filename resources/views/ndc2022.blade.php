@@ -247,7 +247,7 @@
                         if($categorie == "T") {
                             $jeux = $POO_jeux;
                             $categorie_titre = "PYTHON - Sélection Terminale NSI";
-                            $categorie_desc = "\"Termianle NSI\"";
+                            $categorie_desc = "\"Terminale NSI\"";
                         }
                         ?>
 
