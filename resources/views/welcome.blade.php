@@ -73,9 +73,15 @@
 				</p>
 				-->
 
-				<p class="m-0 mt-4 mb-2 text-center text-monospace font-weight-bold" style="color:#cf63cf">Jeux 2022</p>
-				<div class="text-center mb-5">
-					<a class="btn btn-primary btn-sm" href="/ndc2022/C3" role="button">Cycle 3 (CM1 > 6<sup>e</sup>)</a>
+				<p class="m-0 mt-5 mb-2 text-monospace font-weight-bold" style="color:#cf63cf">Jeux 2022</p>
+				<div class="mb-1 text-monospace">
+					Scratch&nbsp;: <a class="btn btn-primary btn-sm" href="/ndc2022/C3" role="button">Cycle 3 (CM1>6<sup>e</sup>)</a>
+					<a class="btn btn-primary btn-sm" href="/ndc2022/C4" role="button">Cycle 4 (5<sup>e</sup>>3<sup>e</sup>)</a>
+					<a class="btn btn-primary btn-sm" href="/ndc2022/LY" role="button">Lycée (2<sup>de</sup>>Tle)</a><br />
+				</div>
+				<div class="mb-5 text-monospace">
+					Python&nbsp;&nbsp;: <a class="btn btn-primary btn-sm" href="/ndc2022/P" role="button">Première NSI</a>
+					<a class="btn btn-primary btn-sm" href="/ndc2022/T" role="button">Terminale NSI</a>
 				</div>
 
 				<iframe style="border-radius:5px" width="100%" height="300px" frameborder="0" allowfullscreen src="//umap.openstreetmap.fr/en/map/nuit-du-code_759208?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=false&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=null&onLoadPanel=undefined&captionBar=false"></iframe>
